@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Carta · Terra, restaurante en Cullera</title>
-<meta name="description" content="La carta completa de Terra en una sola página: menú del día, carta de mediodía, carta de noche y bebidas, con buscador, filtro de alérgenos, tamaño de letra ajustable e impresión.">
+<meta name="description" content="Toda la carta de Terra de golpe: menú del día, carta de mediodía, carta de noche y bebidas. Con buscador, filtro de alérgenos, tamaño de letra ajustable e impresión a un toque.">
 <meta name="theme-color" content="#251C0A">
 <link rel="canonical" href="https://terra-cullera.vercel.app/carta.html">
 <meta property="og:type" content="restaurant.menu">
@@ -36,7 +36,7 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none !important}
-html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--header-h) + 5rem)}
+html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--terra-fondo);color:var(--crema-90);font-family:var(--font);font-size:1.4rem;line-height:1.6;font-synthesis:none;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
 img,svg{max-width:100%}
 a{color:var(--terra-salvia);text-underline-offset:.25em;text-decoration-thickness:1px}
@@ -92,99 +92,73 @@ body.ver-editables .edit{outline:2px dashed var(--terra-salvia);outline-offset:3
 }
 
 /* ===== Carta ===== */
-.cp{--z:1;font-size:calc(1.2rem*var(--z));line-height:1.5;padding-top:calc(var(--header-h) + 2rem);padding-bottom:3rem}
-.cp h1{font-size:clamp(2.2em,9vw,4.4em);line-height:1.05;color:var(--terra-crema)}
-.cp .lead{margin-top:.5em;max-width:34em;font-size:1.05em;color:var(--crema-90)}
+.cp{--z:1;font-size:calc(1.2rem*var(--z));line-height:1.5;padding-top:calc(var(--header-h) + 1rem);padding-bottom:3rem}
+.cp h1{font-size:clamp(1.8em,6vw,3em);line-height:1.05;color:var(--terra-crema)}
 
 /* Pestañas */
-.tabs{margin-top:1.4em}
-.tabs ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(4.2em,1fr));gap:.4em}
-.tabs a{display:flex;align-items:center;justify-content:center;min-height:2.9em;padding:.3em .3em;font-size:1.02em;line-height:1.15;text-align:center;color:var(--terra-crema);text-decoration:none;border:1px solid var(--crema-20);border-radius:4px;transition:border-color .15s ease,background-color .15s ease}
+.tabs{margin-top:.55em}
+.tabs ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(3em,1fr));gap:.3em}
+.tabs a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:.2em .2em;font-size:.86em;line-height:1.15;text-align:center;color:var(--terra-crema);text-decoration:none;border:1px solid var(--crema-20);border-radius:4px;transition:border-color .15s ease,background-color .15s ease}
+@media (min-width:520px){.tabs a{font-size:1.05em}}
 @media (min-width:760px){.tabs a{font-size:1.25em;min-height:2.6em}}
 .tabs a[aria-current="true"]{background:var(--terra-salvia);border-color:var(--terra-salvia);color:var(--terra-fondo)}
 @media (hover:hover) and (pointer:fine){.tabs a:not([aria-current="true"]):hover{border-color:var(--terra-salvia);color:var(--terra-salvia)}}
 
-/* Herramientas */
-.herr{margin-top:1.6em;border-top:1px solid var(--crema-20);padding-top:1.2em}
-@media (min-width:900px){
-  .herr{display:grid;grid-template-columns:1fr auto;gap:0 1.5em;align-items:end}
-  .herr>*{grid-column:1/-1}
-  .herr>.buscar{grid-column:1;grid-row:1}
-  .herr>.fila{grid-column:2;grid-row:1;margin-top:0}
-}
-.buscar label{display:block;font-size:.9em;color:var(--crema-90);margin-bottom:.25em}
-.buscar input{width:100%;min-height:2.6em;font-size:1.1em;color:var(--terra-crema);background:transparent;border:1px solid var(--crema-20);border-radius:4px;padding:.3em .8em;-webkit-appearance:none;appearance:none}
-.buscar input::placeholder{color:var(--crema-72);opacity:1}
-.buscar input:focus-visible{outline:2px solid var(--terra-salvia);outline-offset:2px;border-color:var(--terra-salvia)}
-.buscar input::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}
-.fila{display:flex;flex-wrap:wrap;gap:.6em;margin-top:.9em;align-items:center}
-.herr button,.herr summary{min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;gap:.5em;font-size:.95em;line-height:1.1;color:var(--terra-crema);background:transparent;border:1px solid var(--crema-20);border-radius:4px;padding:.3em .9em;cursor:pointer;transition:border-color .15s ease,color .15s ease}
-@media (hover:hover) and (pointer:fine){.herr button:not(:disabled):hover,.herr summary:hover{border-color:var(--terra-salvia);color:var(--terra-salvia)}}
-.herr button:disabled{opacity:.45;cursor:default}
-.herr button:active:not(:disabled){transform:scale(.97)}
-.tam{display:inline-flex;gap:.4em;align-items:center}
-.tam .rot{font-size:.9em;color:var(--crema-90)}
-@media (max-width:520px){.tam .rot{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
-.herr .limpiar{border-color:var(--terra-salvia);color:var(--terra-salvia)}
-
-details.evitar{width:100%;margin-top:.9em}
-details.evitar>summary{list-style:none;width:100%;justify-content:space-between}
-details.evitar>summary::-webkit-details-marker{display:none}
-details.evitar>summary::after,details.leyenda>summary::after{content:"";width:.5em;height:.5em;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg) translateY(-.1em);transition:transform .15s var(--ease-out);flex:none}
-details[open]>summary::after{transform:rotate(225deg) translateY(-.1em)}
-details.evitar .cuenta{color:var(--terra-salvia)}
-.evitar-panel{border:1px solid var(--crema-20);border-top:0;border-radius:0 0 4px 4px;padding:1rem}
-details.evitar[open]>summary{border-radius:4px 4px 0 0}
-.evitar-panel .ayuda{font-size:.9em;color:var(--crema-90);margin-bottom:.8em}
-.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(10.5em,100%),1fr));gap:.5em}
-.chip{position:relative;min-width:0}
-.chip label span{min-width:0;overflow-wrap:anywhere}
-.chip input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
-.chip label{display:flex;align-items:center;gap:.55em;min-height:44px;padding:.3em .55em;border:1px solid var(--crema-20);border-radius:4px;font-size:.88em;line-height:1.1;color:var(--terra-crema);transition:border-color .15s ease,background-color .15s ease}
-.chip label::after{content:"";flex:none;margin-left:auto;width:1.05em;height:1.05em;border:1px solid var(--crema-72);border-radius:2px;background:transparent center/80% no-repeat}
-.chip input:checked+label{border-color:var(--terra-salvia);background:var(--salvia-35)}
-.chip input:checked+label::after{border-color:var(--terra-salvia);background-color:var(--terra-salvia);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.4 4.8 9 10 3' fill='none' stroke='%23251C0A' stroke-width='1.8'/%3E%3C/svg%3E")}
-.chip input:focus-visible+label{outline:2px solid var(--terra-salvia);outline-offset:3px}
-.ocultar{display:flex;align-items:center;gap:.7em;margin-top:1em;min-height:44px;font-size:.95em;color:var(--terra-crema);cursor:pointer}
-.ocultar input{width:1.3em;height:1.3em;margin:0;accent-color:var(--terra-salvia);flex:none}
-
-.estado{margin-top:1em;display:flex;flex-wrap:wrap;gap:.5em 1em;align-items:center;justify-content:space-between}
-.estado p{font-size:.95em;color:var(--crema-90);min-height:1.5em}
-.mas{margin-top:.4em;font-size:.9em;color:var(--crema-90)}
-.mas a{white-space:nowrap}
-
-details.leyenda{margin-top:.9em}
-details.leyenda>summary{list-style:none;width:100%;justify-content:space-between}
-details.leyenda>summary::-webkit-details-marker{display:none}
-.leyenda-panel{border:1px solid var(--crema-20);border-top:0;border-radius:0 0 4px 4px;padding:1rem}
-.leyenda-panel li span{min-width:0;overflow-wrap:anywhere}
-details.leyenda[open]>summary{border-radius:4px 4px 0 0}
-.leyenda-panel ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(10.5em,100%),1fr));gap:.4em 1em}
-.leyenda-panel li{display:flex;align-items:center;gap:.5em;font-size:.95em;min-height:2.2em}
-
-.aviso-alergias{margin-top:1em;padding:.9em 1em;border-left:2px solid var(--terra-salvia);font-size:.95em;color:var(--terra-crema)}
-.aviso-alergias a{white-space:nowrap;display:inline-block;min-height:44px;line-height:44px}
-
 .ic{width:1.5em;height:1.5em;flex:none;color:currentColor;display:inline-block;vertical-align:middle}
 
+/* Botón Buscar y filtrar */
+.fbtn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:44px;min-width:44px;font:inherit;font-size:1.3rem;line-height:1.1;color:var(--terra-crema);background:var(--terra-fondo);border:1px solid var(--crema-20);border-radius:4px;padding:.3em 1.1em;cursor:pointer;white-space:nowrap;transition:border-color .15s ease,color .15s ease,transform .16s var(--ease-out)}
+.fbtn:active{transform:scale(.97)}
+.fbtn[data-n]:not([data-n="0"]){border-color:var(--terra-salvia);color:var(--terra-salvia)}
+@media (hover:hover) and (pointer:fine){.fbtn:hover{border-color:var(--terra-salvia);color:var(--terra-salvia)}}
+.fbar{display:none}
+.fbtn-d{display:none}
+
 /* Barra de categorías */
-.catbar{position:sticky;top:var(--header-h);z-index:40;margin-top:1.6em;background:var(--fondo-92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid var(--crema-20);border-bottom:1px solid var(--crema-20)}
-.catbar ul{display:flex;gap:.2rem;overflow-x:auto;scrollbar-width:thin;padding-inline:var(--pad);margin-inline:auto;max-width:calc(var(--wrap) + var(--pad)*2);scroll-padding-inline:var(--pad)}
+.catbar{position:sticky;top:var(--header-h);z-index:40;margin-top:.5em;background:var(--fondo-92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid var(--crema-20);border-bottom:1px solid var(--crema-20)}
+.catbar-in{display:flex;align-items:center;gap:1rem;max-width:calc(var(--wrap) + var(--pad)*2);margin-inline:auto;padding-inline:var(--pad)}
+.catbar nav{flex:1;min-width:0}
+.catbar ul{display:flex;gap:.2rem;overflow-x:auto;scrollbar-width:thin;margin-inline:calc(var(--pad)*-1);padding-inline:var(--pad);scroll-padding-inline:var(--pad)}
 .catbar li{flex:none}
 .catbar a{display:flex;align-items:center;min-height:48px;padding:.2rem .9rem;font-size:calc(1.15rem*min(var(--z),1.4));white-space:nowrap;color:var(--crema-90);text-decoration:none;border-bottom:2px solid transparent;transition:color .15s ease,border-color .15s ease}
+.catbar li.g a{color:var(--terra-crema);padding-left:.4rem;border-left:1px solid var(--crema-20);padding-left:.9rem;margin-left:.4rem}
+.catbar li.g:first-child a{border-left:0;margin-left:0;padding-left:.4rem}
 .catbar a[aria-current="true"]{color:var(--terra-salvia);border-bottom-color:var(--terra-salvia)}
 @media (hover:hover) and (pointer:fine){.catbar a:hover{color:var(--terra-salvia)}}
+@media (min-width:861px){.fbtn-d{display:inline-flex;flex:none;min-height:40px}}
+
+/* Estado de filtros (junto a la lista) */
+.estado{display:flex;flex-wrap:wrap;gap:.2em 1em;align-items:center;justify-content:space-between;margin-top:1.2em;padding:.6em 0 .6em .8em;border-left:2px solid var(--terra-salvia)}
+.estado p{font-size:.95em;color:var(--terra-crema)}
+.estado.flash p{animation:flash .22s var(--ease-out)}
+@keyframes flash{from{opacity:.3}to{opacity:1}}
+.limpiar{min-height:44px;min-width:44px;font:inherit;font-size:.95em;line-height:1.1;color:var(--terra-salvia);background:transparent;border:1px solid var(--terra-salvia);border-radius:4px;padding:.3em .9em;cursor:pointer}
+@media (hover:hover) and (pointer:fine){.limpiar:hover{background:var(--salvia-35)}}
+.limpiar:active{transform:scale(.97)}
+.mas{margin-top:.4em;font-size:.9em;color:var(--crema-90);flex-basis:100%}
+.mas a{white-space:nowrap}
 
 /* Lista de platos */
-.menu-dia{margin-top:1.8em;display:flex;flex-wrap:wrap;align-items:baseline;gap:.3em 1.2em}
+#lista{scroll-margin-top:calc(var(--header-h) + 3.5rem)}
+.grupo{scroll-margin-top:calc(var(--header-h) + 3.5rem)}
+.grupo+.grupo{margin-top:2.4em;padding-top:1.6em;border-top:1px solid var(--terra-salvia)}
+.grupo-cab{margin-top:.8em;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.3em 1em}
+.grupo-cab h2{min-width:0}
+.grupo-cab h2{font-size:clamp(1.9em,5vw,2.5em);line-height:1.1;color:var(--terra-crema)}
+.grupo-cab .imp{text-align:right;margin-left:auto}
+.grupo-cab .importe{font-size:1.8em;line-height:1;color:var(--terra-crema)}
+.grupo-cab .iva{font-size:.85em;line-height:1.2;color:var(--crema-90)}
+.menu-dia{margin-top:.4em;display:flex;flex-wrap:wrap;align-items:baseline;gap:.3em 1.2em}
 .menu-dia .importe{font-size:2.4em;line-height:1;color:var(--terra-crema)}
-.menu-dia .iva{font-size:.95em;color:var(--crema-90)}
-.menu-dia .nota-menu{flex-basis:100%;max-width:38em;font-size:.95em;color:var(--crema-90)}
-.cat{display:grid;grid-template-columns:minmax(0,1fr);gap:.4em;padding-block:2em 1.2em;border-top:1px solid var(--crema-20);scroll-margin-top:calc(var(--header-h) + 4.8rem)}
-.cat:first-child{border-top:0}
-.cat-cab h2{font-size:clamp(1.9em,5vw,2.3em);line-height:1.1;color:var(--terra-salvia)}
-.cat-cab{margin-bottom:.7em}
-.cat-cab .nota{margin-top:.5em;font-size:.9em;color:var(--crema-90);max-width:26em}
+.menu-dia .iva{font-size:.9em;color:var(--crema-90)}
+.menu-dia .nota-menu{flex-basis:100%;max-width:38em;font-size:.85em;line-height:1.4;color:var(--crema-90)}
+.cat{display:grid;grid-template-columns:minmax(0,1fr);gap:.4em;padding-block:1.1em .8em;border-top:1px solid var(--crema-20);scroll-margin-top:calc(var(--header-h) + 3.5rem)}
+.menu-dia+.cat,.grupo-cab+.cat,.grupo>.cat:first-child{border-top:0}
+.grupo>.menu-dia:first-child{margin-top:.8em}
+.menu-dia+.cat,.grupo-cab+.cat,.grupo>.cat:first-child{padding-top:.7em}
+.cat-cab :is(h2,h3){font-size:clamp(1.55em,5vw,2.1em);line-height:1.1;color:var(--terra-salvia)}
+.cat-cab{margin-bottom:.5em}
+.cat-cab .nota{margin-top:.4em;font-size:.9em;color:var(--crema-90);max-width:26em}
 @media (min-width:1000px){
   .cat{grid-template-columns:minmax(13em,1fr) minmax(0,3fr);gap:2.5em}
   .cat-cab{align-self:start}
@@ -198,18 +172,77 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
 .desc{margin-top:.15em;font-size:.95em;color:var(--crema-90);max-width:36em}
 .alg{display:flex;flex-wrap:wrap;gap:.2em 1.1em;margin-top:.5em}
 .alg li{display:inline-flex;align-items:center;gap:.35em;padding:0;border:0;font-size:.82em;line-height:1.2;color:var(--crema-90)}
+.alg li{max-width:100%}
+.alg li span{min-width:0;overflow-wrap:anywhere}
 .alg li.ev{color:var(--terra-salvia);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.25em}
-.alg li.sin{font-style:normal;color:var(--crema-90)}
 .plato.afecta{border-left:2px solid var(--terra-salvia);padding-left:.7em}
 .plato.afecta .nombre,.plato.afecta .precio{color:var(--crema-72)}
 .plato.afecta .desc,.plato.afecta .alg li:not(.ev){color:var(--crema-72)}
 .plato .contiene{margin-top:.3em;font-size:.85em;color:var(--terra-salvia)}
-.plato.consultar .contiene{color:var(--terra-salvia)}
-.plato[hidden],.cat[hidden],.catbar li[hidden]{display:none}
+.plato[hidden],.cat[hidden],.grupo[hidden],.catbar li[hidden]{display:none}
 .vacio{margin-top:2em;padding:1.2em 0;font-size:1.2em;color:var(--terra-crema);border-top:1px solid var(--crema-20);border-bottom:1px solid var(--crema-20)}
 .pie-carta{margin-top:1.5em;font-size:.9em;color:var(--crema-90)}
 .pie-carta p+p{margin-top:.5em}
-.pie-carta.hidden{display:none}
+
+/* Final de la carta */
+.fin{margin-top:2.4em;padding-top:1.6em;border-top:1px solid var(--crema-20)}
+.aviso-alergias{padding:.9em 1em;border-left:2px solid var(--terra-salvia);font-size:.95em;color:var(--terra-crema)}
+.aviso-alergias a{white-space:nowrap;display:inline-block;min-height:44px;line-height:44px}
+.fin h2{margin-top:1.6em;font-size:1.5em;line-height:1.2;color:var(--terra-salvia)}
+.leyenda-lista{margin-top:.6em;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(10.5em,100%),1fr));gap:.4em 1em}
+.leyenda-lista li{display:flex;align-items:center;gap:.5em;font-size:.95em;min-height:2.2em}
+.leyenda-lista li span{min-width:0;overflow-wrap:anywhere}
+.contacto{margin-top:1.6em;font-size:.95em;color:var(--crema-90)}
+.contacto a{display:inline-block;min-height:44px;line-height:44px}
+
+/* Panel Buscar y filtrar */
+.velo{position:fixed;inset:0;z-index:70;background:rgba(37,28,10,.5);opacity:0;visibility:hidden;transition:opacity .16s ease,visibility 0s .16s}
+.velo.on{opacity:1;visibility:visible;transition:opacity .2s ease,visibility 0s}
+.panel{position:fixed;z-index:80;left:0;right:0;bottom:0;max-height:68dvh;display:flex;flex-direction:column;font-size:1.2rem;line-height:1.5;color:var(--crema-90);background:var(--terra-fondo);border-top:1px solid var(--terra-salvia);border-radius:8px 8px 0 0;transform:translateY(100%);visibility:hidden;transition:transform .16s var(--ease-out),visibility 0s .16s}
+.panel.on{transform:none;visibility:visible;transition:transform .24s var(--ease-out),visibility 0s}
+.panel:focus{outline:0}
+.panel-cab{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.4rem var(--pad) .4rem var(--pad);border-bottom:1px solid var(--crema-10)}
+.panel-cab h2{font-size:1.7rem;line-height:1.2;color:var(--terra-crema)}
+.panel button.cerrar{min-height:44px;min-width:44px;font:inherit;font-size:1.2rem;color:var(--terra-crema);background:transparent;border:1px solid var(--crema-20);border-radius:4px;padding:.2em .9em;cursor:pointer}
+.panel-cuerpo{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:1rem var(--pad) 1.2rem}
+.panel-pie{display:flex;flex-wrap:wrap;gap:.6rem;padding:.7rem var(--pad) calc(.7rem + env(safe-area-inset-bottom));border-top:1px solid var(--crema-10)}
+.panel-pie .btn{flex:1 1 9rem;font-size:1.5rem;padding:.7rem .8rem}
+.panel .buscar label,.panel legend{display:block;font-size:1rem;color:var(--terra-crema);margin-bottom:.3em;padding:0}
+.panel .buscar input{width:100%;min-height:48px;font-size:1.3rem;color:var(--terra-crema);background:transparent;border:1px solid var(--crema-72);border-radius:4px;padding:.3em .8em;-webkit-appearance:none;appearance:none}
+.panel .buscar input::placeholder{color:var(--crema-72);opacity:1}
+.panel .buscar input::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}
+.panel fieldset{border:0;margin:1.2rem 0 0;padding:0;min-width:0}
+.panel .ayuda{font-size:1rem;color:var(--crema-90);margin-bottom:.7em}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(7.6em,100%),1fr));gap:.5em}
+.chip{position:relative;min-width:0}
+.chip label span{min-width:0;overflow-wrap:anywhere}
+.chip input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.chip label{display:flex;align-items:center;gap:.55em;min-height:44px;padding:.3em .55em;border:1px solid var(--crema-20);border-radius:4px;font-size:1rem;line-height:1.1;color:var(--terra-crema);transition:border-color .15s ease,background-color .15s ease}
+.chip label::after{content:"";flex:none;margin-left:auto;width:1.05em;height:1.05em;border:1px solid var(--crema-72);border-radius:2px;background:transparent center/80% no-repeat}
+.chip input:checked+label{border-color:var(--terra-salvia);background:rgba(184,196,158,.2)}
+.chip input:checked+label::after{border-color:var(--terra-salvia);background-color:var(--terra-salvia);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.4 4.8 9 10 3' fill='none' stroke='%23251C0A' stroke-width='1.8'/%3E%3C/svg%3E")}
+.chip input:focus-visible+label{outline:2px solid var(--terra-salvia);outline-offset:3px}
+.ocultar{display:flex;align-items:center;gap:.7em;margin-top:.8em;min-height:44px;font-size:1rem;color:var(--terra-crema);cursor:pointer}
+.ocultar input{width:1.3em;height:1.3em;margin:0;accent-color:var(--terra-salvia);flex:none}
+.panel .fila{display:flex;flex-wrap:wrap;gap:.6em;margin-top:1.2rem;align-items:center}
+.panel .fila button{min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;font-size:1.1rem;line-height:1.1;color:var(--terra-crema);background:transparent;border:1px solid var(--crema-20);border-radius:4px;padding:.3em .9em;cursor:pointer;transition:border-color .15s ease,color .15s ease}
+.panel .fila button:disabled{opacity:.45;cursor:default}
+@media (hover:hover) and (pointer:fine){.panel .fila button:not(:disabled):hover,.panel button.cerrar:hover{border-color:var(--terra-salvia);color:var(--terra-salvia)}}
+.tam{display:inline-flex;gap:.4em;align-items:center}
+.tam .rot{font-size:1rem;color:var(--terra-crema)}
+.comp-msg{min-height:1.5em;margin-top:.4em;font-size:1rem;color:var(--terra-salvia)}
+@media (min-width:861px){
+  .panel{left:auto;top:0;width:min(26rem,100%);max-height:none;border-top:0;border-left:1px solid var(--terra-salvia);border-radius:0;transform:translateX(100%)}
+  .panel-cab{padding-block:.9rem}
+}
+
+@media (max-width:260px){
+  .cab{grid-template-columns:minmax(0,1fr)}
+  .precio{text-align:left;white-space:normal}
+  .fbtn{white-space:normal}
+  .panel-cab{flex-wrap:wrap}
+  .grupo-cab .imp{margin-left:0;text-align:left}
+}
 
 /* Pie */
 .site-footer{border-top:1px solid var(--crema-10);padding-block:2rem}
@@ -223,9 +256,11 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
 /* Barra móvil */
 .barra{display:none}
 @media (max-width:860px){
-  body{padding-bottom:4.75rem}
+  body{padding-bottom:calc(var(--barra-h,4.6rem) + 3.4rem)}
   .barra{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;position:fixed;inset:auto 0 0 0;z-index:60;padding:.7rem var(--pad) calc(.7rem + env(safe-area-inset-bottom));background:var(--fondo-92);border-top:1px solid var(--crema-10);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
   .barra .btn{font-size:1.5rem;padding:.8rem .5rem}
+  .fbar{display:block;position:fixed;left:0;right:0;bottom:var(--barra-h,4.6rem);z-index:59;padding:.3rem var(--pad);background:var(--fondo-92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid var(--crema-10)}
+  .fbar .fbtn{width:100%}
 }
 
 /* Franja propuesta (no aparece en la web publicada) */
@@ -240,8 +275,12 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
 
 @media (prefers-reduced-motion:reduce){
   .dd-list,.nav{transition:opacity .1s ease}
-  .btn:active,.herr button:active{transform:none}
-  .platos li,.catbar a,.tabs a,.dd-btn::after,details>summary::after{transition:none}
+  .btn:active,.fbtn:active,.limpiar:active{transform:none}
+  .platos li,.catbar a,.tabs a,.dd-btn::after,.chip label{transition:none}
+  .panel,.panel.on{transform:none;transition:opacity .1s ease,visibility 0s}
+  .panel{opacity:0}.panel.on{opacity:1}
+  .velo,.velo.on{transition:none}
+  .estado.flash p{animation:none}
 }
 @media (prefers-contrast:more){
   :root{--crema-90:#CBC6C2;--crema-72:#CBC6C2;--crema-20:rgba(203,198,194,.7);--crema-10:rgba(203,198,194,.4)}
@@ -251,24 +290,25 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
 @media print{
   @page{margin:16mm}
   html,body{background:#fff !important;color:#000 !important}
-  body{font-size:11pt;padding:0}
-  .site-header,.barra,.propuesta,.skip,.tabs,.herr,.catbar,.site-footer,.mas,.estado,.aviso-alergias.pantalla,details.leyenda>summary,.no-print{display:none !important}
+  body{font-size:11pt;padding:0 !important}
+  .site-header,.barra,.fbar,.panel,.velo,.propuesta,.skip,.tabs,.catbar,.site-footer,.mas,.estado,.no-print{display:none !important}
   .cp{padding:0;font-size:11pt !important}
   .cp h1{font-size:22pt;color:#000}
-  .cp .lead{display:none}
   .print-only{display:block}
   .cp *{color:#000 !important;background:transparent !important;box-shadow:none !important;border-color:#999 !important;opacity:1 !important}
+  .grupo+.grupo{margin-top:14pt;padding-top:8pt}
+  .grupo-cab h2{font-size:18pt}
+  .grupo-cab .importe{font-size:14pt}
   .cat{display:block;padding-block:12pt 4pt;break-inside:auto}
   .cat-cab{break-after:avoid}
-  .cat-cab h2{font-size:15pt}
+  .cat-cab :is(h2,h3){font-size:15pt}
   .platos li{break-inside:avoid;padding-block:5pt}
   .nombre{font-size:12pt}.precio{font-size:11pt}.desc{font-size:10pt;max-width:none}
   .alg li{font-size:9pt}
   .ic{width:12pt;height:12pt}
-  details.leyenda{display:block;margin-top:10pt}
-  details.leyenda .leyenda-panel{display:block !important;border:0;padding:0}
-  details.leyenda:not([open])>*:not(summary){display:block}
-  .leyenda-panel ul{grid-template-columns:repeat(3,1fr)}
+  .fin{margin-top:12pt}
+  .fin h2{font-size:13pt}
+  .leyenda-lista{grid-template-columns:repeat(3,1fr)}
   .aviso-alergias{border-left:1px solid #000;font-size:10pt}
   .pie-carta{font-size:9pt}
   a{text-decoration:none}
@@ -310,67 +350,43 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
 <main id="contenido" class="cp" style="--z:1">
   <div class="wrap">
     <h1 id="h-carta" data-ui="h1">La carta</h1>
-    <p class="lead" data-ui="lead">Toda la carta en una sola página. Busca un plato o marca lo que no puedes tomar.</p>
-
     <nav class="tabs" aria-label="Cartas" id="tabs" data-ui-label="aria_cartas">
       <ul>
+        <li><a href="#todas" data-tab="todas" data-ui="t_todas">Todas</a></li>
         <li><a href="#menu" data-tab="menu" data-ui="t_menu">Menú del día</a></li>
         <li><a href="#mediodia" data-tab="mediodia" data-ui="t_mediodia">Mediodía</a></li>
         <li><a href="#noche" data-tab="noche" data-ui="t_noche">Noche</a></li>
         <li><a href="#bebidas" data-tab="bebidas" data-ui="t_bebidas">Bebidas</a></li>
       </ul>
     </nav>
-
-    <div class="herr">
-      <form class="buscar" role="search" id="formBuscar" onsubmit="return false">
-        <label for="q" data-ui="buscar">Buscar un plato</label>
-        <input id="q" type="search" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" placeholder="Arroz, pulpo, flan…" data-ui-ph="ph">
-      </form>
-
-      <details class="evitar" id="evitar">
-        <summary><span><span data-ui="evitar">Evitar alérgenos</span> <span class="cuenta" id="cuenta" aria-hidden="true"></span></span></summary>
-        <div class="evitar-panel">
-          <p class="ayuda" data-ui="ayuda">Marca los alérgenos que debes evitar. Los platos que los contienen se atenúan y se avisa de cuántos son.</p>
-          <div class="chips" id="chips"></div>
-          <label class="ocultar"><input type="checkbox" id="ocultar"> <span data-ui="ocultar">Ocultar esos platos en vez de atenuarlos</span></label>
-        </div>
-      </details>
-
-      <div class="fila">
-        <div class="tam" role="group" aria-labelledby="lbl-tam">
-          <span class="rot" id="lbl-tam" data-ui="tam">Letra</span>
-          <button type="button" id="menos" data-ui-aria="menos"><span aria-hidden="true">A−</span></button>
-          <button type="button" id="mas" data-ui-aria="mas"><span aria-hidden="true">A+</span></button>
-        </div>
-        <button type="button" id="imprimir" data-ui="imprimir">Imprimir / PDF</button>
-        <button type="button" id="compartir" data-ui="compartir">Compartir</button>
-      </div>
-
-      <div class="estado">
-        <p id="estado" role="status" aria-live="polite" aria-atomic="true"></p>
-        <button type="button" class="limpiar" id="limpiar" hidden data-ui="limpiar">Limpiar filtros</button>
-      </div>
-      <p class="mas" id="otros" aria-live="polite"></p>
-    <details class="leyenda" id="leyenda">
-      <summary data-ui="leyenda">Leyenda de alérgenos</summary>
-      <div class="leyenda-panel"><ul id="leyendaLista"></ul></div>
-    </details>
-    </div>
-
-    <p class="aviso-alergias pantalla" id="aviso"></p>
   </div>
 
   <div class="catbar" id="catbarWrap">
-    <nav aria-label="Categorías" id="catnav" data-ui-label="aria_cats"><ul id="catbar"></ul></nav>
+    <div class="catbar-in">
+      <nav aria-label="Categorías" id="catnav" data-ui-label="aria_cats"><ul id="catbar"></ul></nav>
+      <button type="button" class="fbtn fbtn-d" aria-haspopup="dialog" aria-expanded="false" aria-controls="panel"><span data-ui="fbtn">Buscar y filtrar</span><span class="fn" aria-hidden="true"></span></button>
+    </div>
   </div>
 
   <div class="wrap" id="lista" tabindex="-1">
     <p class="print-only" id="printTitulo" style="font-size:14pt"></p>
-    <div id="menuDia"></div>
+    <div class="estado" id="estadoBox" hidden>
+      <p id="estado" aria-hidden="true"></p>
+      <button type="button" class="limpiar" id="limpiar" data-ui="limpiar">Limpiar filtros</button>
+      <p class="mas" id="otros"></p>
+    </div>
+    <p class="sr" id="live" role="status" aria-live="polite" aria-atomic="true"></p>
     <div id="platos"></div>
     <p class="vacio" id="vacio" hidden></p>
     <div class="pie-carta" id="pieCarta"></div>
-    <p class="aviso-alergias print-only" id="avisoPrint"></p>
+    <section class="fin" aria-labelledby="h-fin">
+      <p class="aviso-alergias" id="aviso"></p>
+      <div id="leyenda">
+        <h2 id="h-fin" data-ui="leyenda">Leyenda de alérgenos</h2>
+        <ul class="leyenda-lista" id="leyendaLista"></ul>
+      </div>
+      <p class="contacto" id="contacto"></p>
+    </section>
   </div>
 </main>
 
@@ -390,6 +406,46 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
   <a class="btn btn-linea" href="tel:+34960488254" data-ui="llamar">Llamar</a>
 </div>
 
+<div class="fbar" id="fbarM">
+  <button type="button" class="fbtn fbtn-m" aria-haspopup="dialog" aria-expanded="false" aria-controls="panel"><span data-ui="fbtn">Buscar y filtrar</span><span class="fn" aria-hidden="true"></span></button>
+</div>
+
+<div class="velo" id="velo"></div>
+<div class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panelTit" tabindex="-1">
+  <div class="panel-cab">
+    <h2 id="panelTit" data-ui="fbtn">Buscar y filtrar</h2>
+    <button type="button" class="cerrar" id="cerrar" data-ui="cerrar">Cerrar</button>
+  </div>
+  <div class="panel-cuerpo">
+    <form class="buscar" role="search" onsubmit="return false">
+      <label for="q" data-ui="buscar">Buscar un plato</label>
+      <input id="q" type="search" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" placeholder="Arroz, pulpo, flan…" data-ui-ph="ph">
+    </form>
+    <fieldset id="algSet">
+      <legend data-ui="evitar">Evitar alérgenos</legend>
+      <p class="ayuda" data-ui="ayuda">Marca los alérgenos que debes evitar.</p>
+      <div class="chips" id="chips"></div>
+      <label class="ocultar"><input type="checkbox" id="ocultar"> <span data-ui="ocultar">Ocultar esos platos en vez de atenuarlos</span></label>
+    </fieldset>
+    <div class="fila">
+      <div class="tam" role="group" aria-labelledby="lbl-tam">
+        <span class="rot" id="lbl-tam" data-ui="tam">Letra</span>
+        <button type="button" id="menos" data-ui-aria="menos"><span aria-hidden="true">A−</span></button>
+        <button type="button" id="mas" data-ui-aria="mas"><span aria-hidden="true">A+</span></button>
+      </div>
+    </div>
+    <div class="fila">
+      <button type="button" id="imprimir" data-ui="imprimir">Imprimir / PDF</button>
+      <button type="button" id="compartir" data-ui="compartir">Compartir</button>
+    </div>
+    <p class="comp-msg" id="compMsg" role="status"></p>
+  </div>
+  <div class="panel-pie">
+    <button type="button" class="btn btn-cobre" id="ver"></button>
+    <button type="button" class="btn btn-linea" id="limpiarP" data-ui="limpiar">Limpiar filtros</button>
+  </div>
+</div>
+
 <aside class="propuesta" aria-label="Franja para el propietario">
   <div class="wrap">
     <span class="aviso">Esta franja no aparece en la web publicada</span>
@@ -404,12 +460,13 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
   var UI={
     es:{
       skip:"Ir a la carta",menu:"Menú",nav_filosofia:"Filosofía",nav_cartas:"Cartas",nav_idiomas:"Idiomas",reservar_larga:"Hacer una reserva",reservar:"Reservar",llamar:"Llamar",
-      t_menu:"Menú del día",t_mediodia:"Mediodía",t_noche:"Noche",t_bebidas:"Bebidas",
+      t_todas:"Todas",t_menu:"Menú del día",t_mediodia:"Mediodía",t_noche:"Noche",t_bebidas:"Bebidas",
       t_menu_long:"Menú del día",t_mediodia_long:"Carta mediodía",t_noche_long:"Carta noche",t_bebidas_long:"Bebidas",
-      h1:"La carta",lead:"Toda la carta en una sola página. Busca un plato o marca lo que no puedes tomar.",
+      h1:"La carta",fbtn:"Buscar y filtrar",cerrar:"Cerrar",ver:"Ver {n}",f1:"filtro activo",fn:"filtros activos",
+      mostrando:"Mostrando {v} de {t}",sin:"Sin {l}",todas_print:"Carta completa",contacto:"Terra · C/ Riu 2, Cullera · Reservas y consultas: ",
       aria_cartas:"Cartas",aria_cats:"Categorías de la carta",aria_barra:"Acciones rápidas",
       buscar:"Buscar un plato",ph:"Arroz, pulpo, flan…",evitar:"Evitar alérgenos",
-      ayuda:"Marca los alérgenos que debes evitar. Los platos que los contienen se atenúan y te decimos cuántos son.",
+      ayuda:"Marca lo que debes evitar. Los platos que lo contienen se atenúan y te decimos cuántos son.",
       ocultar:"Ocultar esos platos en vez de atenuarlos",
       tam:"Letra",menos:"Reducir el tamaño de letra",mas:"Aumentar el tamaño de letra",
       imprimir:"Imprimir / PDF",compartir:"Compartir",copiado:"Enlace copiado",limpiar:"Limpiar filtros",
@@ -421,19 +478,20 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
       bebidasAlg:"En esta carta no se indican los alérgenos de las bebidas. Pregunta al personal.",
       psm:"P/SM: precio según mercado.",tambien:"También hay resultados en: ",
       n1:"plato",nn:"platos",b1:"bebida",bn:"bebidas",
-      cnt_all:"{t} en esta carta.",cnt_q:"{s} encontrados.",cnt_q1:"{s} encontrado.",
-      cnt_f:"{v} visibles de {t}.",cnt_dim:"{a} contienen {l} y se muestran atenuados.",cnt_hid:"{a} contienen {l} y se han ocultado.",cnt_unk:"{u} a consultar con el personal.",cnt_none:"Ningún plato contiene {l}.",
+      cnt_all:"{t} en la carta.",cnt_q:"{s} encontrados.",cnt_q1:"{s} encontrado.",
+      cnt_f:"{v} visibles de {t}.",cnt_dim:"{a} contienen {l} y se muestran atenuados.",cnt_hid:"{a} contienen {l} y se han ocultado.",cnt_unk:"{u} a consultar con el personal.",cnt_none:"Ninguno contiene {l}.",
       y:" y ",precioPor:"Precio: ",
       print_t:"Carta · terra · Cullera · C/ Riu 2 · 960 488 254"
     },
     va:{
       skip:"Anar a la carta",menu:"Menú",nav_filosofia:"Filosofia",nav_cartas:"Cartes",nav_idiomas:"Idiomes",reservar_larga:"Fer una reserva",reservar:"Reservar",llamar:"Telefonar",
-      t_menu:"Menú del dia",t_mediodia:"Migdia",t_noche:"Nit",t_bebidas:"Begudes",
+      t_todas:"Totes",t_menu:"Menú del dia",t_mediodia:"Migdia",t_noche:"Nit",t_bebidas:"Begudes",
       t_menu_long:"Menú del dia",t_mediodia_long:"Carta de migdia",t_noche_long:"Carta de nit",t_bebidas_long:"Begudes",
-      h1:"La carta",lead:"Tota la carta en una sola pàgina. Busca un plat o marca el que no pots menjar.",
+      h1:"La carta",fbtn:"Buscar i filtrar",cerrar:"Tancar",ver:"Veure {n}",f1:"filtre actiu",fn:"filtres actius",
+      mostrando:"Mostrant {v} de {t}",sin:"Sense {l}",todas_print:"Carta completa",contacto:"Terra · C/ Riu 2, Cullera · Reserves i consultes: ",
       aria_cartas:"Cartes",aria_cats:"Categories de la carta",aria_barra:"Accions ràpides",
       buscar:"Buscar un plat",ph:"Arròs, polp, flam…",evitar:"Evitar al·lèrgens",
-      ayuda:"Marca els al·lèrgens que has d'evitar. Els plats que els contenen s'atenuen i t'avisem de quants són.",
+      ayuda:"Marca el que has d'evitar. Els plats que ho contenen s'atenuen i t'avisem de quants són.",
       ocultar:"Amagar eixos plats en lloc d'atenuar-los",
       tam:"Lletra",menos:"Reduir la mida de la lletra",mas:"Augmentar la mida de la lletra",
       imprimir:"Imprimir / PDF",compartir:"Compartir",copiado:"Enllaç copiat",limpiar:"Netejar filtres",
@@ -445,19 +503,20 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
       bebidasAlg:"En esta carta no s'indiquen els al·lèrgens de les begudes. Pregunta al personal.",
       psm:"P/SM: preu segons mercat.",tambien:"També hi ha resultats en: ",
       n1:"plat",nn:"plats",b1:"beguda",bn:"begudes",
-      cnt_all:"{t} en esta carta.",cnt_q:"{s} trobats.",cnt_q1:"{s} trobat.",
-      cnt_f:"{v} visibles de {t}.",cnt_dim:"{a} contenen {l} i es mostren atenuats.",cnt_hid:"{a} contenen {l} i s'han amagat.",cnt_unk:"{u} per consultar amb el personal.",cnt_none:"Cap plat conté {l}.",
+      cnt_all:"{t} en la carta.",cnt_q:"{s} trobats.",cnt_q1:"{s} trobat.",
+      cnt_f:"{v} visibles de {t}.",cnt_dim:"{a} contenen {l} i es mostren atenuats.",cnt_hid:"{a} contenen {l} i s'han amagat.",cnt_unk:"{u} per consultar amb el personal.",cnt_none:"Cap conté {l}.",
       y:" i ",precioPor:"Preu: ",
       print_t:"Carta · terra · Cullera · C/ Riu 2 · 960 488 254"
     },
     en:{
       skip:"Skip to the menu",menu:"Menu",nav_filosofia:"Philosophy",nav_cartas:"Menus",nav_idiomas:"Languages",reservar_larga:"Book a table",reservar:"Book",llamar:"Call",
-      t_menu:"Daily menu",t_mediodia:"Lunch",t_noche:"Dinner",t_bebidas:"Drinks",
+      t_todas:"All",t_menu:"Daily menu",t_mediodia:"Lunch",t_noche:"Dinner",t_bebidas:"Drinks",
       t_menu_long:"Daily menu",t_mediodia_long:"Lunch menu",t_noche_long:"Dinner menu",t_bebidas_long:"Drinks",
-      h1:"The menu",lead:"The whole menu on one page. Search for a dish or tick what you cannot eat.",
+      h1:"The menu",fbtn:"Search and filter",cerrar:"Close",ver:"Show {n}",f1:"active filter",fn:"active filters",
+      mostrando:"Showing {v} of {t}",sin:"Without {l}",todas_print:"Full menu",contacto:"Terra · C/ Riu 2, Cullera · Bookings and enquiries: ",
       aria_cartas:"Menus",aria_cats:"Menu categories",aria_barra:"Quick actions",
       buscar:"Search for a dish",ph:"Rice, octopus, flan…",evitar:"Avoid allergens",
-      ayuda:"Tick the allergens you need to avoid. Dishes that contain them are dimmed and we tell you how many there are.",
+      ayuda:"Tick what you need to avoid. Dishes that contain it are dimmed and we tell you how many there are.",
       ocultar:"Hide those dishes instead of dimming them",
       tam:"Text",menos:"Decrease text size",mas:"Increase text size",
       imprimir:"Print / PDF",compartir:"Share",copiado:"Link copied",limpiar:"Clear filters",
@@ -469,8 +528,8 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
       bebidasAlg:"Allergens are not listed for drinks on this menu. Please ask the staff.",
       psm:"P/SM: price according to market.",tambien:"Also found in: ",
       n1:"dish",nn:"dishes",b1:"drink",bn:"drinks",
-      cnt_all:"{t} on this menu.",cnt_q:"{s} found.",cnt_q1:"{s} found.",
-      cnt_f:"{v} visible out of {t}.",cnt_dim:"{a} contain {l} and are dimmed.",cnt_hid:"{a} contain {l} and are hidden.",cnt_unk:"{u} to check with the staff.",cnt_none:"No dish contains {l}.",
+      cnt_all:"{t} on the menu.",cnt_q:"{s} found.",cnt_q1:"{s} found.",
+      cnt_f:"{v} visible out of {t}.",cnt_dim:"{a} contain {l} and are dimmed.",cnt_hid:"{a} contain {l} and are hidden.",cnt_unk:"{u} to check with the staff.",cnt_none:"None contain {l}.",
       y:" and ",precioPor:"Price: ",
       print_t:"Menu · terra · Cullera · C/ Riu 2 · +34 960 488 254"
     }
@@ -478,8 +537,9 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
   var HTMLLANG={es:'es',va:'ca-ES-valencia',en:'en'};
   var TITLES={es:"Carta · Terra, restaurante en Cullera",va:"Carta · Terra, restaurant a Cullera",en:"Menu · Terra, restaurant in Cullera"};
   var ZOOMS=[1,1.2,1.4,1.7,2];
-  var TABS=['menu','mediodia','noche','bebidas'];
-  var lang='es',tab='menu',zi=0,DATA=null,q='',avoid={},hideMode=false,rows=[];
+  var CARTAS=['menu','mediodia','noche','bebidas'];
+  var TABS=['todas'].concat(CARTAS);
+  var lang='es',tab='todas',zi=0,DATA=null,q='',avoid={},hideMode=false,rows=[],lastMsg='',liveT=null;
   var $=function(id){return document.getElementById(id);};
   function store(k,v){try{localStorage.setItem(k,v);}catch(e){}}
   function load(k){try{return localStorage.getItem(k);}catch(e){return null;}}
@@ -491,9 +551,9 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
   function icon(a){return '<svg class="ic" aria-hidden="true" focusable="false"><use href="#a-'+a+'"/></svg>';}
   function carta(id){for(var i=0;i<DATA.cartas.length;i++)if(DATA.cartas[i].id===id)return DATA.cartas[i];}
   function usedAllergens(){
-    var o={},list=[];
-    DATA.cartas.forEach(function(c){c.categorias.forEach(function(s){s.platos.forEach(function(p){(p.alergenos||[]).forEach(function(a){if(!o[a]){o[a]=1;list.push(a);}});});});});
-    var order=Object.keys(DATA.alergenos);return order.filter(function(a){return o[a];});
+    var o={};
+    DATA.cartas.forEach(function(c){c.categorias.forEach(function(s){s.platos.forEach(function(p){(p.alergenos||[]).forEach(function(a){o[a]=1;});});});});
+    return Object.keys(DATA.alergenos).filter(function(a){return o[a];});
   }
 
   /* ---------- interfaz estática ---------- */
@@ -507,7 +567,7 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
     document.title=TITLES[lang];
     document.querySelectorAll('[data-lang]').forEach(function(b){b.setAttribute('aria-current',b.getAttribute('data-lang')===lang?'true':'false');});
     $('aviso').innerHTML=esc(T.aviso)+' '+esc(T.consulta)+' <a href="tel:+34960488254">960 488 254</a>.';
-    $('avisoPrint').textContent=T.aviso+' '+T.consulta+' 960 488 254.';
+    $('contacto').innerHTML=esc(T.contacto)+'<a href="tel:+34960488254">960 488 254</a>';
   }
 
   /* ---------- chips y leyenda (según los datos) ---------- */
@@ -520,57 +580,71 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
     $('chips').innerHTML=h;$('leyendaLista').innerHTML=l;
   }
 
-  /* ---------- pintar la carta activa ---------- */
+  /* ---------- pintar la carta (todas o una) ---------- */
+  function menuDia(c,conImporte){
+    if(!c.precioMenu)return '';
+    return '<div class="menu-dia">'+(conImporte?'<p class="importe">'+esc(c.precioMenu.importe)+'</p><p class="iva">'+esc(g(c.precioMenu.nota))+'</p>':'')+'<p class="nota-menu">'+esc(g(c.nota))+'</p></div>';
+  }
   function renderCarta(){
-    var c=carta(tab),h='',nav='';
+    var all=tab==='todas',ids=all?CARTAS:[tab],h='',nav='',lv=all?3:2;
     rows=[];
     TABS.forEach(function(id){document.querySelectorAll('[data-tab="'+id+'"]').forEach(function(a){a.setAttribute('aria-current',id===tab?'true':'false');});});
-    $('printTitulo').textContent=t('print_t')+' · '+g(c.titulo);
-    var md='';
-    if(c.precioMenu){md='<div class="menu-dia"><p class="importe">'+esc(c.precioMenu.importe)+'</p><p class="iva">'+esc(g(c.precioMenu.nota))+'</p><p class="nota-menu">'+esc(g(c.nota))+'</p></div>';}
-    $('menuDia').innerHTML=md;
-    c.categorias.forEach(function(s,si){
-      var cid='cat-'+tab+'-'+s.id;
-      nav+='<li data-cat="'+cid+'"><a href="#'+tab+'/'+s.id+'" data-cid="'+cid+'">'+esc(g(s.titulo))+'</a></li>';
-      h+='<section class="cat" id="'+cid+'" aria-labelledby="h-'+cid+'"><div class="cat-cab"><h2 id="h-'+cid+'">'+esc(g(s.titulo))+'</h2>'+(s.nota?'<p class="nota">'+esc(g(s.nota))+'</p>':'')+'</div><ul class="platos">';
-      s.platos.forEach(function(p,pi){
-        var al=p.alergenos,unk=(al===null||(al===undefined&&!c.sinAlergenos&&false));
-        var ph='<li class="plato" data-i="'+rows.length+'"><div class="cab"><span class="nombre">'+esc(g(p.nombre))+'</span>';
-        if(p.precio){ph+='<span class="precio"><span class="sr">'+esc(t('precioPor'))+'</span>'+esc(g(p.precio))+(p.precioNota?'<small>'+esc(g(p.precioNota))+'</small>':'')+'</span>';}
-        ph+='</div>';
-        if(p.descripcion)ph+='<p class="desc">'+esc(g(p.descripcion))+'</p>';
-        if(al&&al.length){ph+='<ul class="alg" role="list">';al.forEach(function(a){ph+='<li data-a="'+a+'">'+icon(a)+'<span>'+esc(g(DATA.alergenos[a]))+'</span></li>';});ph+='</ul>';}
-        else if(unk){ph+='<p class="desc" style="margin-top:.4em;color:var(--terra-salvia)"><span class="edit">'+esc(t('consultar'))+'</span></p>';}
-        ph+='<p class="contiene" hidden></p></li>';
-        h+=ph;
-        rows.push({cid:cid,alg:al||[],unk:unk,txt:norm(g(p.nombre)+' '+(p.nombre.es||'')+' '+g(p.descripcion)+' '+g(s.titulo)),c:tab});
+    $('printTitulo').textContent=t('print_t')+' · '+(all?t('todas_print'):g(carta(tab).titulo));
+    ids.forEach(function(id){
+      var c=carta(id),gid='carta-'+id;
+      h+='<section class="grupo" id="'+gid+'"'+(all?' aria-labelledby="h-'+gid+'"':'')+'>';
+      if(all){
+        nav+='<li class="g" data-cat="'+gid+'"><a href="#'+id+'" data-cid="'+gid+'">'+esc(g(c.titulo))+'</a></li>';
+        h+='<div class="grupo-cab"><h2 id="h-'+gid+'">'+esc(g(c.titulo))+'</h2>'+(c.precioMenu?'<div class="imp"><p class="importe">'+esc(c.precioMenu.importe)+'</p><p class="iva">'+esc(g(c.precioMenu.nota))+'</p></div>':'')+'</div>'+menuDia(c,false);
+      }else h+=menuDia(c,true);
+      c.categorias.forEach(function(s){
+        var cid='cat-'+id+'-'+s.id;
+        nav+='<li data-cat="'+cid+'"><a href="#'+id+'/'+s.id+'" data-cid="'+cid+'">'+esc(g(s.titulo))+'</a></li>';
+        h+='<section class="cat" id="'+cid+'" aria-labelledby="h-'+cid+'"><div class="cat-cab"><h'+lv+' id="h-'+cid+'">'+esc(g(s.titulo))+'</h'+lv+'>'+(s.nota?'<p class="nota">'+esc(g(s.nota))+'</p>':'')+'</div><ul class="platos">';
+        s.platos.forEach(function(p){
+          var al=p.alergenos,unk=(al===null);
+          var ph='<li class="plato" data-i="'+rows.length+'"><div class="cab"><span class="nombre">'+esc(g(p.nombre))+'</span>';
+          if(p.precio){ph+='<span class="precio"><span class="sr">'+esc(t('precioPor'))+'</span>'+esc(g(p.precio))+(p.precioNota?'<small>'+esc(g(p.precioNota))+'</small>':'')+'</span>';}
+          ph+='</div>';
+          if(p.descripcion)ph+='<p class="desc">'+esc(g(p.descripcion))+'</p>';
+          if(al&&al.length){ph+='<ul class="alg" role="list">';al.forEach(function(a){ph+='<li data-a="'+a+'">'+icon(a)+'<span>'+esc(g(DATA.alergenos[a]))+'</span></li>';});ph+='</ul>';}
+          else if(unk){ph+='<p class="desc" style="margin-top:.4em;color:var(--terra-salvia)"><span class="edit">'+esc(t('consultar'))+'</span></p>';}
+          ph+='<p class="contiene" hidden></p></li>';
+          h+=ph;
+          rows.push({cid:cid,gid:gid,alg:al||[],unk:unk,sin:!!c.sinAlergenos,txt:norm(g(p.nombre)+' '+(p.nombre.es||'')+' '+g(p.descripcion)+' '+g(s.titulo)),c:id});
+        });
+        h+='</ul></section>';
       });
-      h+='</ul></section>';
+      h+='</section>';
     });
     $('platos').innerHTML=h;$('catbar').innerHTML=nav;
-    rows.forEach(function(r,i){r.el=document.querySelector('.plato[data-i="'+i+'"]');});
+    var els=document.querySelectorAll('#platos .plato');
+    rows.forEach(function(r,i){r.el=els[i];});
     var foot='';
-    if(c.sinAlergenos)foot+='<p>'+esc(t('bebidasAlg'))+'</p>';
-    if(JSON.stringify(c).indexOf('"P/SM"')>-1)foot+='<p><span class="edit">'+esc(t('psm'))+'</span></p>';
+    ids.forEach(function(id){
+      var c=carta(id);
+      if(c.sinAlergenos)foot+='<p>'+esc(t('bebidasAlg'))+'</p>';
+    });
+    if(JSON.stringify(ids.map(carta)).indexOf('"P/SM"')>-1)foot+='<p><span class="edit">'+esc(t('psm'))+'</span></p>';
     $('pieCarta').innerHTML=foot;
-    $('aviso').hidden=false;
-    var hasAlg=!c.sinAlergenos;
-    $('evitar').hidden=!hasAlg;
+    var hasAlg=tab!=='bebidas';
+    $('algSet').hidden=!hasAlg;
     $('leyenda').hidden=!hasAlg;
     applyFilter();spy();
   }
 
-  /* ---------- filtrar ---------- */
-  function avoidList(){return Object.keys(avoid).filter(function(k){return avoid[k];});}
+  /* ---------- filtrar (en directo sobre la lista) ---------- */
+  function avoidList(){return tab==='bebidas'?[]:Object.keys(avoid).filter(function(k){return avoid[k];});}
+  function activeFbtn(){var b=document.querySelectorAll('.fbtn');for(var i=0;i<b.length;i++)if(b[i].getClientRects().length)return b[i];return b[0];}
+  function announce(m){clearTimeout(liveT);liveT=setTimeout(function(){$('live').textContent=m;},350);}
   function applyFilter(){
-    var c=carta(tab),av=avoidList(),nq=norm(q.trim()),total=rows.length,vis=0,aff=0,unk=0,matchQ=0;
-    var toks=nq?nq.split(/\s+/):[];
-    var counts={};
+    if(!DATA)return;
+    var av=avoidList(),nq=norm(q.trim()),toks=nq?nq.split(/\s+/):[],total=rows.length,vis=0,aff=0,unk=0,matchQ=0,counts={},gc={};
     rows.forEach(function(r){
       var ok=true;toks.forEach(function(w){if(r.txt.indexOf(w)<0)ok=false;});
-      var hit=av.filter(function(a){return r.alg.indexOf(a)>-1;});
-      var is=!c.sinAlergenos&&av.length&&hit.length>0;
-      var isUnk=!c.sinAlergenos&&av.length&&r.unk&&!hit.length;
+      var hit=r.sin?[]:av.filter(function(a){return r.alg.indexOf(a)>-1;});
+      var is=hit.length>0;
+      var isUnk=!r.sin&&av.length&&r.unk&&!hit.length;
       if(ok){matchQ++;if(is)aff++;if(isUnk)unk++;}
       var hidden=!ok||(is&&hideMode);
       r.el.hidden=hidden;
@@ -581,31 +655,42 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
       else if(isUnk){ct.hidden=false;ct.textContent=t('consultar');}
       else{ct.hidden=true;ct.textContent='';}
       r.el.querySelectorAll('.alg li').forEach(function(li){li.classList.toggle('ev',av.indexOf(li.getAttribute('data-a'))>-1);});
-      if(!hidden){vis++;counts[r.cid]=(counts[r.cid]||0)+1;}
+      if(!hidden){vis++;counts[r.cid]=(counts[r.cid]||0)+1;gc[r.gid]=(gc[r.gid]||0)+1;}
     });
     document.querySelectorAll('.cat').forEach(function(s){var n=counts[s.id]||0;s.hidden=!n;var li=document.querySelector('#catbar li[data-cat="'+s.id+'"]');if(li)li.hidden=!n;});
+    document.querySelectorAll('.grupo').forEach(function(s){var n=gc[s.id]||0;s.hidden=!n;var li=document.querySelector('#catbar li[data-cat="'+s.id+'"]');if(li)li.hidden=!n;});
     $('vacio').hidden=vis>0;$('vacio').textContent=t('vacio');
-    // mensajes
-    var msg='';
-    var names=av.map(function(a){return g(DATA.alergenos[a]).toLowerCase();});
-    var list=names.length>1?names.slice(0,-1).join(', ')+t('y')+names[names.length-1]:names[0]||'';
-    if(!c.sinAlergenos&&av.length){
-      if(aff===0&&unk===0)msg=t('cnt_none').replace('{l}',list);
-      else{
-        msg=t('cnt_f').replace('{v}',vis).replace('{t}',total)+' ';
-        if(aff)msg+=(hideMode?t('cnt_hid'):t('cnt_dim')).replace('{a}',plural(aff)).replace('{l}',list)+' ';
-        if(unk)msg+=t('cnt_unk').replace('{u}',plural(unk));
+    var active=!!(toks.length||av.length),msg;
+    if(active){
+      var names=av.map(function(a){return g(DATA.alergenos[a]).toLowerCase();});
+      var list=names.length>1?names.slice(0,-1).join(', ')+t('y')+names[names.length-1]:names[0]||'';
+      msg=t('mostrando').replace('{v}',vis).replace('{t}',plural(total));
+      if(toks.length)msg+=' · «'+q.trim()+'»';
+      if(av.length)msg+=' · '+t('sin').replace('{l}',list);
+      msg+='.';
+      if(av.length){
+        if(aff===0&&unk===0)msg+=' '+t('cnt_none').replace('{l}',list);
+        else{
+          if(aff)msg+=' '+(hideMode?t('cnt_hid'):t('cnt_dim')).replace('{a}',plural(aff)).replace('{l}',list);
+          if(unk)msg+=' '+t('cnt_unk').replace('{u}',plural(unk));
+        }
       }
-    }else if(toks.length){msg=(matchQ===1?t('cnt_q1'):t('cnt_q')).replace('{s}',plural(matchQ));}
-    else msg=t('cnt_all').replace('{t}',plural(total));
-    if(toks.length&&av.length&&!c.sinAlergenos)msg=(matchQ===1?t('cnt_q1'):t('cnt_q')).replace('{s}',plural(matchQ))+' '+msg;
-    $('estado').textContent=msg.trim();
-    var has=!!(toks.length||av.length);
-    $('limpiar').hidden=!has;
-    var n=av.length;$('cuenta').textContent=n?'('+n+')':'';
+    }else msg=t('cnt_all').replace('{t}',plural(total));
+    var box=$('estadoBox');
+    box.hidden=!active;
+    $('estado').textContent=msg;
+    if(msg!==lastMsg&&active){box.classList.remove('flash');void box.offsetWidth;box.classList.add('flash');}
+    lastMsg=msg;announce(msg);
+    $('ver').textContent=t('ver').replace('{n}',plural(vis));
+    var nf=(toks.length?1:0)+av.length;
+    document.querySelectorAll('.fbtn').forEach(function(b){
+      b.setAttribute('data-n',nf);
+      b.querySelector('.fn').textContent=nf?' · '+nf:'';
+      if(nf)b.setAttribute('aria-label',t('fbtn')+', '+nf+' '+(nf===1?t('f1'):t('fn')));else b.removeAttribute('aria-label');
+    });
     // resultados en otras cartas
     var other='';
-    if(toks.length){
+    if(toks.length&&tab!=='todas'){
       var parts=[];
       DATA.cartas.forEach(function(oc){
         if(oc.id===tab)return;var n2=0;
@@ -616,10 +701,16 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
     }
     $('otros').innerHTML=other;
   }
+  function limpiar(){
+    q='';$('q').value='';avoid={};
+    document.querySelectorAll('#chips input').forEach(function(i){i.checked=false;});
+    applyFilter();
+    if(!panelAbierto())activeFbtn().focus();
+  }
 
   /* ---------- pestañas y navegación ---------- */
   function setTab(id,cat,noScroll){
-    if(TABS.indexOf(id)<0)id='menu';
+    if(TABS.indexOf(id)<0)id='todas';
     var changed=id!==tab||!rows.length;
     tab=id;store('terra-carta-tab',id);
     if(changed)renderCarta();
@@ -632,34 +723,72 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
   window.addEventListener('hashchange',function(){var h=parseHash();if(TABS.indexOf(h.tab)>-1)setTab(h.tab,h.cat);});
   document.addEventListener('click',function(e){
     var a=e.target.closest('a[href^="#"]');if(!a)return;
+    if(a.hasAttribute('data-cid')){
+      e.preventDefault();
+      var el=$(a.getAttribute('data-cid'));if(el)el.scrollIntoView({block:'start'});
+      try{history.replaceState(null,'','#'+(tab==='todas'?'todas':a.getAttribute('href').slice(1)));}catch(x){}
+      return;
+    }
     var h=a.getAttribute('href').slice(1),p=h.split('/');
     if(TABS.indexOf(p[0])<0)return;
     e.preventDefault();
     try{history.replaceState(null,'','#'+p[0]);}catch(x){location.hash='#'+p[0];}
     setTab(p[0],p[1]);
     closeMenu();closeDD();
-    if(!p[1]){var tabs=$('tabs');}
   });
 
   /* ---------- scroll-spy ---------- */
   var ticking=false;
   function spy(){
-    var secs=document.querySelectorAll('.cat:not([hidden])'),cur=null,line=window.innerHeight*0.0+parseFloat(getComputedStyle(document.documentElement).fontSize)*9;
+    var secs=document.querySelectorAll('.cat:not([hidden])'),cur=null,line=parseFloat(getComputedStyle(document.documentElement).fontSize)*9;
     secs.forEach(function(s){if(s.getBoundingClientRect().top<=line)cur=s;});
-    if(!cur&&secs.length)cur=null;
     var links=document.querySelectorAll('#catbar a'),active=null;
     links.forEach(function(a){var on=cur&&a.getAttribute('data-cid')===cur.id;a.setAttribute('aria-current',on?'true':'false');if(on)active=a;});
     if(active){var ul=$('catbar'),l=active.parentNode.offsetLeft,w=active.parentNode.offsetWidth;
       if(l<ul.scrollLeft+8||l+w>ul.scrollLeft+ul.clientWidth-8){ul.scrollLeft=l-16;}}
+    else $('catbar').scrollLeft=0;
   }
   window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;spy();});}},{passive:true});
 
+  /* ---------- panel Buscar y filtrar ---------- */
+  var panel=$('panel'),velo=$('velo'),opener=null;
+  function panelAbierto(){return panel.classList.contains('on');}
+  function setInert(v){document.querySelectorAll('.site-header,main,.site-footer,.barra,.fbar,.propuesta,.skip').forEach(function(el){if(v)el.setAttribute('inert','');else el.removeAttribute('inert');});}
+  function openPanel(btn){
+    if(panelAbierto())return;
+    opener=btn;
+    velo.classList.add('on');panel.classList.add('on');
+    document.querySelectorAll('.fbtn').forEach(function(b){b.setAttribute('aria-expanded','true');});
+    setInert(true);panel.focus();
+  }
+  function closePanel(){
+    if(!panelAbierto())return;
+    velo.classList.remove('on');panel.classList.remove('on');
+    document.querySelectorAll('.fbtn').forEach(function(b){b.setAttribute('aria-expanded','false');});
+    setInert(false);
+    var b=(opener&&opener.getClientRects().length)?opener:activeFbtn();
+    b.focus();
+  }
+  document.querySelectorAll('.fbtn').forEach(function(b){b.addEventListener('click',function(){panelAbierto()?closePanel():openPanel(b);});});
+  $('cerrar').addEventListener('click',closePanel);
+  $('ver').addEventListener('click',closePanel);
+  velo.addEventListener('click',closePanel);
+  panel.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){e.preventDefault();e.stopPropagation();closePanel();return;}
+    if(e.key!=='Tab')return;
+    var f=Array.prototype.filter.call(panel.querySelectorAll('button,input,[href]'),function(el){return !el.disabled&&el.getClientRects().length;});
+    if(!f.length)return;
+    var first=f[0],last=f[f.length-1],cur=document.activeElement;
+    if(e.shiftKey&&(cur===first||cur===panel)){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&cur===last){e.preventDefault();first.focus();}
+  });
+
   /* ---------- controles ---------- */
   $('q').addEventListener('input',function(e){q=e.target.value;applyFilter();});
-  $('q').addEventListener('keydown',function(e){if(e.key==='Escape'&&q){q='';e.target.value='';applyFilter();}});
   $('chips').addEventListener('change',function(e){var a=e.target.getAttribute('data-alg');if(a){avoid[a]=e.target.checked;applyFilter();}});
   $('ocultar').addEventListener('change',function(e){hideMode=e.target.checked;store('terra-carta-hide',hideMode?'1':'0');applyFilter();});
-  $('limpiar').addEventListener('click',function(){q='';$('q').value='';avoid={};document.querySelectorAll('#chips input').forEach(function(i){i.checked=false;});applyFilter();$('q').focus();});
+  $('limpiar').addEventListener('click',limpiar);
+  $('limpiarP').addEventListener('click',limpiar);
   document.addEventListener('click',function(e){var a=e.target.closest('[data-goto]');if(a){e.preventDefault();try{history.replaceState(null,'','#'+a.getAttribute('data-goto'));}catch(x){}setTab(a.getAttribute('data-goto'));}});
 
   function setZoom(i){
@@ -670,11 +799,11 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
   }
   $('menos').addEventListener('click',function(){setZoom(zi-1);});
   $('mas').addEventListener('click',function(){setZoom(zi+1);});
-  $('imprimir').addEventListener('click',function(){var d=$('leyenda');var was=d.open;d.open=true;window.print();d.open=was;});
+  $('imprimir').addEventListener('click',function(){closePanel();setTimeout(function(){window.print();},80);});
   $('compartir').addEventListener('click',function(){
     var url=location.href.split('#')[0]+'#'+tab,title=document.title;
     if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});return;}
-    var done=function(){var s=$('estado'),prev=s.textContent;s.textContent=t('copiado');setTimeout(function(){applyFilter();},2500);};
+    var done=function(){var m=$('compMsg');m.textContent=t('copiado');setTimeout(function(){m.textContent='';},2500);};
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done,function(){window.prompt(title,url);});}
     else window.prompt(title,url);
   });
@@ -691,22 +820,24 @@ details.leyenda[open]>summary{border-radius:4px 4px 0 0}
   document.addEventListener('click',function(e){if(!e.target.closest('.dd'))closeDD();});
   var nav=$('nav'),mt=$('menuToggle');
   function closeMenu(){nav.classList.remove('open');mt.setAttribute('aria-expanded','false');}
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();closeMenu();}});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(panelAbierto()){closePanel();return;}closeDD();closeMenu();}});
   mt.addEventListener('click',function(){var o=!nav.classList.contains('open');nav.classList.toggle('open',o);mt.setAttribute('aria-expanded',o);});
   $('resaltar').addEventListener('click',function(){document.body.classList.toggle('ver-editables');});
+  function setBarraH(){var b=document.querySelector('.barra');if(b&&b.offsetHeight)document.documentElement.style.setProperty('--barra-h',b.offsetHeight+'px');}
+  window.addEventListener('resize',setBarraH);
 
   /* ---------- arranque ---------- */
   var l0=null;
-  try{var ql=new URLSearchParams(location.search).get('lang');l0=ql;}catch(e){}
+  try{l0=new URLSearchParams(location.search).get('lang');}catch(e){}
   l0=(l0==='va'||l0==='es'||l0==='en')?l0:load('terra-lang');
   if(l0==='va'||l0==='en')lang=l0;
   var z0=parseInt(load('terra-carta-zoom'),10);if(z0>=0&&z0<ZOOMS.length)zi=z0;
   hideMode=load('terra-carta-hide')==='1';$('ocultar').checked=hideMode;
-  applyUI();setZoom(zi);
-  var h0=parseHash(),t0=TABS.indexOf(h0.tab)>-1?h0.tab:(TABS.indexOf(load('terra-carta-tab'))>-1?load('terra-carta-tab'):'menu');
+  applyUI();setZoom(zi);setBarraH();
+  var h0=parseHash(),t0=TABS.indexOf(h0.tab)>-1?h0.tab:(TABS.indexOf(load('terra-carta-tab'))>-1?load('terra-carta-tab'):'todas');
   tab=t0;
   fetch('carta.json').then(function(r){return r.json();}).then(function(d){
-    DATA=d;buildAllergenUI();tab=t0;renderCarta();
+    DATA=d;buildAllergenUI();tab=t0;renderCarta();setBarraH();
     if(h0.cat)setTimeout(function(){var el=$('cat-'+tab+'-'+h0.cat);if(el)el.scrollIntoView();},0);
   }).catch(function(){
     $('vacio').hidden=false;$('vacio').textContent='No se ha podido cargar la carta. Llámanos al 960 488 254.';
