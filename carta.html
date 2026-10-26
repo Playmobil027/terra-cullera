@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carta · Terra, restaurante en Cullera</title>
+<meta name="description" content="La carta completa de Terra en una sola página: menú del día, carta de mediodía, carta de noche y bebidas, con buscador, filtro de alérgenos, tamaño de letra ajustable e impresión.">
+<meta name="theme-color" content="#251C0A">
+<link rel="canonical" href="https://terra-cullera.vercel.app/carta.html">
+<meta property="og:type" content="restaurant.menu">
+<meta property="og:title" content="La carta de Terra · Cullera">
+<meta property="og:description" content="Busca un plato, filtra por alérgenos y consulta precios. Menú del día, carta de mediodía, carta de noche y bebidas.">
+<meta property="og:image" content="https://terra-cullera.vercel.app/assets/hero.jpg">
+<meta property="og:url" content="https://terra-cullera.vercel.app/carta.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+<link rel="preload" as="fetch" href="carta.json" crossorigin>
+<style>
+:root{
+  --terra-fondo:#251C0A;
+  --terra-crema:#CBC6C2;
+  --terra-salvia:#B8C49E;
+  --terra-cobre:#755035;
+  --crema-90:rgba(203,198,194,.9);
+  --crema-72:rgba(203,198,194,.72);
+  --crema-20:rgba(203,198,194,.2);
+  --crema-10:rgba(203,198,194,.1);
+  --salvia-35:rgba(184,196,158,.35);
+  --fondo-92:rgba(37,28,10,.92);
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+  --font:"Italiana",serif;
+  --pad:clamp(1.25rem,5vw,3rem);
+  --wrap:1120px;
+  --header-h:4.25rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none !important}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--header-h) + 5rem)}
+body{margin:0;background:var(--terra-fondo);color:var(--crema-90);font-family:var(--font);font-size:1.4rem;line-height:1.6;font-synthesis:none;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
+img,svg{max-width:100%}
+a{color:var(--terra-salvia);text-underline-offset:.25em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+h1,h2,h3,h4,p,ul,dl,dd,figure{margin:0;padding:0}
+ul{list-style:none}
+h1,h2,h3,h4{font-weight:400}
+button,input,summary{font:inherit}
+:focus-visible{outline:2px solid var(--terra-salvia);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:1rem;top:-5rem;background:var(--terra-fondo);color:var(--terra-crema);padding:.7rem 1rem;border:1px solid var(--terra-salvia);z-index:100;font-size:1.2rem}
+.skip:focus{top:1rem}
+.wrap{width:100%;max-width:calc(var(--wrap) + var(--pad)*2);margin-inline:auto;padding-inline:var(--pad)}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.edit{outline:0}
+body.ver-editables .edit{outline:2px dashed var(--terra-salvia);outline-offset:3px;background:var(--salvia-35)}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;font:inherit;font-size:1.5rem;line-height:1;padding:.95rem 1.9rem;border-radius:4px;border:1px solid transparent;text-decoration:none;cursor:pointer;letter-spacing:.02em;transition:background-color .18s ease,border-color .18s ease,transform .16s var(--ease-out)}
+.btn-cobre{background:var(--terra-cobre);color:var(--terra-crema);box-shadow:2px 4px 5px rgb(33 23 3)}
+.btn-linea{background:transparent;color:var(--terra-crema);border-color:var(--crema-20)}
+.btn:active{transform:scale(.97)}
+@media (hover:hover) and (pointer:fine){
+  .btn-cobre:hover{background-image:linear-gradient(var(--crema-10),var(--crema-10));text-decoration:none}
+  .btn-linea:hover{border-color:var(--terra-salvia);color:var(--terra-salvia);text-decoration:none}
+}
+
+/* Cabecera (la misma de la web) */
+.site-header{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--header-h);background:var(--fondo-92);border-bottom:1px solid var(--crema-10);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.site-header .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font-size:2.4rem;line-height:1;padding:.4rem 0;display:inline-block;color:var(--terra-salvia);text-decoration:none;letter-spacing:.01em}
+.nav{display:flex;align-items:center;gap:clamp(.75rem,2vw,1.75rem)}
+.nav a,.nav button.nav-link{font:inherit;font-size:1.35rem;color:var(--crema-90);background:none;border:0;padding:.5rem .25rem;min-height:44px;cursor:pointer;text-decoration:none}
+@media (hover:hover) and (pointer:fine){.nav a:hover,.nav button.nav-link:hover{color:var(--terra-salvia)}}
+.nav .btn-cobre{font-size:1.5rem;padding:.6rem 1.25rem;color:var(--terra-crema)}
+.dd{position:relative}
+.dd-btn::after{content:"";display:inline-block;width:.45em;height:.45em;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-.15em) rotate(45deg);margin-left:.55em;transition:transform .18s var(--ease-out)}
+.dd-btn[aria-expanded="true"]::after{transform:translateY(.05em) rotate(225deg)}
+.dd-list{position:absolute;right:0;top:calc(100% + .5rem);min-width:13rem;background:var(--terra-fondo);border:1px solid var(--crema-20);border-radius:4px;padding:.4rem;box-shadow:2px 4px 5px rgb(33 23 3);opacity:0;transform:scale(.96);transform-origin:top right;visibility:hidden;pointer-events:none;transition:opacity .15s ease,transform .15s var(--ease-out),visibility 0s .15s}
+.dd.open .dd-list{opacity:1;transform:scale(1);visibility:visible;pointer-events:auto;transition:opacity .15s ease,transform .15s var(--ease-out),visibility 0s}
+.dd-list a,.dd-list button{display:block;width:100%;min-height:44px;text-align:left;padding:.55rem .8rem;font:inherit;font-size:1.2rem;color:var(--crema-90);background:none;border:0;border-radius:3px;cursor:pointer;text-decoration:none}
+.dd-list [aria-current="true"]{color:var(--terra-salvia)}
+@media (hover:hover) and (pointer:fine){.dd-list a:hover,.dd-list button:hover{background:var(--crema-10);color:var(--terra-salvia)}}
+.menu-toggle{display:none;font:inherit;font-size:1.25rem;min-height:44px;color:var(--terra-crema);background:none;border:1px solid var(--crema-20);border-radius:4px;padding:.4rem .9rem;cursor:pointer}
+@media (max-width:860px){
+  .menu-toggle{display:inline-block}
+  .nav{position:fixed;inset:var(--header-h) 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:var(--terra-fondo);border-bottom:1px solid var(--crema-10);padding:.5rem var(--pad) 1.25rem;max-height:calc(100dvh - var(--header-h));overflow:auto;opacity:0;transform:translateY(-8px);visibility:hidden;transition:opacity .18s ease,transform .2s var(--ease-out),visibility 0s .2s}
+  .nav.open{opacity:1;transform:none;visibility:visible;transition:opacity .18s ease,transform .2s var(--ease-out),visibility 0s}
+  .nav a,.nav button.nav-link{padding:.8rem 0;font-size:1.4rem;text-align:left;width:100%;border-bottom:1px solid var(--crema-10)}
+  .nav .btn-cobre{display:none}
+  .dd-list{position:static;opacity:1;transform:none;visibility:visible;pointer-events:auto;display:none;border:0;box-shadow:none;padding:0 0 .5rem 1rem;min-width:0}
+  .dd.open .dd-list{display:block}
+  .dd-list a,.dd-list button{font-size:1.25rem;padding:.55rem 0}
+}
+
+/* ===== Carta ===== */
+.cp{--z:1;font-size:calc(1.2rem*var(--z));line-height:1.5;padding-top:calc(var(--header-h) + 2rem);padding-bottom:3rem}
+.cp h1{font-size:clamp(2.2em,9vw,4.4em);line-height:1.05;color:var(--terra-crema)}
+.cp .lead{margin-top:.5em;max-width:34em;font-size:1.05em;color:var(--crema-90)}
+
+/* Pestañas */
+.tabs{margin-top:1.4em}
+.tabs ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(4.2em,1fr));gap:.4em}
+.tabs a{display:flex;align-items:center;justify-content:center;min-height:2.9em;padding:.3em .3em;font-size:1.02em;line-height:1.15;text-align:center;color:var(--terra-crema);text-decoration:none;border:1px solid var(--crema-20);border-radius:4px;transition:border-color .15s ease,background-color .15s ease}
+@media (min-width:760px){.tabs a{font-size:1.25em;min-height:2.6em}}
+.tabs a[aria-current="true"]{background:var(--terra-salvia);border-color:var(--terra-salvia);color:var(--terra-fondo)}
+@media (hover:hover) and (pointer:fine){.tabs a:not([aria-current="true"]):hover{border-color:var(--terra-salvia);color:var(--terra-salvia)}}
+
+/* Herramientas */
+.herr{margin-top:1.6em;border-top:1px solid var(--crema-20);padding-top:1.2em}
+@media (min-width:900px){
+  .herr{display:grid;grid-template-columns:1fr auto;gap:0 1.5em;align-items:end}
+  .herr>*{grid-column:1/-1}
+  .herr>.buscar{grid-column:1;grid-row:1}
+  .herr>.fila{grid-column:2;grid-row:1;margin-top:0}
+}
+.buscar label{display:block;font-size:.9em;color:var(--crema-90);margin-bottom:.25em}
+.buscar input{width:100%;min-height:2.6em;font-size:1.1em;color:var(--terra-crema);background:transparent;border:1px solid var(--crema-20);border-radius:4px;padding:.3em .8em;-webkit-appearance:none;appearance:none}
+.buscar input::placeholder{color:var(--crema-72);opacity:1}
+.buscar input:focus-visible{outline:2px solid var(--terra-salvia);outline-offset:2px;border-color:var(--terra-salvia)}
+.buscar input::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}
+.fila{display:flex;flex-wrap:wrap;gap:.6em;margin-top:.9em;align-items:center}
+.herr button,.herr summary{min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;gap:.5em;font-size:.95em;line-height:1.1;color:var(--terra-crema);background:transparent;border:1px solid var(--crema-20);border-radius:4px;padding:.3em .9em;cursor:pointer;transition:border-color .15s ease,color .15s ease}
+@media (hover:hover) and (pointer:fine){.herr button:not(:disabled):hover,.herr summary:hover{border-color:var(--terra-salvia);color:var(--terra-salvia)}}
+.herr button:disabled{opacity:.45;cursor:default}
+.herr button:active:not(:disabled){transform:scale(.97)}
+.tam{display:inline-flex;gap:.4em;align-items:center}
+.tam .rot{font-size:.9em;color:var(--crema-90)}
+@media (max-width:520px){.tam .rot{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+.herr .limpiar{border-color:var(--terra-salvia);color:var(--terra-salvia)}
+
+details.evitar{width:100%;margin-top:.9em}
+details.evitar>summary{list-style:none;width:100%;justify-content:space-between}
+details.evitar>summary::-webkit-details-marker{display:none}
+details.evitar>summary::after,details.leyenda>summary::after{content:"";width:.5em;height:.5em;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg) translateY(-.1em);transition:transform .15s var(--ease-out);flex:none}
+details[open]>summary::after{transform:rotate(225deg) translateY(-.1em)}
+details.evitar .cuenta{color:var(--terra-salvia)}
+.evitar-panel{border:1px solid var(--crema-20);border-top:0;border-radius:0 0 4px 4px;padding:1rem}
+details.evitar[open]>summary{border-radius:4px 4px 0 0}
+.evitar-panel .ayuda{font-size:.9em;color:var(--crema-90);margin-bottom:.8em}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(10.5em,100%),1fr));gap:.5em}
+.chip{position:relative;min-width:0}
+.chip label span{min-width:0;overflow-wrap:anywhere}
+.chip input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.chip label{display:flex;align-items:center;gap:.55em;min-height:44px;padding:.3em .55em;border:1px solid var(--crema-20);border-radius:4px;font-size:.88em;line-height:1.1;color:var(--terra-crema);transition:border-color .15s ease,background-color .15s ease}
+.chip label::after{content:"";flex:none;margin-left:auto;width:1.05em;height:1.05em;border:1px solid var(--crema-72);border-radius:2px;background:transparent center/80% no-repeat}
+.chip input:checked+label{border-color:var(--terra-salvia);background:var(--salvia-35)}
+.chip input:checked+label::after{border-color:var(--terra-salvia);background-color:var(--terra-salvia);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.4 4.8 9 10 3' fill='none' stroke='%23251C0A' stroke-width='1.8'/%3E%3C/svg%3E")}
+.chip input:focus-visible+label{outline:2px solid var(--terra-salvia);outline-offset:3px}
+.ocultar{display:flex;align-items:center;gap:.7em;margin-top:1em;min-height:44px;font-size:.95em;color:var(--terra-crema);cursor:pointer}
+.ocultar input{width:1.3em;height:1.3em;margin:0;accent-color:var(--terra-salvia);flex:none}
+
+.estado{margin-top:1em;display:flex;flex-wrap:wrap;gap:.5em 1em;align-items:center;justify-content:space-between}
+.estado p{font-size:.95em;color:var(--crema-90);min-height:1.5em}
+.mas{margin-top:.4em;font-size:.9em;color:var(--crema-90)}
+.mas a{white-space:nowrap}
+
+details.leyenda{margin-top:.9em}
+details.leyenda>summary{list-style:none;width:100%;justify-content:space-between}
+details.leyenda>summary::-webkit-details-marker{display:none}
+.leyenda-panel{border:1px solid var(--crema-20);border-top:0;border-radius:0 0 4px 4px;padding:1rem}
+.leyenda-panel li span{min-width:0;overflow-wrap:anywhere}
+details.leyenda[open]>summary{border-radius:4px 4px 0 0}
+.leyenda-panel ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(10.5em,100%),1fr));gap:.4em 1em}
+.leyenda-panel li{display:flex;align-items:center;gap:.5em;font-size:.95em;min-height:2.2em}
+
+.aviso-alergias{margin-top:1em;padding:.9em 1em;border-left:2px solid var(--terra-salvia);font-size:.95em;color:var(--terra-crema)}
+.aviso-alergias a{white-space:nowrap;display:inline-block;min-height:44px;line-height:44px}
+
+.ic{width:1.5em;height:1.5em;flex:none;color:currentColor;display:inline-block;vertical-align:middle}
+
+/* Barra de categorías */
+.catbar{position:sticky;top:var(--header-h);z-index:40;margin-top:1.6em;background:var(--fondo-92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid var(--crema-20);border-bottom:1px solid var(--crema-20)}
+.catbar ul{display:flex;gap:.2rem;overflow-x:auto;scrollbar-width:thin;padding-inline:var(--pad);margin-inline:auto;max-width:calc(var(--wrap) + var(--pad)*2);scroll-padding-inline:var(--pad)}
+.catbar li{flex:none}
+.catbar a{display:flex;align-items:center;min-height:48px;padding:.2rem .9rem;font-size:calc(1.15rem*min(var(--z),1.4));white-space:nowrap;color:var(--crema-90);text-decoration:none;border-bottom:2px solid transparent;transition:color .15s ease,border-color .15s ease}
+.catbar a[aria-current="true"]{color:var(--terra-salvia);border-bottom-color:var(--terra-salvia)}
+@media (hover:hover) and (pointer:fine){.catbar a:hover{color:var(--terra-salvia)}}
+
+/* Lista de platos */
+.menu-dia{margin-top:1.8em;display:flex;flex-wrap:wrap;align-items:baseline;gap:.3em 1.2em}
+.menu-dia .importe{font-size:2.4em;line-height:1;color:var(--terra-crema)}
+.menu-dia .iva{font-size:.95em;color:var(--crema-90)}
+.menu-dia .nota-menu{flex-basis:100%;max-width:38em;font-size:.95em;color:var(--crema-90)}
+.cat{display:grid;grid-template-columns:minmax(0,1fr);gap:.4em;padding-block:2em 1.2em;border-top:1px solid var(--crema-20);scroll-margin-top:calc(var(--header-h) + 4.8rem)}
+.cat:first-child{border-top:0}
+.cat-cab h2{font-size:clamp(1.9em,5vw,2.3em);line-height:1.1;color:var(--terra-salvia)}
+.cat-cab{margin-bottom:.7em}
+.cat-cab .nota{margin-top:.5em;font-size:.9em;color:var(--crema-90);max-width:26em}
+@media (min-width:1000px){
+  .cat{grid-template-columns:minmax(13em,1fr) minmax(0,3fr);gap:2.5em}
+  .cat-cab{align-self:start}
+}
+.platos li{padding-block:.85em;border-top:1px solid var(--crema-10);transition:opacity .15s ease}
+.platos li:first-child{border-top:0;padding-top:0}
+.cab{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.2em 1em;align-items:start}
+.nombre{font-size:1.3em;line-height:1.2;color:var(--terra-crema)}
+.precio{text-align:right;font-size:1.3em;letter-spacing:.06em;line-height:1.25;color:var(--terra-crema);white-space:nowrap}
+.precio small{display:block;font-size:.75em;color:var(--crema-90);white-space:nowrap}
+.desc{margin-top:.15em;font-size:.95em;color:var(--crema-90);max-width:36em}
+.alg{display:flex;flex-wrap:wrap;gap:.2em 1.1em;margin-top:.5em}
+.alg li{display:inline-flex;align-items:center;gap:.35em;padding:0;border:0;font-size:.82em;line-height:1.2;color:var(--crema-90)}
+.alg li.ev{color:var(--terra-salvia);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.25em}
+.alg li.sin{font-style:normal;color:var(--crema-90)}
+.plato.afecta{border-left:2px solid var(--terra-salvia);padding-left:.7em}
+.plato.afecta .nombre,.plato.afecta .precio{color:var(--crema-72)}
+.plato.afecta .desc,.plato.afecta .alg li:not(.ev){color:var(--crema-72)}
+.plato .contiene{margin-top:.3em;font-size:.85em;color:var(--terra-salvia)}
+.plato.consultar .contiene{color:var(--terra-salvia)}
+.plato[hidden],.cat[hidden],.catbar li[hidden]{display:none}
+.vacio{margin-top:2em;padding:1.2em 0;font-size:1.2em;color:var(--terra-crema);border-top:1px solid var(--crema-20);border-bottom:1px solid var(--crema-20)}
+.pie-carta{margin-top:1.5em;font-size:.9em;color:var(--crema-90)}
+.pie-carta p+p{margin-top:.5em}
+.pie-carta.hidden{display:none}
+
+/* Pie */
+.site-footer{border-top:1px solid var(--crema-10);padding-block:2rem}
+.site-footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem 2rem;flex-wrap:wrap}
+.site-footer ul{display:flex;gap:0;flex-wrap:wrap}
+.site-footer li+li{border-left:1px solid var(--crema-20);margin-left:1rem;padding-left:1rem}
+.site-footer a{color:var(--crema-90);text-decoration:none;font-size:1.2rem;display:inline-flex;align-items:center;min-height:44px}
+.site-footer a:hover{color:var(--terra-salvia)}
+.site-footer .logo{font-size:2.2rem}
+
+/* Barra móvil */
+.barra{display:none}
+@media (max-width:860px){
+  body{padding-bottom:4.75rem}
+  .barra{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;position:fixed;inset:auto 0 0 0;z-index:60;padding:.7rem var(--pad) calc(.7rem + env(safe-area-inset-bottom));background:var(--fondo-92);border-top:1px solid var(--crema-10);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+  .barra .btn{font-size:1.5rem;padding:.8rem .5rem}
+}
+
+/* Franja propuesta (no aparece en la web publicada) */
+.propuesta{background:var(--terra-fondo);border-top:6px double var(--terra-cobre);padding-block:3.5rem 4rem}
+.propuesta .wrap{max-width:60rem}
+.propuesta .aviso{display:inline-block;font-size:1.1rem;border:1px dashed var(--terra-salvia);color:var(--terra-salvia);padding:.3rem .8rem;border-radius:3px}
+.propuesta h2{font-size:clamp(2rem,4.5vw,3rem);color:var(--terra-crema);margin-top:1rem;line-height:1.15}
+.propuesta p{margin-top:.8rem;font-size:1.25rem}
+.propuesta code{font-family:var(--font);color:var(--terra-salvia)}
+
+.print-only{display:none}
+
+@media (prefers-reduced-motion:reduce){
+  .dd-list,.nav{transition:opacity .1s ease}
+  .btn:active,.herr button:active{transform:none}
+  .platos li,.catbar a,.tabs a,.dd-btn::after,details>summary::after{transition:none}
+}
+@media (prefers-contrast:more){
+  :root{--crema-90:#CBC6C2;--crema-72:#CBC6C2;--crema-20:rgba(203,198,194,.7);--crema-10:rgba(203,198,194,.4)}
+  .chip input:checked+label{border-width:2px}
+}
+
+@media print{
+  @page{margin:16mm}
+  html,body{background:#fff !important;color:#000 !important}
+  body{font-size:11pt;padding:0}
+  .site-header,.barra,.propuesta,.skip,.tabs,.herr,.catbar,.site-footer,.mas,.estado,.aviso-alergias.pantalla,details.leyenda>summary,.no-print{display:none !important}
+  .cp{padding:0;font-size:11pt !important}
+  .cp h1{font-size:22pt;color:#000}
+  .cp .lead{display:none}
+  .print-only{display:block}
+  .cp *{color:#000 !important;background:transparent !important;box-shadow:none !important;border-color:#999 !important;opacity:1 !important}
+  .cat{display:block;padding-block:12pt 4pt;break-inside:auto}
+  .cat-cab{break-after:avoid}
+  .cat-cab h2{font-size:15pt}
+  .platos li{break-inside:avoid;padding-block:5pt}
+  .nombre{font-size:12pt}.precio{font-size:11pt}.desc{font-size:10pt;max-width:none}
+  .alg li{font-size:9pt}
+  .ic{width:12pt;height:12pt}
+  details.leyenda{display:block;margin-top:10pt}
+  details.leyenda .leyenda-panel{display:block !important;border:0;padding:0}
+  details.leyenda:not([open])>*:not(summary){display:block}
+  .leyenda-panel ul{grid-template-columns:repeat(3,1fr)}
+  .aviso-alergias{border-left:1px solid #000;font-size:10pt}
+  .pie-carta{font-size:9pt}
+  a{text-decoration:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="a-celery" viewBox="0 0 24 24"><g id="Celery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"> <path d="M11.2738628,1.24712328 C12.052307,1.24712328 12.6833607,1.87817699 12.6833607,2.65662118 L12.6827291,3.03312328 L13.0765681,2.90107348 C13.5714095,2.7343376 14.1077238,3.00031968 14.2744597,3.49516107 C14.3544192,3.73246611 14.3369726,3.99179963 14.2259483,4.2162563 L13.7817291,5.11312328 L13.8708317,5.0843773 C14.3289757,4.96521428 14.813805,5.20576744 14.989186,5.65781703 C15.1240269,6.00537318 15.042052,6.39971881 14.7798704,6.66474359 L13.873156,7.57993702 C13.7594388,7.53123862 13.6351314,7.50442794 13.5062586,7.50373294 C12.9840891,7.50091691 12.5585043,7.92193604 12.5556883,8.44410549 L12.5556883,8.44410549 L12.4847852,21.591484 C12.4830412,21.9148704 12.3161354,22.2149328 12.0423042,22.3869742 L12.0423042,22.3869742 L11.1992365,22.9161233 L10.3560151,22.3869742 C10.0821838,22.2149328 9.91527798,21.9148704 9.91353398,21.591484 L9.86323653,12.3421233 L9.86372908,8.83212328 L9.84423653,8.81312328 L9.84263095,8.44410549 C9.83981492,7.92193604 9.41423011,7.50091691 8.89206066,7.50373294 C8.79027074,7.50428189 8.69132897,7.52112335 8.59820417,7.55217399 L7.59536609,6.5390186 C7.23040317,6.17009789 7.23361159,5.57516766 7.6025323,5.21020474 C7.88122028,4.93450653 8.30178457,4.86079684 8.65762143,5.02528582 L8.67772908,5.03512328 L8.27366439,4.2162563 C8.04215037,3.74820702 8.23390009,3.18109893 8.70194936,2.94958491 C8.92640603,2.83856057 9.18573955,2.82111399 9.42304458,2.90107348 L9.86372908,3.04912328 L9.86436489,2.65662118 C9.86436489,1.87817699 10.4954186,1.24712328 11.2738628,1.24712328 Z M11.2498063,4.85989572 L11.2498063,6.20319402 M3.22149157,6.95890356 C2.70252878,7.47786636 2.70252878,8.3192713 3.22149157,8.83823409 L3.86565649,9.48116282 L3.39424548,9.71508871 C2.9264397,9.94709434 2.73528591,10.5144036 2.96729155,10.9822094 C3.07855165,11.2065493 3.27426474,11.3775892 3.51148563,11.4577979 L4.45821197,11.7778456 L4.3764452,11.8205469 C3.9682275,12.0602426 3.79549819,12.5731654 3.99113242,13.0168259 C4.14154485,13.3579321 4.47835434,13.5788115 4.85114555,13.580822 L7.98095833,13.5977008 L8.02182035,21.1746471 C8.0274095,22.21103 8.86618255,23.0498031 9.90256545,23.0553922 L11.4330458,23.063646 L10.3560151,22.3869742 C10.0821838,22.2149328 9.91527798,21.9148704 9.91353398,21.591484 L9.84263095,8.44410549 C9.83981492,7.92193604 9.41423011,7.50091691 8.89206066,7.50373294 C8.50083962,7.50584277 8.15169105,7.74862323 8.01316716,8.11379356 L7.72038594,7.24889762 C7.55313025,6.75423167 7.01653675,6.48881322 6.5218708,6.6560689 C6.28464991,6.73627766 6.08893682,6.90731757 5.97767672,7.13165746 L5.7444392,7.6023801 L5.10082211,6.95890356 C4.58185931,6.43994077 3.74045437,6.43994077 3.22149157,6.95890356 Z M6.07105759,9.80846958 L7.02091292,10.7583249 M8.45486699,15.5055228 L14.0928586,15.5055228 M19.1768276,6.95890356 C19.6957904,7.47786636 19.6957904,8.3192713 19.1768276,8.83823409 L18.5326627,9.48116282 L19.0040737,9.71508871 C19.4718795,9.94709434 19.6630333,10.5144036 19.4310277,10.9822094 C19.3197676,11.2065493 19.1240545,11.3775892 18.8868336,11.4577979 L17.9401072,11.7778456 L18.021874,11.8205469 C18.4300917,12.0602426 18.602821,12.5731654 18.4071868,13.0168259 C18.2567744,13.3579321 17.9199649,13.5788115 17.5471737,13.580822 L14.4173609,13.5977009 L14.3764989,21.1746471 C14.3709097,22.21103 13.5321367,23.0498031 12.4957538,23.0553922 L10.9652734,23.063646 L12.0423042,22.3869742 C12.3161354,22.2149328 12.4830412,21.9148704 12.4847852,21.591484 L12.5556883,8.44410549 C12.5585043,7.92193604 12.9840891,7.50091691 13.5062586,7.50373294 C13.8974796,7.50584277 14.2466282,7.74862323 14.3851521,8.11379356 L14.6779333,7.24889762 C14.845189,6.75423167 15.3817825,6.48881322 15.8764484,6.6560689 C16.1136693,6.73627767 16.3093824,6.90731757 16.4206425,7.13165746 L16.65388,7.6023801 L17.2974971,6.95890356 C17.8164599,6.43994077 18.6578648,6.43994077 19.1768276,6.95890356 Z M16.3272616,9.80846958 L15.3774063,10.7583249" id="Combined-Shape" stroke="currentColor" transform="translate(11.199160, 12.729215) rotate(-315.000000) translate(-11.199160, -12.729215) "> </path> </g></symbol><symbol id="a-crustaceans" viewBox="0 0 24 24"><g id="Crab" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"> <path d="M9,3 L9,6 L11,5 C11,6.87142149 9.48291313,8.38850835 7.61149165,8.38850835 C7.42484969,8.38850835 7.23852679,8.3730878 7.0544243,8.34240405 L5,8 L5,7 C5,4.85780461 6.68396847,3.10892112 8.80035966,3.00489531 L9,3 Z M5,8 L5,8.63951221 C5,9.52168891 5.29163142,10.3791208 5.82950404,11.0783553 L7,12.6 M6.5,13 L5.23606798,13 C4.47852386,13 3.78599762,13.4280048 3.4472136,14.1055728 L3,15 M5.8,16 L5.23606798,16 C4.47852386,16 3.78599762,16.4280048 3.4472136,17.1055728 L3,18 M8.5,19 L7.23606798,19 C6.47852386,19 5.78599762,19.4280048 5.4472136,20.1055728 L5,21 M17.5,13 L18.763932,13 C19.5214761,13 20.2140024,13.4280048 20.5527864,14.1055728 L21,15 M18.2,16 L18.763932,16 C19.5214761,16 20.2140024,16.4280048 20.5527864,17.1055728 L21,18 M15.5,19 L16.763932,19 C17.5214761,19 18.2140024,19.4280048 18.5527864,20.1055728 L19,21 M8.29042111,18.8226385 L9.125,19.3125 C10.9000747,20.3543917 13.0999253,20.3543917 14.875,19.3125 L15.7095789,18.8226385 C17.010003,18.059346 17.9313344,16.7863285 18.25,15.3125 C18.5085293,14.1168021 17.748804,12.9379181 16.5531061,12.6793888 L16.4815717,12.6651505 L15.375,12.5 C13.137212,12.1684759 10.862788,12.1684759 8.625,12.5 L7.59039273,12.6532752 C6.38027267,12.8325522 5.5446093,13.9588811 5.72388634,15.1690011 C5.73101325,15.2171078 5.73972253,15.2649667 5.75,15.3125 C6.06866563,16.7863285 6.98999696,18.059346 8.29042111,18.8226385 Z M19,8 L19,8.63951221 C19,9.52168891 18.7083686,10.3791208 18.170496,11.0783553 L17,12.6 M15,3 L15,6 L13,5 C13,6.87142149 14.5170869,8.38850835 16.3885084,8.38850835 C16.5751503,8.38850835 16.7614732,8.3730878 16.9455757,8.34240405 L19,8 L19,7 C19,4.85780461 17.3160315,3.10892112 15.1996403,3.00489531 L15,3 Z" id="Combined-Shape" stroke="currentColor"> </path> <path d="M10.5,10.6 L10.5,10.5 L10.5,10.5 L10.5,10.6 Z" id="Rectangle-Copy-3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"> </path> <path d="M13.5,10.6 L13.5,10.5 L13.5,10.5 L13.5,10.6 Z" id="Rectangle-Copy-4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"> </path> </g></symbol><symbol id="a-dairy" viewBox="0 0 24 24"><g id="Milk" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"> <path d="M8.30755459,10.5115516 L9.23628684,9.03656842 C10.0507366,7.74308517 10.5742404,6.28799914 10.7705303,4.77211737 L11,3 L14,3 L14.2074647,4.65971731 C14.4001716,6.20137271 14.9265656,7.68250497 15.75,9 L16.6959966,10.5135946 C16.8946611,10.8314578 17,11.198753 17,11.5735925 L17,19 C17,20.1045695 16.1045695,21 15,21 L10,21 C8.8954305,21 8,20.1045695 8,19 L8,11.5772103 C8,11.2000991 8.10661865,10.8306716 8.30755459,10.5115516 Z M8,14 L8.62829175,14.2094306 C10.1136618,14.7045539 11.747426,14.4394305 13,13.5 L13.2111456,13.3416408 C14.2465666,12.565075 15.6124342,12.4039592 16.7935841,12.9047455 L17,13 L17,19 C17,20.1045695 16.1045695,21 15,21 L10,21 C8.8954305,21 8,20.1045695 8,19 L8,14 Z M10,3 L15,3" id="Combined-Shape" stroke="currentColor"> </path> </g></symbol><symbol id="a-eggs" viewBox="0 0 24 24"><g id="Eggs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"> <path d="M8.5,4 C10.6880996,4 12.6236769,6.56725359 13.8016474,9.38507756 C14.6677837,7.99375083 15.7831262,6.96153846 17,6.96153846 C19.7614237,6.96153846 22,12.2770378 22,15.0384615 C22,17.7998853 19.7614237,20.0384615 17,20.0384615 C15.6471612,20.0384615 14.41981,19.501185 13.5196845,18.6283698 C12.3291905,20.0763143 10.5224644,21 8.5,21 C4.91014913,21 2,18.0898509 2,14.5 C2,13.5862198 2.18855842,12.4573062 2.52888881,11.2819886 L2.52888881,11.2819886 L2.6839296,10.7759319 C3.75069954,7.47449151 5.95446938,4 8.5,4 Z M8.5,21 C12.0898509,21 15,18.0898509 15,14.5 C15,13.5862198 14.8114416,12.4573062 14.4711112,11.2819886 L14.3160704,10.7759319 C13.2493005,7.47449151 11.0455306,4 8.5,4 C5.95446938,4 3.75069954,7.47449151 2.6839296,10.7759319 L2.52888881,11.2819886 C2.18855842,12.4573062 2,13.5862198 2,14.5 C2,18.0898509 4.91014913,21 8.5,21 Z" id="Combined-Shape" stroke="currentColor"> </path> </g></symbol><symbol id="a-fish" viewBox="0 0 24 24"><g id="Fish" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"> <path d="M8.36037413,9.37780173 C12.9996449,6.48411516 19.1063134,7.89919075 22,12.5384615 L22,12.5384615 L21.7714102,12.8882815 C21.2212943,13.6925508 20.5550068,14.4118491 19.7936525,15.0224156 C15.9018582,18.1434325 10.3739711,17.8468022 6.83709622,14.5311796 C6.27002204,15.9932862 4.79851304,16.9798163 3.15189288,16.8603536 L3,16.8461538 L3,16.5884428 C3,15.0437123 3.67627478,13.6327133 4.77206207,12.6672238 C3.75338032,11.8768407 3.08250128,10.6671435 3.00709918,9.30699879 L3,9.05027424 L3,8.23076923 L3.20727682,8.23910502 C4.76443449,8.34004935 6.09767297,9.29463397 6.72703405,10.6524074 C7.2233625,10.1730892 7.77122081,9.74527868 8.36037413,9.37780173 Z M14.0372476,17.1902154 L14.1687971,17.1838145 C13.439803,17.9097888 12.5461565,18.4611948 11.5290784,18.759803 C10.7388556,18.9918079 9.94352384,19.0508336 9.17656914,18.9580635 C9.55107882,18.1973838 9.84153946,17.384199 10.0385168,16.536936 C11.3133173,17.0284034 12.6772642,17.249253 14.0372476,17.1902154 Z M15.0132594,7.83862474 L15.1167812,7.99444821 C13.1571593,7.68971933 11.098444,7.96928046 9.22076426,8.89804486 C8.64695948,7.68562475 7.87730735,6.62873797 6.97077654,5.76506832 C7.36191185,5.54761966 7.78075942,5.37001767 8.22293679,5.24019696 C10.8327336,4.47397571 13.4982542,5.59447699 15.0132594,7.83862474 Z" id="Combined-Shape" stroke="currentColor"> </path> <path d="M17.5,11.6 L17.5,11.5 L17.5,11.5 L17.5,11.6 Z" id="Rectangle-Copy-3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"> </path> </g></symbol><symbol id="a-gluten" viewBox="0 0 24 24"><g id="Gluten" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"> <path d="M4.90709946,11.4653026 C7.01338466,13.0450699 7.44021176,16.0332059 5.86044447,18.1394911 C5.64363317,18.428563 5.39483672,18.6918116 5.11898453,18.9243074 L4.90709946,19.0928361 C2.80081426,17.5130688 2.37398717,14.5249329 3.95375445,12.4186477 C4.17056575,12.1295757 4.41936221,11.8663271 4.6952144,11.6338313 L4.90709946,11.4653026 Z M8.72073729,7.65153593 C10.8270225,9.23130322 11.2538496,12.2194392 9.6740823,14.3257244 C9.457271,14.6147963 9.20847454,14.8780449 8.93262236,15.1105407 L8.72073729,15.2790694 C6.61445209,13.6993021 6.18762499,10.7111661 7.76739228,8.60488094 C7.98420358,8.31580898 8.23300004,8.05256039 8.50885222,7.8200646 L8.72073729,7.65153593 Z M12.5343751,3.83776921 C14.6406603,5.4175365 15.0674874,8.40567244 13.4877201,10.5119576 C13.2709088,10.8010296 13.0221124,11.0642782 12.7462602,11.296774 L12.5343751,11.4653026 C10.4280899,9.88553536 10.0012628,6.89739942 11.5810301,4.79111422 C11.7978414,4.50204226 12.0466379,4.23879367 12.32249,4.00629788 L12.5343751,3.83776921 Z M20.1616508,11.4653026 C18.5820436,13.5715167 15.5940953,13.9984159 13.4878812,12.4188088 C13.1987527,12.2019697 12.9354572,11.953132 12.7029271,11.6772283 L12.5343751,11.4653026 C14.1139822,9.35908863 17.1019306,8.9321894 19.2081446,10.5117965 C19.4972732,10.7286356 19.7605687,10.9774733 19.9930988,11.253377 L20.1616508,11.4653026 Z M16.3480129,15.2790694 C14.7684058,17.3852834 11.7804574,17.8121826 9.67424341,16.2325755 C9.38511489,16.0157364 9.12181933,15.7668988 8.88928925,15.490995 L8.72073729,15.2790694 C10.3003444,13.1728554 13.2882928,12.7459561 15.3945068,14.3255632 C15.6836353,14.5424023 15.9469309,14.79124 16.179461,15.0671437 L16.3480129,15.2790694 Z M12.5343751,19.0928361 C10.954768,21.1990501 7.9668196,21.6259493 5.86060558,20.0463422 C5.57147707,19.8295031 5.30818151,19.5806655 5.07565143,19.3047617 L4.90709946,19.0928361 C6.48670659,16.9866221 9.47465498,16.5597228 11.580869,18.13933 C11.8699975,18.356169 12.1332931,18.6050067 12.3658232,18.8809104 L12.5343751,19.0928361 Z M20.9514816,3.04791286 C21.3238283,5.6544274 19.5128192,8.06908238 16.9065088,8.44139985 C16.548771,8.49250352 16.1866752,8.50272288 15.8271945,8.47205796 L15.5581541,8.44118932 C15.1858366,5.83487893 16.9968457,3.42022395 19.6031561,3.04790648 C20.0503283,2.9840269 20.5043101,2.98402905 20.9514816,3.04791286 Z" id="Combined-Shape" stroke="currentColor"> </path> </g></symbol><symbol id="a-mollusks" viewBox="0 0 24 24"><g id="Abalone" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"> <path d="M19.1029736,9.2393558 L19.5072416,9.38676028 C20.8012617,9.85731306 21.4688139,11.287782 20.9982611,12.5818022 C20.8874215,12.8866113 20.7181722,13.1668648 20.5,13.4068542 L20.3362673,13.5869602 C18.7878409,15.2902293 16.9883338,16.7469929 15,17.9068542 L12.0503871,19.6274618 C12.0192509,19.6456246 11.9807491,19.6456246 11.9496129,19.6274618 L9,17.9068542 C7.01166619,16.7469929 5.21215913,15.2902293 3.66373272,13.5869602 L3.5,13.4068542 C2.57378354,12.3880161 2.64886822,10.8112379 3.66770633,9.88502142 C3.90769576,9.6668492 4.18794928,9.49759997 4.49275841,9.38676028 L4.89759122,9.23813236 M8.69408049,15.2487992 L5.4973666,10.9866764 C4.50325405,9.66119298 4.7718832,7.78078893 6.0973666,6.78667638 C6.35532363,6.59320861 6.64278389,6.44259295 6.9486833,6.34062648 L7.5,6.15685425 C7.88099972,6.02985434 8.26603169,5.91941964 8.65404401,5.82555014 L8.83624687,5.78266122 C8.50982528,6.38522784 8.41465234,7.10813745 8.61429512,7.80688716 L10.4532794,14.2438294 M13.5462927,14.2436904 L15.3857049,7.80688716 C15.585236,7.10852825 15.4902811,6.38603646 15.1643006,5.78367235 C15.6137746,5.88537675 16.0595813,6.01004801 16.5,6.15685425 L17.0513167,6.34062648 C18.6231467,6.8645698 19.4726266,8.56352972 18.9486833,10.1353597 C18.8467168,10.4412591 18.6961012,10.7287193 18.5026334,10.9866764 L15.3053581,15.2483041 M10.4532794,14.2438294 L8.61429512,7.80688716 C8.25810919,6.5602364 8.84034262,5.23668294 10,4.65685425 C11.2590292,4.02733964 12.7409708,4.02733964 14,4.65685425 C15.1596574,5.23668294 15.7418908,6.5602364 15.3857049,7.80688716 L13.5462927,14.2436904" id="Combined-Shape" stroke="currentColor"> </path> <path d="M16.9997745,16.5937589 L17,18.5 C17,19.3284271 16.3284271,20 15.5,20 L8.5,20 C7.67157288,20 7,19.3284271 7,18.5 L6.99904865,16.5928936 C7.64151174,17.0652931 8.30936513,17.5039839 9,17.9068542 L9,17.9068542 L11.9496129,19.6274618 C11.9807491,19.6456246 12.0192509,19.6456246 12.0503871,19.6274618 L12.0503871,19.6274618 L15,17.9068542 C15.6902132,17.5042299 16.3576727,17.0658287 16.9997745,16.5937589 Z" id="Rectangle-2" stroke="currentColor"> </path> </g></symbol><symbol id="a-nuts" viewBox="0 0 24 24"><g id="Walnut" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square"> <path d="M12,21 C17,21 19,17 19,13.1176471 C19,9.03921569 16.6666667,6 12,4 C7.33333333,6 5,9.03921569 5,13.1176471 C5,17 7,21 12,21 Z M12,6.671573 L13.061931,7.73319066 C13.3416946,7.58434358 13.6609976,7.50000012 14,7.50000012 C15.1045695,7.50000012 16,8.39543063 16,9.50000012 C16,9.91213989 15.8753378,10.2951632 15.6616637,10.6134199 C16.4408283,10.8848612 17,11.6271299 17,12.5000001 C17,12.8644244 16.9025324,13.2060839 16.7322434,13.5003323 C16.9025324,13.7939164 17,14.1355759 17,14.5000001 C17,15.6045696 16.1045695,16.5000001 15,16.5000001 C15,17.6045696 14.1045695,18.5000001 13,18.5000001 C12.6356829,18.5000001 12.2941173,18.4025898 11.9999275,18.2323938 C11.7066608,18.4023678 11.364732,18.5000001 11,18.5000001 C9.8954305,18.5000001 9,17.6045696 9,16.5000001 L9,16.5000001 L8.85073766,16.4945144 C7.81587779,16.4181652 7,15.5543619 7,14.5000001 C7,14.1355759 7.09746762,13.7939164 7.26775657,13.499668 C7.09746762,13.2060839 7,12.8644244 7,12.5000001 C7,11.6271299 7.55917167,10.8848612 8.33884361,10.6118654 C8.12466221,10.2951632 8,9.91213989 8,9.50000012 C8,8.39543063 8.8954305,7.50000012 10,7.50000012 C10.3390024,7.50000012 10.6583054,7.58434358 10.938069,7.73319066 L12,6.671573 Z M12,7.5 L12,17.5 M8.58578644,8.085786 C7.80473785,8.86683458 7.80473785,10.1331645 8.58578644,10.9142131 C9.05192952,11.3803562 9.69092525,11.5682972 10.2964508,11.478036 M14.4142136,17.9142131 C15.1952621,17.1331645 15.1952621,15.8668346 14.4142136,15.085786 M16.3677673,11.03934 C15.7819807,10.4535534 14.8322334,10.4535536 14.246447,11.03934 M7.64644661,15.9000002 C8.23223305,16.4857866 9.18198052,16.4857866 9.76776695,15.9000002" id="Combined-Shape" stroke="currentColor"> </path> </g></symbol><symbol id="a-sulphites" viewBox="0 0 24 24"><g id="Sulfur-Dioxide-&amp;-Sulphites" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"> <path d="M11,10.0731368 L11,3 L14,3 L14,10 L19.0439766,17.926249 C19.6369929,18.8581318 19.3622874,20.0943067 18.4304047,20.687323 C18.1095028,20.8915333 17.7370217,21 17.3566537,21 L7.65644946,21 C6.55187996,21 5.65644946,20.1045695 5.65644946,19 C5.65644946,18.6175735 5.76609246,18.2431642 5.97238319,17.9211484 L11,10.0731368 Z M7.85,15 L17.2,15 L19.0556007,17.9298958 C19.6466029,18.8630572 19.3692281,20.0986359 18.4360667,20.6896382 C18.1159656,20.8923688 17.7448615,21 17.3659625,21 L7.65966337,21 C6.55509387,21 5.65966337,20.1045695 5.65966337,19 C5.65966337,18.6170702 5.76959488,18.2421898 5.9763955,17.9199031 L7.85,15 Z M10,3 L15,3" id="Combined-Shape" stroke="currentColor"> </path> </g></symbol></svg>
+<a class="skip" href="#lista" data-ui="skip">Ir a la carta</a>
+
+<header class="site-header" id="cabecera">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="terra, inicio">terra</a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="nav" data-ui="menu">Menú</button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="index.html#filosofia" data-ui="nav_filosofia">Filosofía</a>
+      <a href="#menu" data-tab="menu" data-ui="t_menu_long">Menú del día</a>
+      <div class="dd" id="ddCartas">
+        <button class="nav-link dd-btn" aria-expanded="false" aria-haspopup="true" data-ui="nav_cartas">Cartas</button>
+        <ul class="dd-list">
+          <li><a href="#mediodia" data-tab="mediodia" data-ui="t_mediodia_long">Carta mediodía</a></li>
+          <li><a href="#noche" data-tab="noche" data-ui="t_noche_long">Carta noche</a></li>
+          <li><a href="#bebidas" data-tab="bebidas" data-ui="t_bebidas_long">Bebidas</a></li>
+        </ul>
+      </div>
+      <div class="dd" id="ddIdiomas">
+        <button class="nav-link dd-btn" aria-expanded="false" aria-haspopup="true" data-ui="nav_idiomas">Idiomas</button>
+        <ul class="dd-list">
+          <li><button type="button" data-lang="es" aria-current="true" lang="es">Castellano</button></li>
+          <li><button type="button" data-lang="va" aria-current="false" lang="ca-ES-valencia">Valencià</button></li>
+          <li><button type="button" data-lang="en" aria-current="false" lang="en">English</button></li>
+        </ul>
+      </div>
+      <a class="btn btn-cobre" href="index.html#reservas" data-ui="reservar_larga">Hacer una reserva</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido" class="cp" style="--z:1">
+  <div class="wrap">
+    <h1 id="h-carta" data-ui="h1">La carta</h1>
+    <p class="lead" data-ui="lead">Toda la carta en una sola página. Busca un plato o marca lo que no puedes tomar.</p>
+
+    <nav class="tabs" aria-label="Cartas" id="tabs" data-ui-label="aria_cartas">
+      <ul>
+        <li><a href="#menu" data-tab="menu" data-ui="t_menu">Menú del día</a></li>
+        <li><a href="#mediodia" data-tab="mediodia" data-ui="t_mediodia">Mediodía</a></li>
+        <li><a href="#noche" data-tab="noche" data-ui="t_noche">Noche</a></li>
+        <li><a href="#bebidas" data-tab="bebidas" data-ui="t_bebidas">Bebidas</a></li>
+      </ul>
+    </nav>
+
+    <div class="herr">
+      <form class="buscar" role="search" id="formBuscar" onsubmit="return false">
+        <label for="q" data-ui="buscar">Buscar un plato</label>
+        <input id="q" type="search" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" placeholder="Arroz, pulpo, flan…" data-ui-ph="ph">
+      </form>
+
+      <details class="evitar" id="evitar">
+        <summary><span><span data-ui="evitar">Evitar alérgenos</span> <span class="cuenta" id="cuenta" aria-hidden="true"></span></span></summary>
+        <div class="evitar-panel">
+          <p class="ayuda" data-ui="ayuda">Marca los alérgenos que debes evitar. Los platos que los contienen se atenúan y se avisa de cuántos son.</p>
+          <div class="chips" id="chips"></div>
+          <label class="ocultar"><input type="checkbox" id="ocultar"> <span data-ui="ocultar">Ocultar esos platos en vez de atenuarlos</span></label>
+        </div>
+      </details>
+
+      <div class="fila">
+        <div class="tam" role="group" aria-labelledby="lbl-tam">
+          <span class="rot" id="lbl-tam" data-ui="tam">Letra</span>
+          <button type="button" id="menos" data-ui-aria="menos"><span aria-hidden="true">A−</span></button>
+          <button type="button" id="mas" data-ui-aria="mas"><span aria-hidden="true">A+</span></button>
+        </div>
+        <button type="button" id="imprimir" data-ui="imprimir">Imprimir / PDF</button>
+        <button type="button" id="compartir" data-ui="compartir">Compartir</button>
+      </div>
+
+      <div class="estado">
+        <p id="estado" role="status" aria-live="polite" aria-atomic="true"></p>
+        <button type="button" class="limpiar" id="limpiar" hidden data-ui="limpiar">Limpiar filtros</button>
+      </div>
+      <p class="mas" id="otros" aria-live="polite"></p>
+    <details class="leyenda" id="leyenda">
+      <summary data-ui="leyenda">Leyenda de alérgenos</summary>
+      <div class="leyenda-panel"><ul id="leyendaLista"></ul></div>
+    </details>
+    </div>
+
+    <p class="aviso-alergias pantalla" id="aviso"></p>
+  </div>
+
+  <div class="catbar" id="catbarWrap">
+    <nav aria-label="Categorías" id="catnav" data-ui-label="aria_cats"><ul id="catbar"></ul></nav>
+  </div>
+
+  <div class="wrap" id="lista" tabindex="-1">
+    <p class="print-only" id="printTitulo" style="font-size:14pt"></p>
+    <div id="menuDia"></div>
+    <div id="platos"></div>
+    <p class="vacio" id="vacio" hidden></p>
+    <div class="pie-carta" id="pieCarta"></div>
+    <p class="aviso-alergias print-only" id="avisoPrint"></p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="terra, inicio">terra</a>
+    <ul>
+      <li><a class="edit" href="#" data-ui="pie_priv">Política de privacidad</a></li>
+      <li><a class="edit" href="#" data-ui="pie_cook">Política de cookies</a></li>
+      <li><a class="edit" href="#" data-ui="pie_legal">Aviso legal</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="barra" role="group" aria-label="Acciones rápidas" data-ui-label="aria_barra">
+  <a class="btn btn-cobre" href="index.html#reservas" data-ui="reservar">Reservar</a>
+  <a class="btn btn-linea" href="tel:+34960488254" data-ui="llamar">Llamar</a>
+</div>
+
+<aside class="propuesta" aria-label="Franja para el propietario">
+  <div class="wrap">
+    <span class="aviso">Esta franja no aparece en la web publicada</span>
+    <h2>La carta, pensada para quien la usa</h2>
+    <p>Los datos salen de un único archivo, <code>carta.json</code>: cambiar un precio o un plato es editar una línea y la carta se actualiza en castellano, valenciano e inglés. Los alérgenos que no se pudieron confirmar aparecen como "pregunta al personal".</p>
+    <button class="btn btn-linea" type="button" id="resaltar" style="margin-top:1.4rem">Resaltar datos a confirmar</button>
+  </div>
+</aside>
+
+<script>
+(function(){
+  var UI={
+    es:{
+      skip:"Ir a la carta",menu:"Menú",nav_filosofia:"Filosofía",nav_cartas:"Cartas",nav_idiomas:"Idiomas",reservar_larga:"Hacer una reserva",reservar:"Reservar",llamar:"Llamar",
+      t_menu:"Menú del día",t_mediodia:"Mediodía",t_noche:"Noche",t_bebidas:"Bebidas",
+      t_menu_long:"Menú del día",t_mediodia_long:"Carta mediodía",t_noche_long:"Carta noche",t_bebidas_long:"Bebidas",
+      h1:"La carta",lead:"Toda la carta en una sola página. Busca un plato o marca lo que no puedes tomar.",
+      aria_cartas:"Cartas",aria_cats:"Categorías de la carta",aria_barra:"Acciones rápidas",
+      buscar:"Buscar un plato",ph:"Arroz, pulpo, flan…",evitar:"Evitar alérgenos",
+      ayuda:"Marca los alérgenos que debes evitar. Los platos que los contienen se atenúan y te decimos cuántos son.",
+      ocultar:"Ocultar esos platos en vez de atenuarlos",
+      tam:"Letra",menos:"Reducir el tamaño de letra",mas:"Aumentar el tamaño de letra",
+      imprimir:"Imprimir / PDF",compartir:"Compartir",copiado:"Enlace copiado",limpiar:"Limpiar filtros",
+      leyenda:"Leyenda de alérgenos",
+      aviso:"Bajo previo aviso adaptamos el menú a vuestras alergias, intolerancias o restricciones alimentarias.",consulta:"Consúltanos al",
+      pie_priv:"Política de privacidad",pie_cook:"Política de cookies",pie_legal:"Aviso legal",
+      vacio:"Ningún plato coincide. Prueba con otra búsqueda o quita algún filtro.",
+      consultar:"Alérgenos: pregunta al personal",contiene:"Contiene lo que evitas: ",
+      bebidasAlg:"En esta carta no se indican los alérgenos de las bebidas. Pregunta al personal.",
+      psm:"P/SM: precio según mercado.",tambien:"También hay resultados en: ",
+      n1:"plato",nn:"platos",b1:"bebida",bn:"bebidas",
+      cnt_all:"{t} en esta carta.",cnt_q:"{s} encontrados.",cnt_q1:"{s} encontrado.",
+      cnt_f:"{v} visibles de {t}.",cnt_dim:"{a} contienen {l} y se muestran atenuados.",cnt_hid:"{a} contienen {l} y se han ocultado.",cnt_unk:"{u} a consultar con el personal.",cnt_none:"Ningún plato contiene {l}.",
+      y:" y ",precioPor:"Precio: ",
+      print_t:"Carta · terra · Cullera · C/ Riu 2 · 960 488 254"
+    },
+    va:{
+      skip:"Anar a la carta",menu:"Menú",nav_filosofia:"Filosofia",nav_cartas:"Cartes",nav_idiomas:"Idiomes",reservar_larga:"Fer una reserva",reservar:"Reservar",llamar:"Telefonar",
+      t_menu:"Menú del dia",t_mediodia:"Migdia",t_noche:"Nit",t_bebidas:"Begudes",
+      t_menu_long:"Menú del dia",t_mediodia_long:"Carta de migdia",t_noche_long:"Carta de nit",t_bebidas_long:"Begudes",
+      h1:"La carta",lead:"Tota la carta en una sola pàgina. Busca un plat o marca el que no pots menjar.",
+      aria_cartas:"Cartes",aria_cats:"Categories de la carta",aria_barra:"Accions ràpides",
+      buscar:"Buscar un plat",ph:"Arròs, polp, flam…",evitar:"Evitar al·lèrgens",
+      ayuda:"Marca els al·lèrgens que has d'evitar. Els plats que els contenen s'atenuen i t'avisem de quants són.",
+      ocultar:"Amagar eixos plats en lloc d'atenuar-los",
+      tam:"Lletra",menos:"Reduir la mida de la lletra",mas:"Augmentar la mida de la lletra",
+      imprimir:"Imprimir / PDF",compartir:"Compartir",copiado:"Enllaç copiat",limpiar:"Netejar filtres",
+      leyenda:"Llegenda d'al·lèrgens",
+      aviso:"Amb avís previ adaptem el menú a les vostres al·lèrgies, intoleràncies o restriccions alimentàries.",consulta:"Consulteu-nos al",
+      pie_priv:"Política de privacitat",pie_cook:"Política de galetes",pie_legal:"Avís legal",
+      vacio:"Cap plat coincidix. Prova amb una altra cerca o lleva algun filtre.",
+      consultar:"Al·lèrgens: pregunta al personal",contiene:"Conté el que evites: ",
+      bebidasAlg:"En esta carta no s'indiquen els al·lèrgens de les begudes. Pregunta al personal.",
+      psm:"P/SM: preu segons mercat.",tambien:"També hi ha resultats en: ",
+      n1:"plat",nn:"plats",b1:"beguda",bn:"begudes",
+      cnt_all:"{t} en esta carta.",cnt_q:"{s} trobats.",cnt_q1:"{s} trobat.",
+      cnt_f:"{v} visibles de {t}.",cnt_dim:"{a} contenen {l} i es mostren atenuats.",cnt_hid:"{a} contenen {l} i s'han amagat.",cnt_unk:"{u} per consultar amb el personal.",cnt_none:"Cap plat conté {l}.",
+      y:" i ",precioPor:"Preu: ",
+      print_t:"Carta · terra · Cullera · C/ Riu 2 · 960 488 254"
+    },
+    en:{
+      skip:"Skip to the menu",menu:"Menu",nav_filosofia:"Philosophy",nav_cartas:"Menus",nav_idiomas:"Languages",reservar_larga:"Book a table",reservar:"Book",llamar:"Call",
+      t_menu:"Daily menu",t_mediodia:"Lunch",t_noche:"Dinner",t_bebidas:"Drinks",
+      t_menu_long:"Daily menu",t_mediodia_long:"Lunch menu",t_noche_long:"Dinner menu",t_bebidas_long:"Drinks",
+      h1:"The menu",lead:"The whole menu on one page. Search for a dish or tick what you cannot eat.",
+      aria_cartas:"Menus",aria_cats:"Menu categories",aria_barra:"Quick actions",
+      buscar:"Search for a dish",ph:"Rice, octopus, flan…",evitar:"Avoid allergens",
+      ayuda:"Tick the allergens you need to avoid. Dishes that contain them are dimmed and we tell you how many there are.",
+      ocultar:"Hide those dishes instead of dimming them",
+      tam:"Text",menos:"Decrease text size",mas:"Increase text size",
+      imprimir:"Print / PDF",compartir:"Share",copiado:"Link copied",limpiar:"Clear filters",
+      leyenda:"Allergen key",
+      aviso:"With prior notice, we adapt the menu to your allergies, intolerances or dietary restrictions.",consulta:"Ask us on",
+      pie_priv:"Privacy policy",pie_cook:"Cookie policy",pie_legal:"Legal notice",
+      vacio:"No dishes match. Try another search or remove a filter.",
+      consultar:"Allergens: ask the staff",contiene:"Contains what you avoid: ",
+      bebidasAlg:"Allergens are not listed for drinks on this menu. Please ask the staff.",
+      psm:"P/SM: price according to market.",tambien:"Also found in: ",
+      n1:"dish",nn:"dishes",b1:"drink",bn:"drinks",
+      cnt_all:"{t} on this menu.",cnt_q:"{s} found.",cnt_q1:"{s} found.",
+      cnt_f:"{v} visible out of {t}.",cnt_dim:"{a} contain {l} and are dimmed.",cnt_hid:"{a} contain {l} and are hidden.",cnt_unk:"{u} to check with the staff.",cnt_none:"No dish contains {l}.",
+      y:" and ",precioPor:"Price: ",
+      print_t:"Menu · terra · Cullera · C/ Riu 2 · +34 960 488 254"
+    }
+  };
+  var HTMLLANG={es:'es',va:'ca-ES-valencia',en:'en'};
+  var TITLES={es:"Carta · Terra, restaurante en Cullera",va:"Carta · Terra, restaurant a Cullera",en:"Menu · Terra, restaurant in Cullera"};
+  var ZOOMS=[1,1.2,1.4,1.7,2];
+  var TABS=['menu','mediodia','noche','bebidas'];
+  var lang='es',tab='menu',zi=0,DATA=null,q='',avoid={},hideMode=false,rows=[];
+  var $=function(id){return document.getElementById(id);};
+  function store(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  function load(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+  function norm(s){return (s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function t(k){return UI[lang][k];}
+  function g(o){return o?(o[lang]||o.es):'';}
+  function plural(n){var b=tab==='bebidas';return n+' '+(b?(n===1?t('b1'):t('bn')):(n===1?t('n1'):t('nn')));}
+  function icon(a){return '<svg class="ic" aria-hidden="true" focusable="false"><use href="#a-'+a+'"/></svg>';}
+  function carta(id){for(var i=0;i<DATA.cartas.length;i++)if(DATA.cartas[i].id===id)return DATA.cartas[i];}
+  function usedAllergens(){
+    var o={},list=[];
+    DATA.cartas.forEach(function(c){c.categorias.forEach(function(s){s.platos.forEach(function(p){(p.alergenos||[]).forEach(function(a){if(!o[a]){o[a]=1;list.push(a);}});});});});
+    var order=Object.keys(DATA.alergenos);return order.filter(function(a){return o[a];});
+  }
+
+  /* ---------- interfaz estática ---------- */
+  function applyUI(){
+    var T=UI[lang];
+    document.querySelectorAll('[data-ui]').forEach(function(el){var k=el.getAttribute('data-ui');if(T[k]!==undefined)el.textContent=T[k];});
+    document.querySelectorAll('[data-ui-ph]').forEach(function(el){el.placeholder=T[el.getAttribute('data-ui-ph')];});
+    document.querySelectorAll('[data-ui-aria]').forEach(function(el){el.setAttribute('aria-label',T[el.getAttribute('data-ui-aria')]);});
+    document.querySelectorAll('[data-ui-label]').forEach(function(el){el.setAttribute('aria-label',T[el.getAttribute('data-ui-label')]);});
+    document.documentElement.lang=HTMLLANG[lang];
+    document.title=TITLES[lang];
+    document.querySelectorAll('[data-lang]').forEach(function(b){b.setAttribute('aria-current',b.getAttribute('data-lang')===lang?'true':'false');});
+    $('aviso').innerHTML=esc(T.aviso)+' '+esc(T.consulta)+' <a href="tel:+34960488254">960 488 254</a>.';
+    $('avisoPrint').textContent=T.aviso+' '+T.consulta+' 960 488 254.';
+  }
+
+  /* ---------- chips y leyenda (según los datos) ---------- */
+  function buildAllergenUI(){
+    var used=usedAllergens(),h='',l='';
+    used.forEach(function(a){
+      h+='<div class="chip"><input type="checkbox" id="alg-'+a+'" data-alg="'+a+'"'+(avoid[a]?' checked':'')+'><label for="alg-'+a+'">'+icon(a)+'<span>'+esc(g(DATA.alergenos[a]))+'</span></label></div>';
+      l+='<li>'+icon(a)+'<span>'+esc(g(DATA.alergenos[a]))+'</span></li>';
+    });
+    $('chips').innerHTML=h;$('leyendaLista').innerHTML=l;
+  }
+
+  /* ---------- pintar la carta activa ---------- */
+  function renderCarta(){
+    var c=carta(tab),h='',nav='';
+    rows=[];
+    TABS.forEach(function(id){document.querySelectorAll('[data-tab="'+id+'"]').forEach(function(a){a.setAttribute('aria-current',id===tab?'true':'false');});});
+    $('printTitulo').textContent=t('print_t')+' · '+g(c.titulo);
+    var md='';
+    if(c.precioMenu){md='<div class="menu-dia"><p class="importe">'+esc(c.precioMenu.importe)+'</p><p class="iva">'+esc(g(c.precioMenu.nota))+'</p><p class="nota-menu">'+esc(g(c.nota))+'</p></div>';}
+    $('menuDia').innerHTML=md;
+    c.categorias.forEach(function(s,si){
+      var cid='cat-'+tab+'-'+s.id;
+      nav+='<li data-cat="'+cid+'"><a href="#'+tab+'/'+s.id+'" data-cid="'+cid+'">'+esc(g(s.titulo))+'</a></li>';
+      h+='<section class="cat" id="'+cid+'" aria-labelledby="h-'+cid+'"><div class="cat-cab"><h2 id="h-'+cid+'">'+esc(g(s.titulo))+'</h2>'+(s.nota?'<p class="nota">'+esc(g(s.nota))+'</p>':'')+'</div><ul class="platos">';
+      s.platos.forEach(function(p,pi){
+        var al=p.alergenos,unk=(al===null||(al===undefined&&!c.sinAlergenos&&false));
+        var ph='<li class="plato" data-i="'+rows.length+'"><div class="cab"><span class="nombre">'+esc(g(p.nombre))+'</span>';
+        if(p.precio){ph+='<span class="precio"><span class="sr">'+esc(t('precioPor'))+'</span>'+esc(g(p.precio))+(p.precioNota?'<small>'+esc(g(p.precioNota))+'</small>':'')+'</span>';}
+        ph+='</div>';
+        if(p.descripcion)ph+='<p class="desc">'+esc(g(p.descripcion))+'</p>';
+        if(al&&al.length){ph+='<ul class="alg" role="list">';al.forEach(function(a){ph+='<li data-a="'+a+'">'+icon(a)+'<span>'+esc(g(DATA.alergenos[a]))+'</span></li>';});ph+='</ul>';}
+        else if(unk){ph+='<p class="desc" style="margin-top:.4em;color:var(--terra-salvia)"><span class="edit">'+esc(t('consultar'))+'</span></p>';}
+        ph+='<p class="contiene" hidden></p></li>';
+        h+=ph;
+        rows.push({cid:cid,alg:al||[],unk:unk,txt:norm(g(p.nombre)+' '+(p.nombre.es||'')+' '+g(p.descripcion)+' '+g(s.titulo)),c:tab});
+      });
+      h+='</ul></section>';
+    });
+    $('platos').innerHTML=h;$('catbar').innerHTML=nav;
+    rows.forEach(function(r,i){r.el=document.querySelector('.plato[data-i="'+i+'"]');});
+    var foot='';
+    if(c.sinAlergenos)foot+='<p>'+esc(t('bebidasAlg'))+'</p>';
+    if(JSON.stringify(c).indexOf('"P/SM"')>-1)foot+='<p><span class="edit">'+esc(t('psm'))+'</span></p>';
+    $('pieCarta').innerHTML=foot;
+    $('aviso').hidden=false;
+    var hasAlg=!c.sinAlergenos;
+    $('evitar').hidden=!hasAlg;
+    $('leyenda').hidden=!hasAlg;
+    applyFilter();spy();
+  }
+
+  /* ---------- filtrar ---------- */
+  function avoidList(){return Object.keys(avoid).filter(function(k){return avoid[k];});}
+  function applyFilter(){
+    var c=carta(tab),av=avoidList(),nq=norm(q.trim()),total=rows.length,vis=0,aff=0,unk=0,matchQ=0;
+    var toks=nq?nq.split(/\s+/):[];
+    var counts={};
+    rows.forEach(function(r){
+      var ok=true;toks.forEach(function(w){if(r.txt.indexOf(w)<0)ok=false;});
+      var hit=av.filter(function(a){return r.alg.indexOf(a)>-1;});
+      var is=!c.sinAlergenos&&av.length&&hit.length>0;
+      var isUnk=!c.sinAlergenos&&av.length&&r.unk&&!hit.length;
+      if(ok){matchQ++;if(is)aff++;if(isUnk)unk++;}
+      var hidden=!ok||(is&&hideMode);
+      r.el.hidden=hidden;
+      r.el.classList.toggle('afecta',!!(is||isUnk));
+      r.el.classList.toggle('consultar',!!isUnk);
+      var ct=r.el.querySelector('.contiene');
+      if(is){ct.hidden=false;ct.textContent=t('contiene')+hit.map(function(a){return g(DATA.alergenos[a]);}).join(', ');}
+      else if(isUnk){ct.hidden=false;ct.textContent=t('consultar');}
+      else{ct.hidden=true;ct.textContent='';}
+      r.el.querySelectorAll('.alg li').forEach(function(li){li.classList.toggle('ev',av.indexOf(li.getAttribute('data-a'))>-1);});
+      if(!hidden){vis++;counts[r.cid]=(counts[r.cid]||0)+1;}
+    });
+    document.querySelectorAll('.cat').forEach(function(s){var n=counts[s.id]||0;s.hidden=!n;var li=document.querySelector('#catbar li[data-cat="'+s.id+'"]');if(li)li.hidden=!n;});
+    $('vacio').hidden=vis>0;$('vacio').textContent=t('vacio');
+    // mensajes
+    var msg='';
+    var names=av.map(function(a){return g(DATA.alergenos[a]).toLowerCase();});
+    var list=names.length>1?names.slice(0,-1).join(', ')+t('y')+names[names.length-1]:names[0]||'';
+    if(!c.sinAlergenos&&av.length){
+      if(aff===0&&unk===0)msg=t('cnt_none').replace('{l}',list);
+      else{
+        msg=t('cnt_f').replace('{v}',vis).replace('{t}',total)+' ';
+        if(aff)msg+=(hideMode?t('cnt_hid'):t('cnt_dim')).replace('{a}',plural(aff)).replace('{l}',list)+' ';
+        if(unk)msg+=t('cnt_unk').replace('{u}',plural(unk));
+      }
+    }else if(toks.length){msg=(matchQ===1?t('cnt_q1'):t('cnt_q')).replace('{s}',plural(matchQ));}
+    else msg=t('cnt_all').replace('{t}',plural(total));
+    if(toks.length&&av.length&&!c.sinAlergenos)msg=(matchQ===1?t('cnt_q1'):t('cnt_q')).replace('{s}',plural(matchQ))+' '+msg;
+    $('estado').textContent=msg.trim();
+    var has=!!(toks.length||av.length);
+    $('limpiar').hidden=!has;
+    var n=av.length;$('cuenta').textContent=n?'('+n+')':'';
+    // resultados en otras cartas
+    var other='';
+    if(toks.length){
+      var parts=[];
+      DATA.cartas.forEach(function(oc){
+        if(oc.id===tab)return;var n2=0;
+        oc.categorias.forEach(function(s){s.platos.forEach(function(p){var tx=norm(g(p.nombre)+' '+(p.nombre.es||'')+' '+g(p.descripcion)+' '+g(s.titulo));var ok=true;toks.forEach(function(w){if(tx.indexOf(w)<0)ok=false;});if(ok)n2++;});});
+        if(n2)parts.push('<a href="#'+oc.id+'" data-goto="'+oc.id+'">'+esc(g(oc.titulo))+' ('+n2+')</a>');
+      });
+      if(parts.length)other=esc(t('tambien'))+parts.join(', ');
+    }
+    $('otros').innerHTML=other;
+  }
+
+  /* ---------- pestañas y navegación ---------- */
+  function setTab(id,cat,noScroll){
+    if(TABS.indexOf(id)<0)id='menu';
+    var changed=id!==tab||!rows.length;
+    tab=id;store('terra-carta-tab',id);
+    if(changed)renderCarta();
+    if(cat){var el=$('cat-'+id+'-'+cat);if(el)el.scrollIntoView({block:'start'});}
+    else if(!noScroll&&changed&&window.scrollY>0){window.scrollTo(0,0);}
+  }
+  function parseHash(){
+    var h=decodeURIComponent(location.hash.slice(1)),p=h.split('/');return {tab:p[0],cat:p[1]};
+  }
+  window.addEventListener('hashchange',function(){var h=parseHash();if(TABS.indexOf(h.tab)>-1)setTab(h.tab,h.cat);});
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]');if(!a)return;
+    var h=a.getAttribute('href').slice(1),p=h.split('/');
+    if(TABS.indexOf(p[0])<0)return;
+    e.preventDefault();
+    try{history.replaceState(null,'','#'+p[0]);}catch(x){location.hash='#'+p[0];}
+    setTab(p[0],p[1]);
+    closeMenu();closeDD();
+    if(!p[1]){var tabs=$('tabs');}
+  });
+
+  /* ---------- scroll-spy ---------- */
+  var ticking=false;
+  function spy(){
+    var secs=document.querySelectorAll('.cat:not([hidden])'),cur=null,line=window.innerHeight*0.0+parseFloat(getComputedStyle(document.documentElement).fontSize)*9;
+    secs.forEach(function(s){if(s.getBoundingClientRect().top<=line)cur=s;});
+    if(!cur&&secs.length)cur=null;
+    var links=document.querySelectorAll('#catbar a'),active=null;
+    links.forEach(function(a){var on=cur&&a.getAttribute('data-cid')===cur.id;a.setAttribute('aria-current',on?'true':'false');if(on)active=a;});
+    if(active){var ul=$('catbar'),l=active.parentNode.offsetLeft,w=active.parentNode.offsetWidth;
+      if(l<ul.scrollLeft+8||l+w>ul.scrollLeft+ul.clientWidth-8){ul.scrollLeft=l-16;}}
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;spy();});}},{passive:true});
+
+  /* ---------- controles ---------- */
+  $('q').addEventListener('input',function(e){q=e.target.value;applyFilter();});
+  $('q').addEventListener('keydown',function(e){if(e.key==='Escape'&&q){q='';e.target.value='';applyFilter();}});
+  $('chips').addEventListener('change',function(e){var a=e.target.getAttribute('data-alg');if(a){avoid[a]=e.target.checked;applyFilter();}});
+  $('ocultar').addEventListener('change',function(e){hideMode=e.target.checked;store('terra-carta-hide',hideMode?'1':'0');applyFilter();});
+  $('limpiar').addEventListener('click',function(){q='';$('q').value='';avoid={};document.querySelectorAll('#chips input').forEach(function(i){i.checked=false;});applyFilter();$('q').focus();});
+  document.addEventListener('click',function(e){var a=e.target.closest('[data-goto]');if(a){e.preventDefault();try{history.replaceState(null,'','#'+a.getAttribute('data-goto'));}catch(x){}setTab(a.getAttribute('data-goto'));}});
+
+  function setZoom(i){
+    zi=Math.max(0,Math.min(ZOOMS.length-1,i));
+    $('contenido').style.setProperty('--z',ZOOMS[zi]);
+    $('menos').disabled=zi===0;$('mas').disabled=zi===ZOOMS.length-1;
+    store('terra-carta-zoom',zi);spy();
+  }
+  $('menos').addEventListener('click',function(){setZoom(zi-1);});
+  $('mas').addEventListener('click',function(){setZoom(zi+1);});
+  $('imprimir').addEventListener('click',function(){var d=$('leyenda');var was=d.open;d.open=true;window.print();d.open=was;});
+  $('compartir').addEventListener('click',function(){
+    var url=location.href.split('#')[0]+'#'+tab,title=document.title;
+    if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});return;}
+    var done=function(){var s=$('estado'),prev=s.textContent;s.textContent=t('copiado');setTimeout(function(){applyFilter();},2500);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done,function(){window.prompt(title,url);});}
+    else window.prompt(title,url);
+  });
+
+  /* ---------- idioma, menú, desplegables ---------- */
+  function setLang(l){
+    lang=l;store('terra-lang',l);applyUI();
+    if(DATA){buildAllergenUI();renderCarta();}
+  }
+  document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-lang'));closeDD();});});
+  var dds=document.querySelectorAll('.dd');
+  function closeDD(except){dds.forEach(function(d){if(d!==except){d.classList.remove('open');d.querySelector('.dd-btn').setAttribute('aria-expanded','false');}});}
+  dds.forEach(function(d){var b=d.querySelector('.dd-btn');b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeDD(d);d.classList.toggle('open',o);b.setAttribute('aria-expanded',o);});});
+  document.addEventListener('click',function(e){if(!e.target.closest('.dd'))closeDD();});
+  var nav=$('nav'),mt=$('menuToggle');
+  function closeMenu(){nav.classList.remove('open');mt.setAttribute('aria-expanded','false');}
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();closeMenu();}});
+  mt.addEventListener('click',function(){var o=!nav.classList.contains('open');nav.classList.toggle('open',o);mt.setAttribute('aria-expanded',o);});
+  $('resaltar').addEventListener('click',function(){document.body.classList.toggle('ver-editables');});
+
+  /* ---------- arranque ---------- */
+  var l0=null;
+  try{var ql=new URLSearchParams(location.search).get('lang');l0=ql;}catch(e){}
+  l0=(l0==='va'||l0==='es'||l0==='en')?l0:load('terra-lang');
+  if(l0==='va'||l0==='en')lang=l0;
+  var z0=parseInt(load('terra-carta-zoom'),10);if(z0>=0&&z0<ZOOMS.length)zi=z0;
+  hideMode=load('terra-carta-hide')==='1';$('ocultar').checked=hideMode;
+  applyUI();setZoom(zi);
+  var h0=parseHash(),t0=TABS.indexOf(h0.tab)>-1?h0.tab:(TABS.indexOf(load('terra-carta-tab'))>-1?load('terra-carta-tab'):'menu');
+  tab=t0;
+  fetch('carta.json').then(function(r){return r.json();}).then(function(d){
+    DATA=d;buildAllergenUI();tab=t0;renderCarta();
+    if(h0.cat)setTimeout(function(){var el=$('cat-'+tab+'-'+h0.cat);if(el)el.scrollIntoView();},0);
+  }).catch(function(){
+    $('vacio').hidden=false;$('vacio').textContent='No se ha podido cargar la carta. Llámanos al 960 488 254.';
+  });
+})();
+</script>
+</body>
+</html>

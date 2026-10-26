@@ -1,0 +1,3374 @@
+{
+ "cartas": [
+  {
+   "id": "menu",
+   "titulo": {
+    "es": "Menú del día",
+    "va": "Menú del dia",
+    "en": "Daily menu"
+   },
+   "categorias": [
+    {
+     "id": "starters-lunch-menu",
+     "titulo": {
+      "es": "Entrantes",
+      "va": "Entrants",
+      "en": "Starters"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Croquetas caseras",
+        "va": "Croquetes casolanes",
+        "en": "Homemade croquettes"
+       },
+       "alergenos": []
+      },
+      {
+       "nombre": {
+        "es": "Esgarraet de pimientos a la brasa",
+        "va": "Esgarraet de pimentons a la brasa",
+        "en": "Grilled pepper esgarraet"
+       },
+       "descripcion": {
+        "es": "Aliño de su propia agua. Salazones valencianos.",
+        "va": "Amaniment de la seua pròpia aigua. Salaons valencians.",
+        "en": "Dressed in its own juices. Valencian salt-cured fish."
+       },
+       "alergenos": [
+        "fish"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Ensalada de tomate valenciano",
+        "va": "Amanida de tomaca valenciana",
+        "en": "Valencian tomato salad"
+       },
+       "descripcion": {
+        "es": "Con salmorra y queso de oveja.",
+        "va": "Amb salmorra i formatge d'ovella.",
+        "en": "With salmorra and sheep's cheese."
+       },
+       "alergenos": [
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Berenjena a la brasa",
+        "va": "Albergínia a la brasa",
+        "en": "Grilled eggplant"
+       },
+       "descripcion": {
+        "es": "Con espuma de mantequilla tostada y vinagreta de tomates secos.",
+        "va": "Amb escuma de mantega torrada i vinagreta de tomaques seques.",
+        "en": "With toasted butter foam and sun-dried tomato vinaigrette."
+       },
+       "alergenos": [
+        "dairy",
+        "fish"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Ensaladilla de temporada",
+        "va": "Ensaladilla de temporada",
+        "en": "Seasonal russian salad"
+       },
+       "alergenos": [
+        "eggs"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Fritura de pescaditos de la lonja de Cullera",
+        "va": "Fritura de peixet de la llotja de Cullera",
+        "en": "Fried small fish from Cullera's fish market"
+       },
+       "descripcion": {
+        "es": "Varía según disponibilidad en lonja",
+        "va": "Varia segons disponibilitat en llotja.",
+        "en": "Varies according to availability at the fish market."
+       },
+       "alergenos": [
+        "fish",
+        "gluten"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Panceta lacada a la brasa",
+        "va": "Panxeta lacada a la brasa",
+        "en": "Grilled lacquered bacon"
+       },
+       "descripcion": {
+        "es": "Puré de patata ahumada y huevo a baja temperatura.",
+        "va": "Puré de creïlla fumada i ou a baixa temperatura.",
+        "en": "Smoked potato purée and slow-cooked egg."
+       },
+       "alergenos": [
+        "dairy",
+        "eggs"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "main-dishes-lunch-menu",
+     "titulo": {
+      "es": "Platos principales",
+      "va": "Plats principals",
+      "en": "Main dishes"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Pesca del día",
+        "va": "Peix del dia",
+        "en": "Catch of the day"
+       },
+       "alergenos": [
+        "fish"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Pluma ibérica",
+        "va": "Ploma ibèrica",
+        "en": "Iberian pork shoulder"
+       },
+       "descripcion": {
+        "es": "Crema de chirivía. Demiglace.",
+        "va": "Crema de xirivia. Demiglace.",
+        "en": "Parsnip cream. Demiglace."
+       },
+       "alergenos": [
+        "dairy"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "dry-rice-lunch-menu",
+     "titulo": {
+      "es": "Arroces secos",
+      "va": "Arrossos secs",
+      "en": "Dry rice"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Paella valenciana",
+        "va": "Paella valenciana",
+        "en": "Valencian paella"
+       },
+       "alergenos": []
+      },
+      {
+       "nombre": {
+        "es": "Paella del senyoret",
+        "va": "Paella del senyoret",
+        "en": "Senyoret paella"
+       },
+       "alergenos": [
+        "crustaceans",
+        "fish"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Paella de puchero",
+        "va": "Paella de putxero",
+        "en": "Puchero paella"
+       },
+       "alergenos": []
+      },
+      {
+       "nombre": {
+        "es": "Paella de costilla",
+        "va": "Paella de costelles",
+        "en": "Ribs paella"
+       },
+       "descripcion": {
+        "es": "Verduras de temporada.",
+        "va": "Verdures de temporada.",
+        "en": "Seasonal vegetables."
+       },
+       "alergenos": []
+      },
+      {
+       "nombre": {
+        "es": "Paella de sepia, blanquet y verdura de temporada",
+        "va": "Paella de sípia, blanquet i verdura de temporada",
+        "en": "Cuttlefish, blanquet and seasonal vegetable paella"
+       },
+       "alergenos": [
+        "mollusks"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Fideuá de sobrasada ibérica - marisco",
+        "va": "Fideuà de sobrassada ibèrica - marisc",
+        "en": "Iberian sobrasada fideuà - seafood"
+       },
+       "alergenos": [
+        "mollusks",
+        "crustaceans"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Fideuá del senyoret",
+        "va": "Fideuà del senyoret",
+        "en": "Senyoret fideuà"
+       },
+       "alergenos": [
+        "mollusks",
+        "crustaceans"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "sticky-rice-lunch-menu",
+     "titulo": {
+      "es": "Arroces melosos",
+      "va": "Arrossos melosos",
+      "en": "Creamy rice"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Calamaret - verdura de temporada",
+        "va": "Calamaret - verdura de temporada",
+        "en": "Baby squid - seasonal vegetables"
+       },
+       "alergenos": [
+        "mollusks"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Pollo al ajillo - Hongos",
+        "va": "Pollastre a l'all - Bolets",
+        "en": "Garlic chicken - mushrooms"
+       },
+       "alergenos": []
+      }
+     ]
+    },
+    {
+     "id": "desserts-lunch-menu",
+     "titulo": {
+      "es": "Postres",
+      "va": "Postres",
+      "en": "Desserts"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Flan de vainilla",
+        "va": "Flam de vainilla",
+        "en": "Vanilla flan"
+       },
+       "descripcion": {
+        "es": "Nata de miel de azahar.",
+        "va": "Nata de mel de tarongina.",
+        "en": "Orange blossom honey cream."
+       },
+       "alergenos": [
+        "eggs",
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Crème brûlée de naranjas - Fruta de temporada",
+        "va": "Crème brûlée de taronja - Fruita de temporada",
+        "en": "Orange crème brûlée - Seasonal fruit"
+       },
+       "alergenos": [
+        "eggs",
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Pavlova de hibiscus",
+        "va": "Pavlova d'hibiscus",
+        "en": "Hibiscus pavlova"
+       },
+       "descripcion": {
+        "es": "Helado de fruta de temporada. Cremoso de queso servilleta.",
+        "va": "Gelat de fruita de temporada. Cremós de formatge de tovalló.",
+        "en": "Seasonal fruit ice cream. Servilleta cheese cream."
+       },
+       "alergenos": [
+        "dairy"
+       ]
+      }
+     ]
+    }
+   ],
+   "precioMenu": {
+    "importe": "27,50 €",
+    "nota": {
+     "es": "IVA incluido",
+     "va": "IVA inclòs",
+     "en": "VAT included"
+    }
+   },
+   "nota": {
+    "es": "El menú diario consta de un entrante, un plato principal y un postre, a elección del cliente. Las bebidas y el café no están incluidos en el precio. Una ración de pan incluida.",
+    "va": "El menú diari inclou un entrant, un plat principal i unes postres, a elecció del client. Les begudes i el cafè no estan inclosos en el preu. Una ració de pa inclosa.",
+    "en": "The daily menu includes a starter, a main course and a dessert, chosen by the customer. Drinks and coffee are not included in the price. One serving of bread included."
+   },
+   "sinAlergenos": false
+  },
+  {
+   "id": "mediodia",
+   "titulo": {
+    "es": "Carta mediodía",
+    "va": "Carta de migdia",
+    "en": "Lunch menu"
+   },
+   "categorias": [
+    {
+     "id": "menu-breads",
+     "titulo": {
+      "es": "Panes",
+      "va": "Pans",
+      "en": "Breads"
+     },
+     "nota": {
+      "es": "Todos nuestros panes son elaborados en casa con cereales de proximidad. Se venden por unidad.",
+      "va": "Tots els nostres pans són elaborats a casa amb cereals de proximitat. Es venen per unitat.",
+      "en": "All our breads are homemade with locally sourced grains. They are sold per unit."
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Pan de masa madre",
+        "va": "Pa de massa mare",
+        "en": "Sourdough bread"
+       },
+       "precio": {
+        "es": "2,00 €",
+        "va": "2,00 €",
+        "en": "2,00 €"
+       },
+       "alergenos": [
+        "gluten"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Pan libre de gluten",
+        "va": "Pa sense gluten",
+        "en": "Gluten-free bread"
+       },
+       "precio": {
+        "es": "2,50 €",
+        "va": "2,50 €",
+        "en": "2,50 €"
+       },
+       "alergenos": [
+        "gluten"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "menu-letter-bites",
+     "titulo": {
+      "es": "Bocados",
+      "va": "Bocades",
+      "en": "Bites"
+     },
+     "nota": {
+      "es": "Servidos a partir de las 2 unidades.",
+      "va": "Servits a partir de les 2 unitats.",
+      "en": "Served from 2 units onwards."
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Croquetas de temporada",
+        "va": "Croquetes de temporada",
+        "en": "Seasonal croquettes"
+       },
+       "precio": {
+        "es": "2,80 €",
+        "va": "2,80 €",
+        "en": "2,80 €"
+       },
+       "alergenos": [
+        "gluten",
+        "dairy",
+        "eggs"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Ostra valenciana",
+        "va": "Ostra valenciana",
+        "en": "Valencian oyster"
+       },
+       "precio": {
+        "es": "4,80 €",
+        "va": "4,80 €",
+        "en": "4,80 €"
+       },
+       "alergenos": [
+        "mollusks"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Empanadilla de titaina y atún marinado",
+        "va": "Empanadilla de titaina i tonyina marinada",
+        "en": "Titaina and marinated tuna pasty"
+       },
+       "precio": {
+        "es": "3,70 €",
+        "va": "3,70 €",
+        "en": "3,70 €"
+       },
+       "alergenos": [
+        "fish",
+        "gluten",
+        "sulphites"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Gilda",
+        "va": "Gilda",
+        "en": "Gilda"
+       },
+       "precio": {
+        "es": "3,50 €",
+        "va": "3,50 €",
+        "en": "3,50 €"
+       },
+       "alergenos": [
+        "fish",
+        "sulphites"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "menu-starters",
+     "titulo": {
+      "es": "Entrantes",
+      "va": "Entrants",
+      "en": "Starters"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Cecina de wagyu nacional",
+        "va": "Cecina de wagyu nacional",
+        "en": "Cured national wagyu"
+       },
+       "precio": {
+        "es": "24,00 €",
+        "va": "24,00 €",
+        "en": "24,00 €"
+       },
+       "alergenos": []
+      },
+      {
+       "nombre": {
+        "es": "Esgarraet de pimientos a la brasa",
+        "va": "Esgarraet de pimentons a la brasa",
+        "en": "Grilled pepper esgarraet"
+       },
+       "descripcion": {
+        "es": "Aliño de su propia agua. Salazones valencianos.",
+        "va": "Amaniment de la seua pròpia aigua. Salaons valencians.",
+        "en": "Dressed in its own juices. Valencian salt-cured fish."
+       },
+       "precio": {
+        "es": "14,50 €",
+        "va": "14,50 €",
+        "en": "14,50 €"
+       },
+       "alergenos": [
+        "fish"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Raya",
+        "va": "Rajada",
+        "en": "Stingray"
+       },
+       "descripcion": {
+        "es": "Holandesa. Verdura de temporada.",
+        "va": "Holandesa. Verdura de temporada.",
+        "en": "Hollandaise. Seasonal vegetables."
+       },
+       "precio": {
+        "es": "16,50 €",
+        "va": "16,50 €",
+        "en": "16,50 €"
+       },
+       "alergenos": [
+        "fish",
+        "eggs",
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Sepionet a la brasa",
+        "va": "Sepionet a la brasa",
+        "en": "Grilled cuttlefish"
+       },
+       "descripcion": {
+        "es": "Salsa de mantequilla tostada. Verdura de temporada.",
+        "va": "Salsa de mantega torrada. Verdura de temporada.",
+        "en": "Toasted butter sauce. Seasonal vegetables."
+       },
+       "precio": {
+        "es": "17,50 €",
+        "va": "17,50 €",
+        "en": "17,50 €"
+       },
+       "alergenos": [
+        "mollusks",
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Calamar de playa a la romana",
+        "va": "Calamar de platja a la romana",
+        "en": "Roman-style beach squid"
+       },
+       "precio": {
+        "es": "15,50 €",
+        "va": "15,50 €",
+        "en": "15,50 €"
+       },
+       "alergenos": [
+        "gluten",
+        "mollusks"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Calamar de playa a la brasa",
+        "va": "Calamar de platja a la brasa",
+        "en": "Grilled beach squid"
+       },
+       "precio": {
+        "es": "19,50 €",
+        "va": "19,50 €",
+        "en": "19,50 €"
+       },
+       "alergenos": [
+        "mollusks"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Pulpo a la brasa",
+        "va": "Polp a la brasa",
+        "en": "Grilled octopus"
+       },
+       "descripcion": {
+        "es": "Crema de patata ahumada. Pesto de tomates secos.",
+        "va": "Crema de creïlla fumada. Pesto de tomaques seques.",
+        "en": "Smoked potato cream. Dried tomato pesto."
+       },
+       "precio": {
+        "es": "18,50 €",
+        "va": "18,50 €",
+        "en": "18,50 €"
+       },
+       "alergenos": [
+        "dairy",
+        "nuts",
+        "mollusks"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Berenjena a la llama",
+        "va": "Albergínia a la flama",
+        "en": "Burnt eggplant"
+       },
+       "descripcion": {
+        "es": "Espuma de mantequilla tostada. Tartar de pescado del día. Vinagreta de tomates secos.",
+        "va": "Escuma de mantega torrada. Tàrtar de peix del dia. Vinagreta de tomaques seques.",
+        "en": "Toasted butter foam. Fish tartare of the day. Sun-dried tomato vinaigrette."
+       },
+       "precio": {
+        "es": "17,50 €",
+        "va": "17,50 €",
+        "en": "17,50 €"
+       },
+       "alergenos": [
+        "dairy",
+        "fish"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Mollejas de vaca a la brasa",
+        "va": "Melses de vaca a la brasa",
+        "en": "Grilled beef sweetbreads"
+       },
+       "descripcion": {
+        "es": "Emulsión de zanahorias escabechadas.",
+        "va": "Emulsió de pastanagues escabetxades.",
+        "en": "Pickled carrot emulsion."
+       },
+       "precio": {
+        "es": "21,50 €",
+        "va": "21,50 €",
+        "en": "21,50 €"
+       },
+       "alergenos": []
+      }
+     ]
+    },
+    {
+     "id": "menu-fish",
+     "titulo": {
+      "es": "Pescados",
+      "va": "Peixos",
+      "en": "Fish"
+     },
+     "nota": {
+      "es": "Cada día seleccionamos lo mejor que nos ofrece la lonja. Por eso, nuestras propuestas cambian según la pesca del día. Consulta con nuestro equipo las opciones disponibles fuera de carta.",
+      "va": "Cada dia seleccionem el millor que ens oferix la llotja. Per això, les nostres propostes canvien segons la pesca del dia. Consulta amb el nostre equip les opcions disponibles fora de carta.",
+      "en": "Every day we select the best from the fish market. Therefore, our proposals change according to the catch of the day. Ask our team about the options available off the menu."
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Pescado del día",
+        "va": "Peix del dia",
+        "en": "Fish of the day"
+       },
+       "precio": {
+        "es": "P/SM",
+        "va": "P/SM",
+        "en": "P/SM"
+       },
+       "confirmar": true,
+       "alergenos": [
+        "fish"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "menu-seafood",
+     "titulo": {
+      "es": "Mariscos",
+      "va": "Marisc",
+      "en": "Seafood"
+     },
+     "nota": {
+      "es": "Cada día seleccionamos lo mejor que nos ofrece la lonja. Por eso, nuestras propuestas cambian según el marisco disponible del día. Consulta con nuestro equipo las opciones disponibles fuera de carta.",
+      "va": "Cada dia seleccionem el millor que ens oferix la llotja. Per això, les nostres propostes canvien segons el marisc disponible del dia. Consulta amb el nostre equip les opcions disponibles fora de carta.",
+      "en": "Every day we select the best from the fish market. Therefore, our proposals change according to the seafood available that day. Ask our team about the options available off the menu."
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Marisco del día",
+        "va": "Marisc del dia",
+        "en": "Seafood of the day"
+       },
+       "precio": {
+        "es": "P/SM",
+        "va": "P/SM",
+        "en": "P/SM"
+       },
+       "confirmar": true,
+       "alergenos": [
+        "crustaceans",
+        "mollusks"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "menu-meats",
+     "titulo": {
+      "es": "Carnes",
+      "va": "Carns",
+      "en": "Meats"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Jarrete de cordero",
+        "va": "Garreta de corder",
+        "en": "Lamb shank"
+       },
+       "descripcion": {
+        "es": "A baja temperatura lacado en brasa. Parmentier de apionabo y verdura de temporada.",
+        "va": "A baixa temperatura lacada a la brasa. Parmentier d'api-rave i verdura de temporada.",
+        "en": "Slow-cooked and glazed on the grill. Celeriac parmentier and seasonal vegetables."
+       },
+       "precio": {
+        "es": "20,50 €",
+        "va": "20,50 €",
+        "en": "20,50 €"
+       },
+       "alergenos": [
+        "celery",
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Lomo alto",
+        "va": "Llom alt",
+        "en": "High loin"
+       },
+       "descripcion": {
+        "es": "Salsa Foyot. Patatas fritas.",
+        "va": "Salsa Foyot. Creïlles fregides.",
+        "en": "Foyot Sauce. French Fries."
+       },
+       "precio": {
+        "es": "26,50 €",
+        "va": "26,50 €",
+        "en": "26,50 €"
+       },
+       "alergenos": [
+        "eggs"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Solomillo de vaca",
+        "va": "Rellom de vaca",
+        "en": "Beef tenderloin"
+       },
+       "descripcion": {
+        "es": "Demi glace, foie gras y puré de patata ahumado.",
+        "va": "Demi glace, foie gras i puré de creïlla fumada.",
+        "en": "Demi-glace, foie gras and smoked potato purée."
+       },
+       "precio": {
+        "es": "28,00 €",
+        "va": "28,00 €",
+        "en": "28,00 €"
+       },
+       "alergenos": [
+        "sulphites",
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Chuleta de vaca seleccionada",
+        "va": "Xulla de vaca seleccionada",
+        "en": "Selected beef chop"
+       },
+       "descripcion": {
+        "es": "Madurada 35 días. Piquillos caramelizados.",
+        "va": "Madurada 35 dies. Piquillos caramelitzats.",
+        "en": "Aged 35 days. Caramelized piquillo peppers."
+       },
+       "precio": {
+        "es": "75 €",
+        "va": "75 €",
+        "en": "75 €"
+       },
+       "confirmar": true,
+       "alergenos": [],
+       "precioNota": {
+        "es": "por kg",
+        "va": "per kg",
+        "en": "per kg"
+       }
+      }
+     ]
+    },
+    {
+     "id": "menu-dry-rice",
+     "titulo": {
+      "es": "Arroces secos",
+      "va": "Arrossos secs",
+      "en": "Dry rice dishes"
+     },
+     "nota": {
+      "es": "Es fundamental la reserva previa en esta página web. Todos los precios indicados corresponden a raciones individuales.",
+      "va": "És fonamental la reserva prèvia en esta pàgina web. Tots els preus indicats corresponen a racions individuals.",
+      "en": "Prior reservation at this website is essential. All indicated prices are for individual servings."
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Paella valenciana",
+        "va": "Paella valenciana",
+        "en": "Valencian paella"
+       },
+       "precio": {
+        "es": "15,20 €",
+        "va": "15,20 €",
+        "en": "15,20 €"
+       },
+       "alergenos": [
+        "crustaceans",
+        "mollusks",
+        "sulphites"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Paella del 'senyoret'",
+        "va": "Paella del 'senyoret'",
+        "en": "'Senyoret' paella"
+       },
+       "precio": {
+        "es": "17,50 €",
+        "va": "17,50 €",
+        "en": "17,50 €"
+       },
+       "alergenos": [
+        "crustaceans",
+        "fish"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Paella de pescado de roca",
+        "va": "Paella de peix de roca",
+        "en": "Rock fish paella"
+       },
+       "descripcion": {
+        "es": "Marisco.",
+        "va": "Marisc.",
+        "en": "Seafood."
+       },
+       "precio": {
+        "es": "19,50 €",
+        "va": "19,50 €",
+        "en": "19,50 €"
+       },
+       "alergenos": [
+        "crustaceans",
+        "fish"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Paella de puchero",
+        "va": "Paella de putxero",
+        "en": "Puchero paella"
+       },
+       "precio": {
+        "es": "15,80 €",
+        "va": "15,80 €",
+        "en": "15,80 €"
+       },
+       "alergenos": []
+      },
+      {
+       "nombre": {
+        "es": "Paella de perdiz de tiro",
+        "va": "Paella de perdiu de tir",
+        "en": "Game partridge paella"
+       },
+       "descripcion": {
+        "es": "Hongos de temporada.",
+        "va": "Fongs de temporada.",
+        "en": "Seasonal mushrooms."
+       },
+       "precio": {
+        "es": "16,50 €",
+        "va": "16,50 €",
+        "en": "16,50 €"
+       },
+       "alergenos": []
+      },
+      {
+       "nombre": {
+        "es": "Paella de pato de la Albufera",
+        "va": "Paella d'ànec de l'Albufera",
+        "en": "Albufera duck paella"
+       },
+       "descripcion": {
+        "es": "Alcachofas. \"Roget\".",
+        "va": "Carxofes. \"Roget\".",
+        "en": "Artichokes. \"Roget\"."
+       },
+       "precio": {
+        "es": "20,50 €",
+        "va": "20,50 €",
+        "en": "20,50 €"
+       },
+       "alergenos": []
+      },
+      {
+       "nombre": {
+        "es": "Paella de sepia, blanquet y verdura de temporada",
+        "va": "Paella de sípia, blanquet i verdura de temporada",
+        "en": "Cuttlefish, blanquet and seasonal vegetable paella"
+       },
+       "precio": {
+        "es": "15,50 €",
+        "va": "15,50 €",
+        "en": "15,50 €"
+       },
+       "alergenos": [
+        "mollusks"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Fideuá de sobrasada ibérica - marisco",
+        "va": "Fideuà de sobrassada ibèrica - marisc",
+        "en": "Iberian sobrasada fideuà - seafood"
+       },
+       "precio": {
+        "es": "17,50 €",
+        "va": "17,50 €",
+        "en": "17,50 €"
+       },
+       "alergenos": [
+        "mollusks"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Fideuá del senyoret",
+        "va": "Fideuà del senyoret",
+        "en": "Senyoret fideuà"
+       },
+       "precio": {
+        "es": "17,50 €",
+        "va": "17,50 €",
+        "en": "17,50 €"
+       },
+       "alergenos": [
+        "mollusks"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Arroz al horno",
+        "va": "Arròs al forn",
+        "en": "Baked rice"
+       },
+       "precio": {
+        "es": "16,50 €",
+        "va": "16,50 €",
+        "en": "16,50 €"
+       },
+       "alergenos": []
+      }
+     ]
+    },
+    {
+     "id": "menu-sticky-rice",
+     "titulo": {
+      "es": "Arroces melosos",
+      "va": "Arrossos melosos",
+      "en": "Sticky rice dishes"
+     },
+     "nota": {
+      "es": "Todos los precios indicados corresponden a raciones individuales. Se sugiere previa reserva.",
+      "va": "Tots els preus indicats corresponen a racions individuals. Se suggerix prèvia reserva.",
+      "en": "All prices indicated are for individual servings. Reservation is suggested."
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Arroz, pollo al ajillo y hongos",
+        "va": "Arròs, pollastre a l'all i bolets",
+        "en": "Rice with garlic chicken and mushrooms"
+       },
+       "precio": {
+        "es": "16,50 €",
+        "va": "16,50 €",
+        "en": "16,50 €"
+       },
+       "alergenos": null,
+       "confirmar": true
+      },
+      {
+       "nombre": {
+        "es": "Arroz, 'Fesols i nap' y pato de la Albufera",
+        "va": "Arròs, 'Fesols i nap' i ànec de l'Albufera",
+        "en": "Rice with 'Fesols i nap' and Albufera duck"
+       },
+       "precio": {
+        "es": "20,50 €",
+        "va": "20,50 €",
+        "en": "20,50 €"
+       },
+       "alergenos": null,
+       "confirmar": true
+      },
+      {
+       "nombre": {
+        "es": "Arroz, sepionets y langosta",
+        "va": "Arròs, sepionets i llagosta",
+        "en": "Rice with cuttlefish and lobster"
+       },
+       "precio": {
+        "es": "29,50 €",
+        "va": "29,50 €",
+        "en": "29,50 €"
+       },
+       "alergenos": [
+        "mollusks",
+        "crustaceans"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Arroz, sepia y verdura",
+        "va": "Arròs, sípia i verdura",
+        "en": "Rice with cuttlefish and vegetables"
+       },
+       "precio": {
+        "es": "17,90 €",
+        "va": "17,90 €",
+        "en": "17,90 €"
+       },
+       "alergenos": [
+        "mollusks"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Arroz, gallo de corral y setas de temporada",
+        "va": "Arròs, gall de corral i bolets de temporada",
+        "en": "Rice with free-range rooster and seasonal mushrooms"
+       },
+       "precio": {
+        "es": "17,90 €",
+        "va": "17,90 €",
+        "en": "17,90 €"
+       },
+       "alergenos": null,
+       "confirmar": true
+      }
+     ]
+    },
+    {
+     "id": "menu-stew",
+     "titulo": {
+      "es": "Guisos",
+      "va": "Guisats",
+      "en": "Stews"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Anguila al horno",
+        "va": "Anguila al forn",
+        "en": "Baked eel"
+       },
+       "precio": {
+        "es": "22,50 €",
+        "va": "22,50 €",
+        "en": "22,50 €"
+       },
+       "alergenos": []
+      },
+      {
+       "nombre": {
+        "es": "'All i pebre'",
+        "va": "'All i pebre'",
+        "en": "'All i pebre'"
+       },
+       "precio": {
+        "es": "19,50 €",
+        "va": "19,50 €",
+        "en": "19,50 €"
+       },
+       "alergenos": []
+      },
+      {
+       "nombre": {
+        "es": "Suquet de rape y mariscos",
+        "va": "Suquet de rap i marisc",
+        "en": "Monkfish and seafood suquet"
+       },
+       "descripcion": {
+        "es": "Marisco.",
+        "va": "Marisc.",
+        "en": "Seafood."
+       },
+       "precio": {
+        "es": "22,50 €",
+        "va": "22,50 €",
+        "en": "22,50 €"
+       },
+       "alergenos": [
+        "mollusks",
+        "fish"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Pato y cardos",
+        "va": "Ànec i cards",
+        "en": "Duck and cardoons"
+       },
+       "descripcion": {
+        "es": "Plato de temporada.",
+        "va": "Plat de temporada.",
+        "en": "Seasonal dish."
+       },
+       "precio": {
+        "es": "20,50 €",
+        "va": "20,50 €",
+        "en": "20,50 €"
+       },
+       "alergenos": null,
+       "confirmar": true
+      },
+      {
+       "nombre": {
+        "es": "Encebollado de anguila",
+        "va": "Encebollat d'anguila",
+        "en": "Eel with onions"
+       },
+       "precio": {
+        "es": "19,50 €",
+        "va": "19,50 €",
+        "en": "19,50 €"
+       },
+       "alergenos": [
+        "fish"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Caldereta de mariscos",
+        "va": "Caldereta de marisc",
+        "en": "Seafood stew"
+       },
+       "descripcion": {
+        "es": "Langosta, gamba, cigala.",
+        "va": "Llagosta, gamba, escamarlà.",
+        "en": "Lobster, prawn, scampi."
+       },
+       "precio": {
+        "es": "31,50 €",
+        "va": "31,50 €",
+        "en": "31,50 €"
+       },
+       "alergenos": [
+        "mollusks"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Colloni de cordero lechal - anguila",
+        "va": "Colloni de corder lleter - anguila",
+        "en": "Lamb testicles - eel"
+       },
+       "descripcion": {
+        "es": "Huevos a la cazuela.",
+        "va": "Ous al cassó.",
+        "en": "Eggs casserole."
+       },
+       "precio": {
+        "es": "18,50 €",
+        "va": "18,50 €",
+        "en": "18,50 €"
+       },
+       "alergenos": [
+        "fish"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Espardenya de pato de la albufera y anguila",
+        "va": "Espardenya d'ànec de l'Albufera i anguila",
+        "en": "Albufera duck and eel sea cucumber"
+       },
+       "precio": {
+        "es": "30,50 €",
+        "va": "30,50 €",
+        "en": "30,50 €"
+       },
+       "alergenos": [
+        "fish"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "menu-desserts",
+     "titulo": {
+      "es": "Postres",
+      "va": "Postres",
+      "en": "Desserts"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Flan de vainilla",
+        "va": "Flam de vainilla",
+        "en": "Vanilla flan"
+       },
+       "descripcion": {
+        "es": "Nata de miel de azahar.",
+        "va": "Nata de mel de tarongina.",
+        "en": "Orange blossom honey cream."
+       },
+       "precio": {
+        "es": "6,50 €",
+        "va": "6,50 €",
+        "en": "6,50 €"
+       },
+       "alergenos": [
+        "eggs",
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Pavlova de hibiscus",
+        "va": "Pavlova d'hibiscus",
+        "en": "Hibiscus pavlova"
+       },
+       "descripcion": {
+        "es": "Helado de fruta de temporada. Cremoso de queso servilleta.",
+        "va": "Gelat de fruita de temporada. Cremós de formatge de tovalló.",
+        "en": "Seasonal fruit ice cream. Servilleta cheese cream."
+       },
+       "precio": {
+        "es": "7,50 €",
+        "va": "7,50 €",
+        "en": "7,50 €"
+       },
+       "alergenos": [
+        "eggs",
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Helado de manzana granny",
+        "va": "Gelat de poma granny",
+        "en": "Granny apple ice cream"
+       },
+       "descripcion": {
+        "es": "Hinojos en almíbar. Granito de menta. Garrapiñada de semillas.",
+        "va": "Fonoll en almívar. Granissat de menta. Garrapinyada de llavors.",
+        "en": "Fennel in syrup. Mint granita. Candied seeds."
+       },
+       "precio": {
+        "es": "7,50 €",
+        "va": "7,50 €",
+        "en": "7,50 €"
+       },
+       "alergenos": [
+        "gluten"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Crème brûlée de naranjas",
+        "va": "Crème brûlée de taronges",
+        "en": "Orange crème brûlée"
+       },
+       "descripcion": {
+        "es": "Helado de leche merengada.",
+        "va": "Gelat de llet merengada.",
+        "en": "Meringue milk ice cream."
+       },
+       "precio": {
+        "es": "7,00 €",
+        "va": "7,00 €",
+        "en": "7,00 €"
+       },
+       "alergenos": [
+        "eggs",
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Mousseline de almendras",
+        "va": "Mousseline d'ametla",
+        "en": "Almond mousseline"
+       },
+       "descripcion": {
+        "es": "Helado de pera, coca de llanda tostada y melaza de tomillo limonero.",
+        "va": "Gelat de pera, coca de llanda torrada i melassa de timó llimoner.",
+        "en": "Pear ice cream, toasted coca de llanda and lemon thyme molasses."
+       },
+       "precio": {
+        "es": "8,00 €",
+        "va": "8,00 €",
+        "en": "8,00 €"
+       },
+       "alergenos": [
+        "eggs",
+        "dairy",
+        "nuts",
+        "sulphites"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Tarta de chocolate Dulcey",
+        "va": "Pastís de xocolate Dulcey",
+        "en": "Dulcey chocolate cake"
+       },
+       "descripcion": {
+        "es": "Helado de café. Tía María.",
+        "va": "Gelat de cafè. Tía María.",
+        "en": "Coffee ice cream. Tía María."
+       },
+       "precio": {
+        "es": "8,50 €",
+        "va": "8,50 €",
+        "en": "8,50 €"
+       },
+       "alergenos": [
+        "gluten",
+        "eggs",
+        "dairy",
+        "nuts",
+        "sulphites"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Helado de mantecado",
+        "va": "Gelat de mantecado",
+        "en": "Mantecado ice cream"
+       },
+       "precio": {
+        "es": "6,00 €",
+        "va": "6,00 €",
+        "en": "6,00 €"
+       },
+       "alergenos": [
+        "dairy",
+        "eggs"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Helado de leche merengada",
+        "va": "Gelat de llet merengada",
+        "en": "Meringue milk ice cream"
+       },
+       "precio": {
+        "es": "6,00 €",
+        "va": "6,00 €",
+        "en": "6,00 €"
+       },
+       "alergenos": [
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Helado de café y Tía María",
+        "va": "Gelat de cafè i Tía María",
+        "en": "Coffee and Tía María ice cream"
+       },
+       "precio": {
+        "es": "6,00 €",
+        "va": "6,00 €",
+        "en": "6,00 €"
+       },
+       "alergenos": [
+        "dairy",
+        "sulphites"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Helado de agualimón",
+        "va": "Gelat d'aiguallimò",
+        "en": "Lemon water ice cream"
+       },
+       "precio": {
+        "es": "6,00 €",
+        "va": "6,00 €",
+        "en": "6,00 €"
+       },
+       "alergenos": null,
+       "confirmar": true
+      }
+     ]
+    }
+   ],
+   "sinAlergenos": false
+  },
+  {
+   "id": "noche",
+   "titulo": {
+    "es": "Carta noche",
+    "va": "Carta de nit",
+    "en": "Night menu"
+   },
+   "categorias": [
+    {
+     "id": "menu-breads",
+     "titulo": {
+      "es": "Panes",
+      "va": "Pans",
+      "en": "Breads"
+     },
+     "nota": {
+      "es": "Todos nuestros panes son elaborados en casa con cereales de proximidad. Se venden por unidad.",
+      "va": "Tots els nostres pans són elaborats a casa amb cereals de proximitat. Es venen per unitat.",
+      "en": "All our breads are homemade with locally sourced grains. They are sold per unit."
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Pan de masa madre",
+        "va": "Pa de massa mare",
+        "en": "Sourdough bread"
+       },
+       "precio": {
+        "es": "2,00 €",
+        "va": "2,00 €",
+        "en": "2,00 €"
+       },
+       "alergenos": [
+        "gluten"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Pan libre de gluten",
+        "va": "Pa sense gluten",
+        "en": "Gluten-free bread"
+       },
+       "precio": {
+        "es": "2,50 €",
+        "va": "2,50 €",
+        "en": "2,50 €"
+       },
+       "alergenos": [
+        "gluten"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "menu-letter-bites",
+     "titulo": {
+      "es": "Bocados",
+      "va": "Bocades",
+      "en": "Bites"
+     },
+     "nota": {
+      "es": "Servidos a partir de las 2 unidades.",
+      "va": "Servits a partir de les 2 unitats.",
+      "en": "Served from 2 units onwards."
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Croquetas de temporada",
+        "va": "Croquetes de temporada",
+        "en": "Seasonal croquettes"
+       },
+       "precio": {
+        "es": "2,80 €",
+        "va": "2,80 €",
+        "en": "2,80 €"
+       },
+       "alergenos": [
+        "gluten",
+        "dairy",
+        "eggs"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Ostra valenciana",
+        "va": "Ostra valenciana",
+        "en": "Valencian oyster"
+       },
+       "precio": {
+        "es": "4,80 €",
+        "va": "4,80 €",
+        "en": "4,80 €"
+       },
+       "alergenos": [
+        "mollusks"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Empanadilla de titaina y atún marinado",
+        "va": "Empanadilla de titaina i tonyina marinada",
+        "en": "Titaina and marinated tuna pasty"
+       },
+       "precio": {
+        "es": "3,70 €",
+        "va": "3,70 €",
+        "en": "3,70 €"
+       },
+       "alergenos": [
+        "fish",
+        "gluten",
+        "sulphites"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Gilda",
+        "va": "Gilda",
+        "en": "Gilda"
+       },
+       "precio": {
+        "es": "3,50 €",
+        "va": "3,50 €",
+        "en": "3,50 €"
+       },
+       "alergenos": [
+        "fish",
+        "sulphites"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "menu-starters",
+     "titulo": {
+      "es": "Entrantes",
+      "va": "Entrants",
+      "en": "Starters"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Cecina de wagyu nacional",
+        "va": "Cecina de wagyu nacional",
+        "en": "Cured national wagyu"
+       },
+       "precio": {
+        "es": "24,00 €",
+        "va": "24,00 €",
+        "en": "24,00 €"
+       },
+       "alergenos": []
+      },
+      {
+       "nombre": {
+        "es": "Esgarraet de pimientos a la brasa",
+        "va": "Esgarraet de pimentons a la brasa",
+        "en": "Grilled pepper esgarraet"
+       },
+       "descripcion": {
+        "es": "Aliño de su propia agua. Salazones valencianos.",
+        "va": "Amaniment de la seua pròpia aigua. Salaons valencians.",
+        "en": "Dressed in its own juices. Valencian salt-cured fish."
+       },
+       "precio": {
+        "es": "14,50 €",
+        "va": "14,50 €",
+        "en": "14,50 €"
+       },
+       "alergenos": [
+        "fish"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Raya",
+        "va": "Rajada",
+        "en": "Stingray"
+       },
+       "descripcion": {
+        "es": "Holandesa. Verdura de temporada.",
+        "va": "Holandesa. Verdura de temporada.",
+        "en": "Hollandaise. Seasonal vegetables."
+       },
+       "precio": {
+        "es": "16,50 €",
+        "va": "16,50 €",
+        "en": "16,50 €"
+       },
+       "alergenos": [
+        "fish",
+        "eggs",
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Sepionet a la brasa",
+        "va": "Sepionet a la brasa",
+        "en": "Grilled cuttlefish"
+       },
+       "descripcion": {
+        "es": "Salsa de mantequilla tostada. Verdura de temporada.",
+        "va": "Salsa de mantega torrada. Verdura de temporada.",
+        "en": "Toasted butter sauce. Seasonal vegetables."
+       },
+       "precio": {
+        "es": "17,50 €",
+        "va": "17,50 €",
+        "en": "17,50 €"
+       },
+       "alergenos": [
+        "mollusks",
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Calamar de playa a la romana",
+        "va": "Calamar de platja a la romana",
+        "en": "Roman-style beach squid"
+       },
+       "precio": {
+        "es": "15,50 €",
+        "va": "15,50 €",
+        "en": "15,50 €"
+       },
+       "alergenos": [
+        "gluten",
+        "mollusks"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Calamar de playa a la brasa",
+        "va": "Calamar de platja a la brasa",
+        "en": "Grilled beach squid"
+       },
+       "precio": {
+        "es": "19,50 €",
+        "va": "19,50 €",
+        "en": "19,50 €"
+       },
+       "alergenos": [
+        "mollusks"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Pulpo a la brasa",
+        "va": "Polp a la brasa",
+        "en": "Grilled octopus"
+       },
+       "descripcion": {
+        "es": "Crema de patata ahumada. Pesto de tomates secos.",
+        "va": "Crema de creïlla fumada. Pesto de tomaques seques.",
+        "en": "Smoked potato cream. Dried tomato pesto."
+       },
+       "precio": {
+        "es": "18,50 €",
+        "va": "18,50 €",
+        "en": "18,50 €"
+       },
+       "alergenos": [
+        "dairy",
+        "nuts",
+        "mollusks"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Berenjena a la llama",
+        "va": "Albergínia a la flama",
+        "en": "Burnt eggplant"
+       },
+       "descripcion": {
+        "es": "Espuma de mantequilla tostada. Tartar de pescado del día. Vinagreta de tomates secos.",
+        "va": "Escuma de mantega torrada. Tàrtar de peix del dia. Vinagreta de tomaques seques.",
+        "en": "Toasted butter foam. Fish tartare of the day. Sun-dried tomato vinaigrette."
+       },
+       "precio": {
+        "es": "17,50 €",
+        "va": "17,50 €",
+        "en": "17,50 €"
+       },
+       "alergenos": [
+        "dairy",
+        "fish"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Mollejas de vaca a la brasa",
+        "va": "Melses de vaca a la brasa",
+        "en": "Grilled beef sweetbreads"
+       },
+       "descripcion": {
+        "es": "Emulsión de zanahorias escabechadas.",
+        "va": "Emulsió de pastanagues escabetxades.",
+        "en": "Pickled carrot emulsion."
+       },
+       "precio": {
+        "es": "21,50 €",
+        "va": "21,50 €",
+        "en": "21,50 €"
+       },
+       "alergenos": []
+      }
+     ]
+    },
+    {
+     "id": "menu-fish",
+     "titulo": {
+      "es": "Pescados",
+      "va": "Peixos",
+      "en": "Fish"
+     },
+     "nota": {
+      "es": "Cada día seleccionamos lo mejor que nos ofrece la lonja. Por eso, nuestras propuestas cambian según la pesca del día. Consulta con nuestro equipo las opciones disponibles fuera de carta.",
+      "va": "Cada dia seleccionem el millor que ens oferix la llotja. Per això, les nostres propostes canvien segons la pesca del dia. Consulta amb el nostre equip les opcions disponibles fora de carta.",
+      "en": "Every day we select the best from the fish market. Therefore, our proposals change according to the catch of the day. Ask our team about the options available off the menu."
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Pescado del día",
+        "va": "Peix del dia",
+        "en": "Fish of the day"
+       },
+       "precio": {
+        "es": "P/SM",
+        "va": "P/SM",
+        "en": "P/SM"
+       },
+       "confirmar": true,
+       "alergenos": [
+        "fish"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "menu-seafood",
+     "titulo": {
+      "es": "Mariscos",
+      "va": "Marisc",
+      "en": "Seafood"
+     },
+     "nota": {
+      "es": "Cada día seleccionamos lo mejor que nos ofrece la lonja. Por eso, nuestras propuestas cambian según el marisco disponible del día. Consulta con nuestro equipo las opciones disponibles fuera de carta.",
+      "va": "Cada dia seleccionem el millor que ens oferix la llotja. Per això, les nostres propostes canvien segons el marisc disponible del dia. Consulta amb el nostre equip les opcions disponibles fora de carta.",
+      "en": "Every day we select the best from the fish market. Therefore, our proposals change according to the seafood available that day. Ask our team about the options available off the menu."
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Marisco del día",
+        "va": "Marisc del dia",
+        "en": "Seafood of the day"
+       },
+       "precio": {
+        "es": "P/SM",
+        "va": "P/SM",
+        "en": "P/SM"
+       },
+       "confirmar": true,
+       "alergenos": [
+        "crustaceans",
+        "mollusks"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "menu-meats",
+     "titulo": {
+      "es": "Carnes",
+      "va": "Carns",
+      "en": "Meats"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Jarrete de cordero",
+        "va": "Garreta de corder",
+        "en": "Lamb shank"
+       },
+       "descripcion": {
+        "es": "A baja temperatura lacado en brasa. Parmentier de apionabo y verdura de temporada.",
+        "va": "A baixa temperatura lacada a la brasa. Parmentier d'api-rave i verdura de temporada.",
+        "en": "Slow-cooked and glazed on the grill. Celeriac parmentier and seasonal vegetables."
+       },
+       "precio": {
+        "es": "20,50 €",
+        "va": "20,50 €",
+        "en": "20,50 €"
+       },
+       "alergenos": [
+        "celery",
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Lomo alto",
+        "va": "Llom alt",
+        "en": "High loin"
+       },
+       "descripcion": {
+        "es": "Salsa Foyot. Patatas fritas.",
+        "va": "Salsa Foyot. Creïlles fregides.",
+        "en": "Foyot Sauce. French Fries."
+       },
+       "precio": {
+        "es": "26,50 €",
+        "va": "26,50 €",
+        "en": "26,50 €"
+       },
+       "alergenos": [
+        "eggs"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Solomillo de vaca",
+        "va": "Rellom de vaca",
+        "en": "Beef tenderloin"
+       },
+       "descripcion": {
+        "es": "Demi glace, foie gras y puré de patata ahumado.",
+        "va": "Demi glace, foie gras i puré de creïlla fumada.",
+        "en": "Demi-glace, foie gras and smoked potato purée."
+       },
+       "precio": {
+        "es": "28,00 €",
+        "va": "28,00 €",
+        "en": "28,00 €"
+       },
+       "alergenos": [
+        "sulphites",
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Chuleta de vaca seleccionada",
+        "va": "Xulla de vaca seleccionada",
+        "en": "Selected beef chop"
+       },
+       "descripcion": {
+        "es": "Madurada 35 días. Piquillos caramelizados.",
+        "va": "Madurada 35 dies. Piquillos caramelitzats.",
+        "en": "Aged 35 days. Caramelized piquillo peppers."
+       },
+       "precio": {
+        "es": "75 €",
+        "va": "75 €",
+        "en": "75 €"
+       },
+       "confirmar": true,
+       "alergenos": [],
+       "precioNota": {
+        "es": "por kg",
+        "va": "per kg",
+        "en": "per kg"
+       }
+      }
+     ]
+    },
+    {
+     "id": "menu-desserts",
+     "titulo": {
+      "es": "Postres",
+      "va": "Postres",
+      "en": "Desserts"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Flan de vainilla",
+        "va": "Flam de vainilla",
+        "en": "Vanilla flan"
+       },
+       "descripcion": {
+        "es": "Nata de miel de azahar.",
+        "va": "Nata de mel de tarongina.",
+        "en": "Orange blossom honey cream."
+       },
+       "precio": {
+        "es": "6,50 €",
+        "va": "6,50 €",
+        "en": "6,50 €"
+       },
+       "alergenos": [
+        "eggs",
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Pavlova de hibiscus",
+        "va": "Pavlova d'hibiscus",
+        "en": "Hibiscus pavlova"
+       },
+       "descripcion": {
+        "es": "Helado de fruta de temporada. Cremoso de queso servilleta.",
+        "va": "Gelat de fruita de temporada. Cremós de formatge de tovalló.",
+        "en": "Seasonal fruit ice cream. Servilleta cheese cream."
+       },
+       "precio": {
+        "es": "7,50 €",
+        "va": "7,50 €",
+        "en": "7,50 €"
+       },
+       "alergenos": [
+        "eggs",
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Helado de manzana granny",
+        "va": "Gelat de poma granny",
+        "en": "Granny apple ice cream"
+       },
+       "descripcion": {
+        "es": "Hinojos en almíbar. Granito de menta. Garrapiñada de semillas.",
+        "va": "Fonoll en almívar. Granissat de menta. Garrapinyada de llavors.",
+        "en": "Fennel in syrup. Mint granita. Candied seeds."
+       },
+       "precio": {
+        "es": "7,50 €",
+        "va": "7,50 €",
+        "en": "7,50 €"
+       },
+       "alergenos": [
+        "gluten"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Crème brûlée de naranjas",
+        "va": "Crème brûlée de taronges",
+        "en": "Orange crème brûlée"
+       },
+       "descripcion": {
+        "es": "Helado de leche merengada.",
+        "va": "Gelat de llet merengada.",
+        "en": "Meringue milk ice cream."
+       },
+       "precio": {
+        "es": "7,00 €",
+        "va": "7,00 €",
+        "en": "7,00 €"
+       },
+       "alergenos": [
+        "eggs",
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Mousseline de almendras",
+        "va": "Mousseline d'ametla",
+        "en": "Almond mousseline"
+       },
+       "descripcion": {
+        "es": "Helado de pera, coca de llanda tostada y melaza de tomillo limonero.",
+        "va": "Gelat de pera, coca de llanda torrada i melassa de timó llimoner.",
+        "en": "Pear ice cream, toasted coca de llanda and lemon thyme molasses."
+       },
+       "precio": {
+        "es": "8,00 €",
+        "va": "8,00 €",
+        "en": "8,00 €"
+       },
+       "alergenos": [
+        "eggs",
+        "dairy",
+        "nuts",
+        "sulphites"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Tarta de chocolate Dulcey",
+        "va": "Pastís de xocolate Dulcey",
+        "en": "Dulcey chocolate cake"
+       },
+       "descripcion": {
+        "es": "Helado de café. Tía María.",
+        "va": "Gelat de cafè. Tía María.",
+        "en": "Coffee ice cream. Tía María."
+       },
+       "precio": {
+        "es": "8,50 €",
+        "va": "8,50 €",
+        "en": "8,50 €"
+       },
+       "alergenos": [
+        "gluten",
+        "eggs",
+        "dairy",
+        "nuts",
+        "sulphites"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Helado de mantecado",
+        "va": "Gelat de mantecado",
+        "en": "Mantecado ice cream"
+       },
+       "precio": {
+        "es": "6,00 €",
+        "va": "6,00 €",
+        "en": "6,00 €"
+       },
+       "alergenos": [
+        "dairy",
+        "eggs"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Helado de leche merengada",
+        "va": "Gelat de llet merengada",
+        "en": "Meringue milk ice cream"
+       },
+       "precio": {
+        "es": "6,00 €",
+        "va": "6,00 €",
+        "en": "6,00 €"
+       },
+       "alergenos": [
+        "dairy"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Helado de café y Tía María",
+        "va": "Gelat de cafè i Tía María",
+        "en": "Coffee and Tía María ice cream"
+       },
+       "precio": {
+        "es": "6,00 €",
+        "va": "6,00 €",
+        "en": "6,00 €"
+       },
+       "alergenos": [
+        "dairy",
+        "sulphites"
+       ]
+      },
+      {
+       "nombre": {
+        "es": "Helado de agualimón",
+        "va": "Gelat d'aiguallimò",
+        "en": "Lemon water ice cream"
+       },
+       "precio": {
+        "es": "6,00 €",
+        "va": "6,00 €",
+        "en": "6,00 €"
+       },
+       "alergenos": null,
+       "confirmar": true
+      }
+     ]
+    }
+   ],
+   "sinAlergenos": false
+  },
+  {
+   "id": "bebidas",
+   "titulo": {
+    "es": "Bebidas",
+    "va": "Begudes",
+    "en": "Drinks"
+   },
+   "categorias": [
+    {
+     "id": "coffee",
+     "titulo": {
+      "es": "Café",
+      "va": "Café",
+      "en": "Coffee"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Café solo",
+        "va": "Cafè sol",
+        "en": "Black coffee"
+       },
+       "precio": {
+        "es": "1,90 €",
+        "va": "1,90 €",
+        "en": "1,90 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Café cortado",
+        "va": "Cafè tallat",
+        "en": "Espresso with a dash of milk"
+       },
+       "precio": {
+        "es": "2,00 €",
+        "va": "2,00 €",
+        "en": "2,00 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Café con leche",
+        "va": "Cafè amb llet",
+        "en": "Coffee with milk"
+       },
+       "precio": {
+        "es": "2,50 €",
+        "va": "2,50 €",
+        "en": "2,50 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Carajillo",
+        "va": "Carajillo",
+        "en": "Coffee with liquor"
+       },
+       "precio": {
+        "es": "3,20 €",
+        "va": "3,20 €",
+        "en": "3,20 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Cremaet",
+        "va": "Cremaet",
+        "en": "Cremaet"
+       },
+       "precio": {
+        "es": "3,50 €",
+        "va": "3,50 €",
+        "en": "3,50 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Café bombón",
+        "va": "Cafè bombó",
+        "en": "Coffee with condensed milk"
+       },
+       "precio": {
+        "es": "2,30 €",
+        "va": "2,30 €",
+        "en": "2,30 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Infusiones",
+        "va": "Infusions",
+        "en": "Infusions"
+       },
+       "precio": {
+        "es": "2,00 €",
+        "va": "2,00 €",
+        "en": "2,00 €"
+       }
+      }
+     ]
+    },
+    {
+     "id": "alcohol-free-drinks",
+     "titulo": {
+      "es": "Aguas y bebidas sin alcohol",
+      "va": "Aigües i begudes sense alcohol",
+      "en": "Water and soft drinks"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Agua mineral sin gas",
+        "va": "Aigua mineral sense gas",
+        "en": "Still mineral water"
+       },
+       "descripcion": {
+        "es": "1/2 litro",
+        "va": "1/2 litre",
+        "en": "1/2 liter"
+       },
+       "precio": {
+        "es": "2,00 €",
+        "va": "2,00 €",
+        "en": "2,00 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Agua con gas",
+        "va": "Aigua amb gas",
+        "en": "Sparkling water"
+       },
+       "precio": {
+        "es": "2,70 €",
+        "va": "2,70 €",
+        "en": "2,70 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Coca Cola / Fanta / Otros",
+        "va": "Coca Cola / Fanta / Altres",
+        "en": "Coca Cola / Fanta / Others"
+       },
+       "precio": {
+        "es": "2,50 €",
+        "va": "2,50 €",
+        "en": "2,50 €"
+       }
+      }
+     ]
+    },
+    {
+     "id": "beers",
+     "titulo": {
+      "es": "Cervezas",
+      "va": "Cerveses",
+      "en": "Beers"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Cerveza de barril Turia o Victoria",
+        "va": "Cervesa de barril Turia o Victoria",
+        "en": "Turia or Victoria draft beer"
+       },
+       "descripcion": {
+        "es": "Doble",
+        "va": "Doble",
+        "en": "Double"
+       },
+       "precio": {
+        "es": "3,00 €",
+        "va": "3,00 €",
+        "en": "3,00 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Cerveza especial / importada",
+        "va": "Cervesa especial / importada",
+        "en": "Special / imported beer"
+       },
+       "descripcion": {
+        "es": "1/3 litro",
+        "va": "1/3 litre",
+        "en": "1/3 liter"
+       },
+       "precio": {
+        "es": "3,50 €",
+        "va": "3,50 €",
+        "en": "3,50 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Cerveza sin alcohol",
+        "va": "Cervesa sense alcohol",
+        "en": "Non-alcoholic beer"
+       },
+       "descripcion": {
+        "es": "1/3 litro",
+        "va": "1/3 litre",
+        "en": "1/3 liter"
+       },
+       "precio": {
+        "es": "3,50 €",
+        "va": "3,50 €",
+        "en": "3,50 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Cerveza sin gluten",
+        "va": "Cervesa sense gluten",
+        "en": "Gluten-free beer"
+       },
+       "descripcion": {
+        "es": "1/3 litro",
+        "va": "1/3 litre",
+        "en": "1/3 liter"
+       },
+       "precio": {
+        "es": "3,50 €",
+        "va": "3,50 €",
+        "en": "3,50 €"
+       }
+      }
+     ]
+    },
+    {
+     "id": "sparkling-wines",
+     "titulo": {
+      "es": "Vinos Espumosos",
+      "va": "Vins escumosos",
+      "en": "Sparkling Wines"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Pago de Tharsys millésime",
+        "va": "Pago de Tharsys millésime",
+        "en": "Pago de Tharsys millésime"
+       },
+       "descripcion": {
+        "es": "D.O. Utiel Requena (Chardonnay y Xarelo). Bodega Pago de Tharsys",
+        "va": "D.O. Utiel Requena (Chardonnay i Xarel·lo). Celler Pago de Tharsys",
+        "en": "D.O. Utiel Requena (Chardonnay and Xarelo). Bodega Pago de Tharsys"
+       },
+       "precio": {
+        "es": "28 €",
+        "va": "28 €",
+        "en": "28 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Dominio de la Vega",
+        "va": "Dominio de la Vega",
+        "en": "Dominio de la Vega"
+       },
+       "descripcion": {
+        "es": "D.O. Utiel Requena (Macabeo y Chardonnay). Bodega Dominio de la Vega",
+        "va": "D.O. Utiel Requena (Macabeu i Chardonnay). Celler Dominio de la Vega",
+        "en": "D.O. Utiel Requena (Macabeo and Chardonnay). Bodega Dominio de la Vega"
+       },
+       "precio": {
+        "es": "30 €",
+        "va": "30 €",
+        "en": "30 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Tan Tum Ergo Rosé",
+        "va": "Tan Tum Ergo Rosé",
+        "en": "Tan Tum Ergo Rosé"
+       },
+       "descripcion": {
+        "es": "D.O. Utiel Requena (Pinot Noir). Bodegas Hispano+Suizas",
+        "va": "D.O. Utiel Requena (Pinot Noir). Cellers Hispano+Suizas",
+        "en": "D.O. Utiel Requena (Pinot Noir). Bodegas Hispano+Suizas"
+       },
+       "precio": {
+        "es": "38,50 €",
+        "va": "38,50 €",
+        "en": "38,50 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Agustí Torrelló Mata-Barrica",
+        "va": "Agustí Torrelló Mata-Barrica",
+        "en": "Agustí Torrelló Mata-Barrica"
+       },
+       "descripcion": {
+        "es": "D.O. Penedés / Corpinnat (Macabeo). Bodega Agustí Torrelló Mata",
+        "va": "D.O. Penedés / Corpinnat (Macabeu). Celler Agustí Torrelló Mata",
+        "en": "D.O. Penedés / Corpinnat (Macabeo). Bodega Agustí Torrelló Mata"
+       },
+       "precio": {
+        "es": "40 €",
+        "va": "40 €",
+        "en": "40 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Eterno Brut Nature Gran Reserva",
+        "va": "Eterno Brut Nature Gran Reserva",
+        "en": "Eterno Brut Nature Gran Reserva"
+       },
+       "descripcion": {
+        "es": "D.O. Utiel Requena (Chardonnay). Bodega Chozas Carrascal",
+        "va": "D.O. Utiel Requena (Chardonnay). Celler Chozas Carrascal",
+        "en": "D.O. Utiel Requena (Chardonnay). Bodega Chozas Carrascal"
+       },
+       "precio": {
+        "es": "39 €",
+        "va": "39 €",
+        "en": "39 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Clicquot",
+        "va": "Clicquot",
+        "en": "Clicquot"
+       },
+       "descripcion": {
+        "es": "Champagne (Pinot Noir). Bodega Veuve Clicquot",
+        "va": "Champagne (Pinot Noir). Celler Veuve Clicquot",
+        "en": "Champagne (Pinot Noir). Bodega Veuve Clicquot"
+       },
+       "precio": {
+        "es": "85 €",
+        "va": "85 €",
+        "en": "85 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Ruinart blanc",
+        "va": "Ruinart blanc",
+        "en": "Ruinart blanc"
+       },
+       "descripcion": {
+        "es": "Champagne (Chardonnay). Bodega Ruinart",
+        "va": "Champagne (Chardonnay). Celler Ruinart",
+        "en": "Champagne (Chardonnay). Bodega Ruinart"
+       },
+       "precio": {
+        "es": "95 €",
+        "va": "95 €",
+        "en": "95 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Dom Pérignon",
+        "va": "Dom Pérignon",
+        "en": "Dom Pérignon"
+       },
+       "descripcion": {
+        "es": "Champagne (Chardonnay y Pinot Noir). Bodega Dom Pérignon",
+        "va": "Champagne (Chardonnay i Pinot Noir). Celler Dom Pérignon",
+        "en": "Champagne (Chardonnay and Pinot Noir). Bodega Dom Pérignon"
+       },
+       "precio": {
+        "es": "300 €",
+        "va": "300 €",
+        "en": "300 €"
+       }
+      }
+     ]
+    },
+    {
+     "id": "white-wines",
+     "titulo": {
+      "es": "Vinos Blancos",
+      "va": "Vins blancs",
+      "en": "White Wines"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Las dos Ces Blanco",
+        "va": "Las dos Ces Blanco",
+        "en": "Las dos Ces Blanco"
+       },
+       "descripcion": {
+        "es": "D.O. Utiel-Requena (Macabeo, Sauvignon Blanc). Bodega Chozas Carrascal",
+        "va": "D.O. Utiel-Requena (Macabeu, Sauvignon Blanc). Celler Chozas Carrascal",
+        "en": "D.O. Utiel-Requena (Macabeo, Sauvignon Blanc). Bodega Chozas Carrascal"
+       },
+       "precio": {
+        "es": "14,50 €",
+        "va": "14,50 €",
+        "en": "14,50 €"
+       },
+       "precioNota": {
+        "es": "copa 4 €",
+        "va": "copa 4 €",
+        "en": "glass 4 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Caralludo",
+        "va": "Caralludo",
+        "en": "Caralludo"
+       },
+       "descripcion": {
+        "es": "D.O. Rías Baixas (Albariño). Bodega Mar de Envero",
+        "va": "D.O. Rías Baixas (Albariño). Celler Mar de Envero",
+        "en": "D.O. Rías Baixas (Albariño). Bodega Mar de Envero"
+       },
+       "precio": {
+        "es": "22,50 €",
+        "va": "22,50 €",
+        "en": "22,50 €"
+       },
+       "precioNota": {
+        "es": "copa 4,95 €",
+        "va": "copa 4,95 €",
+        "en": "glass 4,95 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Viña Mocen",
+        "va": "Viña Mocen",
+        "en": "Viña Mocen"
+       },
+       "descripcion": {
+        "es": "D.O. Rueda (Verdejo). Bodega Mocen",
+        "va": "D.O. Rueda (Verdejo). Celler Mocen",
+        "en": "D.O. Rueda (Verdejo). Bodega Mocen"
+       },
+       "precio": {
+        "es": "15,50 €",
+        "va": "15,50 €",
+        "en": "15,50 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Pazo das Bruxas",
+        "va": "Pazo das Bruxas",
+        "en": "Pazo das Bruxas"
+       },
+       "descripcion": {
+        "es": "D.O. Rías Baixas (Albariño). Bodega Familia Torres",
+        "va": "D.O. Rías Baixas (Albariño). Celler Familia Torres",
+        "en": "D.O. Rías Baixas (Albariño). Bodega Familia Torres"
+       },
+       "precio": {
+        "es": "24 €",
+        "va": "24 €",
+        "en": "24 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "A traba",
+        "va": "A traba",
+        "en": "A traba"
+       },
+       "descripcion": {
+        "es": "D.O. Valdeorras (Godello). Bodegas Viña Costeira",
+        "va": "D.O. Valdeorras (Godello). Cellers Viña Costeira",
+        "en": "D.O. Valdeorras (Godello). Bodegas Viña Costeira"
+       },
+       "precio": {
+        "es": "23,50 €",
+        "va": "23,50 €",
+        "en": "23,50 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Casal Arman",
+        "va": "Casal Arman",
+        "en": "Casal Arman"
+       },
+       "descripcion": {
+        "es": "D.O. Ribeiro (Freixadura, Albariño y Godello). Bodega Casal Arman",
+        "va": "D.O. Ribeiro (Freixadura, Albariño i Godello). Celler Casal Arman",
+        "en": "D.O. Ribeiro (Freixadura, Albariño and Godello). Bodega Casal Arman"
+       },
+       "precio": {
+        "es": "25 €",
+        "va": "25 €",
+        "en": "25 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Jean Leon 3055",
+        "va": "Jean Leon 3055",
+        "en": "Jean Leon 3055"
+       },
+       "descripcion": {
+        "es": "D.O. Penedés (Chardonnay). Bodegas Jean Leon",
+        "va": "D.O. Penedés (Chardonnay). Cellers Jean Leon",
+        "en": "D.O. Penedés (Chardonnay). Bodegas Jean Leon"
+       },
+       "precio": {
+        "es": "30 €",
+        "va": "30 €",
+        "en": "30 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Las Tres",
+        "va": "Les Tres",
+        "en": "Las Tres"
+       },
+       "descripcion": {
+        "es": "D.O. Utiel-Requena (Chardonnay, Sauvignon Blanc y Macabeo). Bodega Chozas Carrascal",
+        "va": "D.O. Utiel-Requena (Chardonnay, Sauvignon Blanc i Macabeu). Celler Chozas Carrascal",
+        "en": "D.O. Utiel-Requena (Chardonnay, Sauvignon Blanc and Macabeo). Bodega Chozas Carrascal"
+       },
+       "precio": {
+        "es": "26 €",
+        "va": "26 €",
+        "en": "26 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Terras Gaudas",
+        "va": "Terras Gaudas",
+        "en": "Terras Gaudas"
+       },
+       "descripcion": {
+        "es": "D.O. Rías Baixas (Albariño, Loureiro, Caiño blanco). Bodega Terras Gaudas",
+        "va": "D.O. Rías Baixas (Albariño, Loureiro, Caiño blanco). Celler Terras Gaudas",
+        "en": "D.O. Rías Baixas (Albariño, Loureiro, Caiño blanco). Bodega Terras Gaudas"
+       },
+       "precio": {
+        "es": "26 €",
+        "va": "26 €",
+        "en": "26 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Valduero Garcia Viadero",
+        "va": "Valduero Garcia Viadero",
+        "en": "Valduero Garcia Viadero"
+       },
+       "descripcion": {
+        "es": "D.O. Ribera del Duero (Albillo). Bodega Valduero",
+        "va": "D.O. Ribera del Duero (Albillo). Celler Valduero",
+        "en": "D.O. Ribera del Duero (Albillo). Bodega Valduero"
+       },
+       "precio": {
+        "es": "39 €",
+        "va": "39 €",
+        "en": "39 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Chablis Domaine Fèvre",
+        "va": "Chablis Domaine Fèvre",
+        "en": "Chablis Domaine Fèvre"
+       },
+       "descripcion": {
+        "es": "Vino de Borgoña. Bodega Domaine Fèvre",
+        "va": "Vi de Borgonya. Celler Domaine Fèvre",
+        "en": "Wine from Burgundy. Bodega Domaine Fèvre"
+       },
+       "precio": {
+        "es": "38,50 €",
+        "va": "38,50 €",
+        "en": "38,50 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Impromptu",
+        "va": "Impromptu",
+        "en": "Impromptu"
+       },
+       "descripcion": {
+        "es": "D.O. Utiel-Requena (Sauvignon Blanc). Bodegas Hispano-Suizas",
+        "va": "D.O. Utiel-Requena (Sauvignon Blanc). Cellers Hispano-Suizas",
+        "en": "D.O. Utiel-Requena (Sauvignon Blanc). Bodegas Hispano-Suizas"
+       },
+       "precio": {
+        "es": "44 €",
+        "va": "44 €",
+        "en": "44 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Casa Althay",
+        "va": "Casa Althay",
+        "en": "Casa Althay"
+       },
+       "descripcion": {
+        "es": "D.O. Lanzarote (Malvasia Volcánica). Bodega Althay",
+        "va": "D.O. Lanzarote (Malvasia Volcánica). Celler Althay",
+        "en": "D.O. Lanzarote (Malvasia Volcánica). Bodega Althay"
+       },
+       "precio": {
+        "es": "46 €",
+        "va": "46 €",
+        "en": "46 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Waltraud",
+        "va": "Waltraud",
+        "en": "Waltraud"
+       },
+       "descripcion": {
+        "es": "D.O. Pedenedes (Riesling). Bodega Familia Torres",
+        "va": "D.O. Pedenedes (Riesling). Celler Familia Torres",
+        "en": "D.O. Pedenedes (Riesling). Bodega Familia Torres"
+       },
+       "precio": {
+        "es": "40 €",
+        "va": "40 €",
+        "en": "40 €"
+       }
+      }
+     ]
+    },
+    {
+     "id": "rose-wines",
+     "titulo": {
+      "es": "Vinos Rosados",
+      "va": "Vins rosats",
+      "en": "Rosé Wines"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Enate",
+        "va": "Enate",
+        "en": "Enate"
+       },
+       "descripcion": {
+        "es": "D.O. Somontano (Cabernet Sauvignon). Bodega Enate",
+        "va": "D.O. Somontano (Cabernet Sauvignon). Celler Enate",
+        "en": "D.O. Somontano (Cabernet Sauvignon). Bodega Enate"
+       },
+       "precio": {
+        "es": "17 €",
+        "va": "17 €",
+        "en": "17 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Miraval Rosé",
+        "va": "Miraval Rosé",
+        "en": "Miraval Rosé"
+       },
+       "descripcion": {
+        "es": "A.O.C Côtes de Provence (Cinsault, Garnacha tinta, Syrah, Vermentino). Bodega Chateau Miraval",
+        "va": "A.O.C Côtes de Provence (Cinsault, Garnatxa tinta, Syrah, Vermentino). Celler Chateau Miraval",
+        "en": "A.O.C Côtes de Provence (Cinsault, Grenache, Syrah, Vermentino). Bodega Chateau Miraval"
+       },
+       "precio": {
+        "es": "48 €",
+        "va": "48 €",
+        "en": "48 €"
+       }
+      }
+     ]
+    },
+    {
+     "id": "red-wines-rioja",
+     "titulo": {
+      "es": "Tintos - D.O. Rioja",
+      "va": "Vins tintos · D.O. Rioja",
+      "en": "Red Wines - D.O. Rioja"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Viña Real Crianza",
+        "va": "Viña Real Crianza",
+        "en": "Viña Real Crianza"
+       },
+       "descripcion": {
+        "es": "(Tempranillo, Garnacha, Mazuelo, Graciano). Bodega CVNE (Compañía Vinícola del Norte de España)",
+        "va": "(Tempranillo, Garnatxa, Mazuelo, Graciano). Celler CVNE (Compañía Vinícola del Norte de España)",
+        "en": "(Tempranillo, Garnacha, Mazuelo, Graciano). Bodega CVNE (Compañía Vinícola del Norte de España)"
+       },
+       "precio": {
+        "es": "16 €",
+        "va": "16 €",
+        "en": "16 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Altanza Familia Reserva",
+        "va": "Altanza Familia Reserva",
+        "en": "Altanza Familia Reserva"
+       },
+       "descripcion": {
+        "es": "(Tempranillo). Bodegas Altanza",
+        "va": "(Tempranillo). Cellers Altanza",
+        "en": "(Tempranillo). Bodegas Altanza"
+       },
+       "precio": {
+        "es": "23 €",
+        "va": "23 €",
+        "en": "23 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Club Lealtanza Reserva",
+        "va": "Club Lealtanza Reserva",
+        "en": "Club Lealtanza Reserva"
+       },
+       "descripcion": {
+        "es": "(Tempranillo). Bodegas Altanza",
+        "va": "(Tempranillo). Cellers Altanza",
+        "en": "(Tempranillo). Bodegas Altanza"
+       },
+       "precio": {
+        "es": "28,50 €",
+        "va": "28,50 €",
+        "en": "28,50 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Viña Ardanza",
+        "va": "Viña Ardanza",
+        "en": "Viña Ardanza"
+       },
+       "descripcion": {
+        "es": "(Tempranillo y Garnacha). Bodegas La Rioja Alta",
+        "va": "(Tempranillo i Garnatxa). Cellers La Rioja Alta",
+        "en": "(Tempranillo and Garnacha). Bodegas La Rioja Alta"
+       },
+       "precio": {
+        "es": "40 €",
+        "va": "40 €",
+        "en": "40 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Juan Valdelana - viñedos singulares",
+        "va": "Juan Valdelana - viñedos singulares",
+        "en": "Juan Valdelana - viñedos singulares"
+       },
+       "descripcion": {
+        "es": "D.O. Rioja (Tempranillo, Viura, Graciano, Garnacha, Mazuela). Bodegas La Rioja Alta",
+        "va": "D.O. Rioja (Tempranillo, Viura, Graciano, Garnatxa, Mazuela). Cellers La Rioja Alta",
+        "en": "D.O. Rioja (Tempranillo, Viura, Graciano, Garnacha, Mazuela). Bodegas La Rioja Alta"
+       },
+       "precio": {
+        "es": "45 €",
+        "va": "45 €",
+        "en": "45 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Gran Reserva 904",
+        "va": "Gran Reserva 904",
+        "en": "Gran Reserva 904"
+       },
+       "descripcion": {
+        "es": "D.O. Rioja (Tempranillo). Bodegas La Rioja Alta",
+        "va": "D.O. Rioja (Tempranillo). Cellers La Rioja Alta",
+        "en": "D.O. Rioja (Tempranillo). Bodegas La Rioja Alta"
+       },
+       "precio": {
+        "es": "80 €",
+        "va": "80 €",
+        "en": "80 €"
+       }
+      }
+     ]
+    },
+    {
+     "id": "red-wines-valencia",
+     "titulo": {
+      "es": "Tintos - Comunidad Valenciana",
+      "va": "Vins tintos · Comunitat Valenciana",
+      "en": "Red Wines - Valencian Community"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Las dos Ces",
+        "va": "Las dos Ces",
+        "en": "Las dos Ces"
+       },
+       "descripcion": {
+        "es": "D.O. Utiel-Requena (Bobal, Tempranillo, Syrah). Bodegas Chozas Carrascal",
+        "va": "D.O. Utiel-Requena (Boval, Tempranillo, Syrah). Cellers Chozas Carrascal",
+        "en": "D.O. Utiel-Requena (Bobal, Tempranillo, Syrah). Bodegas Chozas Carrascal"
+       },
+       "precio": {
+        "es": "14 €",
+        "va": "14 €",
+        "en": "14 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Venta del Puerto Nº12",
+        "va": "Venta del Puerto Nº12",
+        "en": "Venta del Puerto Nº12"
+       },
+       "descripcion": {
+        "es": "D.O. Valencia (Tempranillo, Cabernet, Merlot y Syrah). Bodegas Cooperativa La Viña",
+        "va": "D.O. Valencia (Tempranillo, Cabernet, Merlot i Syrah). Cellers Cooperativa La Viña",
+        "en": "D.O. Valencia (Tempranillo, Cabernet, Merlot and Syrah). Bodegas Cooperativa La Viña"
+       },
+       "precio": {
+        "es": "22,50 €",
+        "va": "22,50 €",
+        "en": "22,50 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Bobos - Finca Casa La Borracha",
+        "va": "Bobos - Finca Casa La Borracha",
+        "en": "Bobos - Finca Casa La Borracha"
+       },
+       "descripcion": {
+        "es": "D.O.P. Utiel-Requena (Bobal). Bodegas Hispano+Suizas",
+        "va": "D.O.P. Utiel-Requena (Boval). Cellers Hispano+Suizas",
+        "en": "D.O.P. Utiel-Requena (Bobal). Bodegas Hispano+Suizas"
+       },
+       "precio": {
+        "es": "40 €",
+        "va": "40 €",
+        "en": "40 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Finca Terrerazo",
+        "va": "Finca Terrerazo",
+        "en": "Finca Terrerazo"
+       },
+       "descripcion": {
+        "es": "D.O.P. El Terrerazo (Bobal). Bodega Mustiguillo",
+        "va": "D.O.P. El Terrerazo (Boval). Celler Mustiguillo",
+        "en": "D.O.P. El Terrerazo (Bobal). Bodega Mustiguillo"
+       },
+       "precio": {
+        "es": "49,50 €",
+        "va": "49,50 €",
+        "en": "49,50 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Materia",
+        "va": "Materia",
+        "en": "Materia"
+       },
+       "descripcion": {
+        "es": "D.O. Utiel-Requena (Garnacha). Bodegas Chozas Carrascal",
+        "va": "D.O. Utiel-Requena (Garnatxa). Cellers Chozas Carrascal",
+        "en": "D.O. Utiel-Requena (Garnacha). Bodegas Chozas Carrascal"
+       },
+       "precio": {
+        "es": "62,50 €",
+        "va": "62,50 €",
+        "en": "62,50 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Quincha Corral",
+        "va": "Quincha Corral",
+        "en": "Quincha Corral"
+       },
+       "descripcion": {
+        "es": "D.O.P. El Terrerazo (Bobal). Bodega Mustiguillo",
+        "va": "D.O.P. El Terrerazo (Boval). Celler Mustiguillo",
+        "en": "D.O.P. El Terrerazo (Bobal). Bodega Mustiguillo"
+       },
+       "precio": {
+        "es": "125 €",
+        "va": "125 €",
+        "en": "125 €"
+       }
+      }
+     ]
+    },
+    {
+     "id": "red-wines-ribera",
+     "titulo": {
+      "es": "Tintos - D.O. Ribera del Duero",
+      "va": "Vins tintos · D.O. Ribera del Duero",
+      "en": "Red Wines - D.O. Ribera del Duero"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Finca Resalso",
+        "va": "Finca Resalso",
+        "en": "Finca Resalso"
+       },
+       "descripcion": {
+        "es": "D.O. Ribera del Duero (Tempranillo). Bodegas Emilio Moro",
+        "va": "D.O. Ribera del Duero (Tempranillo). Cellers Emilio Moro",
+        "en": "D.O. Ribera del Duero (Tempranillo). Bodegas Emilio Moro"
+       },
+       "precio": {
+        "es": "20,50 €",
+        "va": "20,50 €",
+        "en": "20,50 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Emilio Moro",
+        "va": "Emilio Moro",
+        "en": "Emilio Moro"
+       },
+       "descripcion": {
+        "es": "D.O. Ribera del Duero (Tempranillo). Bodegas Emilio Moro",
+        "va": "D.O. Ribera del Duero (Tempranillo). Cellers Emilio Moro",
+        "en": "D.O. Ribera del Duero (Tempranillo). Bodegas Emilio Moro"
+       },
+       "precio": {
+        "es": "32,50 €",
+        "va": "32,50 €",
+        "en": "32,50 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Valduero Una Cepa",
+        "va": "Valduero Una Cepa",
+        "en": "Valduero Una Cepa"
+       },
+       "descripcion": {
+        "es": "D.O. Ribera. Bodega Valduero",
+        "va": "D.O. Ribera. Celler Valduero",
+        "en": "D.O. Ribera. Bodega Valduero"
+       },
+       "precio": {
+        "es": "45 €",
+        "va": "45 €",
+        "en": "45 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Malleolus",
+        "va": "Malleolus",
+        "en": "Malleolus"
+       },
+       "descripcion": {
+        "es": "D.O. Ribera del Duero (Tempranillo). Bodegas Emilio Moro",
+        "va": "D.O. Ribera del Duero (Tempranillo). Cellers Emilio Moro",
+        "en": "D.O. Ribera del Duero (Tempranillo). Bodegas Emilio Moro"
+       },
+       "precio": {
+        "es": "47 €",
+        "va": "47 €",
+        "en": "47 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Pago de Carraovejas",
+        "va": "Pago de Carraovejas",
+        "en": "Pago de Carraovejas"
+       },
+       "descripcion": {
+        "es": "D.O. Ribera del Duero (Tempranillo, Cabernet Sauvignon, Merlot). Bodegas Pago de Carraovejas",
+        "va": "D.O. Ribera del Duero (Tempranillo, Cabernet Sauvignon, Merlot). Cellers Pago de Carraovejas",
+        "en": "D.O. Ribera del Duero (Tempranillo, Cabernet Sauvignon, Merlot). Bodegas Pago de Carraovejas"
+       },
+       "precio": {
+        "es": "47 €",
+        "va": "47 €",
+        "en": "47 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Valduero Gran Reserva",
+        "va": "Valduero Gran Reserva",
+        "en": "Valduero Gran Reserva"
+       },
+       "descripcion": {
+        "es": "D.O. Ribera del Duero (Tempranillo). Bodegas Valduero",
+        "va": "D.O. Ribera del Duero (Tempranillo). Cellers Valduero",
+        "en": "D.O. Ribera del Duero (Tempranillo). Bodegas Valduero"
+       },
+       "precio": {
+        "es": "110 €",
+        "va": "110 €",
+        "en": "110 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Alion",
+        "va": "Alion",
+        "en": "Alion"
+       },
+       "descripcion": {
+        "es": "D.O. Ribera del Duero (Tempranillo). Bodegas Vega Sicilia",
+        "va": "D.O. Ribera del Duero (Tempranillo). Cellers Vega Sicilia",
+        "en": "D.O. Ribera del Duero (Tempranillo). Bodegas Vega Sicilia"
+       },
+       "precio": {
+        "es": "130 €",
+        "va": "130 €",
+        "en": "130 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Vega Sicilia Único",
+        "va": "Vega Sicilia Único",
+        "en": "Vega Sicilia Único"
+       },
+       "descripcion": {
+        "es": "D.O. Ribera del Duero (Tempranillo, Cabernet Sauvignon). Bodegas Vega Sicilia",
+        "va": "D.O. Ribera del Duero (Tempranillo, Cabernet Sauvignon). Cellers Vega Sicilia",
+        "en": "D.O. Ribera del Duero (Tempranillo, Cabernet Sauvignon). Bodegas Vega Sicilia"
+       },
+       "precio": {
+        "es": "preguntar",
+        "va": "preguntar",
+        "en": "ask"
+       }
+      }
+     ]
+    },
+    {
+     "id": "other-do-wines",
+     "titulo": {
+      "es": "Otras D.O.",
+      "va": "Altres D.O.",
+      "en": "Other D.O."
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Lo de Pepitin",
+        "va": "Lo de Pepitin",
+        "en": "Lo de Pepitin"
+       },
+       "descripcion": {
+        "es": "D.O. Alicante (Monastrell, Giró, Arcos, Bobal). Bodega Colección de toneles centenarios",
+        "va": "D.O. Alicante (Monastrell, Giró, Arcos, Boval). Celler Colección de toneles centenarios",
+        "en": "D.O. Alicante (Monastrell, Giró, Arcos, Bobal). Bodega Colección de toneles centenarios"
+       },
+       "precio": {
+        "es": "31,50 €",
+        "va": "31,50 €",
+        "en": "31,50 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Azaya",
+        "va": "Azaya",
+        "en": "Azaya"
+       },
+       "descripcion": {
+        "es": "D.O. Tierras de Castilla y León (Tempranillo). Bodega Finca Azaya",
+        "va": "D.O. Tierras de Castilla y León (Tempranillo). Celler Finca Azaya",
+        "en": "D.O. Tierras de Castilla y León (Tempranillo). Bodega Finca Azaya"
+       },
+       "precio": {
+        "es": "32 €",
+        "va": "32 €",
+        "en": "32 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Brugueres",
+        "va": "Brugueres",
+        "en": "Brugueres"
+       },
+       "descripcion": {
+        "es": "D.O. Priorat (Garnacha). Bodega La Conreria de Scala Dei",
+        "va": "D.O. Priorat (Garnatxa). Celler La Conreria de Scala Dei",
+        "en": "D.O. Priorat (Garnacha). Bodega La Conreria de Scala Dei"
+       },
+       "precio": {
+        "es": "38,50 €",
+        "va": "38,50 €",
+        "en": "38,50 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Alto Moncayo Veraton",
+        "va": "Alto Moncayo Veraton",
+        "en": "Alto Moncayo Veraton"
+       },
+       "descripcion": {
+        "es": "D.O. Campo de Borja (Garnacha). Bodegas Alto Moncayo",
+        "va": "D.O. Campo de Borja (Garnatxa). Cellers Alto Moncayo",
+        "en": "D.O. Campo de Borja (Garnacha). Bodegas Alto Moncayo"
+       },
+       "precio": {
+        "es": "40 €",
+        "va": "40 €",
+        "en": "40 €"
+       }
+      }
+     ]
+    },
+    {
+     "id": "sweet-wines",
+     "titulo": {
+      "es": "Dulces",
+      "va": "Vins dolços",
+      "en": "Sweet Wines"
+     },
+     "platos": [
+      {
+       "nombre": {
+        "es": "Domaine de Montahuc",
+        "va": "Domaine de Montahuc",
+        "en": "Domaine de Montahuc"
+       },
+       "descripcion": {
+        "es": "A.O.C. Muscat de Saint-Jean-de-Minervois, Languedoc, Francia (Moscato). Bodega Domaine de Montahuc",
+        "va": "A.O.C. Muscat de Saint-Jean-de-Minervois, Languedoc, França (Moscato). Celler Domaine de Montahuc",
+        "en": "A.O.C. Muscat de Saint-Jean-de-Minervois, Languedoc, France (Moscato). Bodega Domaine de Montahuc"
+       },
+       "precio": {
+        "es": "5 €",
+        "va": "5 €",
+        "en": "5 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Tokaji Aszú",
+        "va": "Tokaji Aszú",
+        "en": "Tokaji Aszú"
+       },
+       "descripcion": {
+        "es": "D.O. Tokaj, Hungría (Furmint, Hárslevelű). Bodega Château Dereszla",
+        "va": "D.O. Tokaj, Hongria (Furmint, Hárslevelű). Celler Château Dereszla",
+        "en": "D.O. Tokaj, Hungary (Furmint, Hárslevelű). Bodega Château Dereszla"
+       },
+       "precio": {
+        "es": "8 €",
+        "va": "8 €",
+        "en": "8 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Don Zoilo",
+        "va": "Don Zoilo",
+        "en": "Don Zoilo"
+       },
+       "descripcion": {
+        "es": "D.O. Jerez-Xerez-Sherry (Pedro Ximenez). Bodega Williams & Humbert",
+        "va": "D.O. Jerez-Xerez-Sherry (Pedro Ximenez). Celler Williams & Humbert",
+        "en": "D.O. Jerez-Xerez-Sherry (Pedro Ximenez). Bodega Williams & Humbert"
+       },
+       "precio": {
+        "es": "5 €",
+        "va": "5 €",
+        "en": "5 €"
+       }
+      },
+      {
+       "nombre": {
+        "es": "Dow's Tawny",
+        "va": "Dow's Tawny",
+        "en": "Dow's Tawny"
+       },
+       "descripcion": {
+        "es": "D.O. Porto (Touriga Nacional, Touriga Franca, Tinta Roriz, tinto cao, tinta barroca). Bodega Dow's",
+        "va": "D.O. Porto (Touriga Nacional, Touriga Franca, Tinta Roriz, tinto cao, tinta barroca). Celler Dow's",
+        "en": "D.O. Porto (Touriga Nacional, Touriga Franca, Tinta Roriz, tinto cao, tinta barroca). Bodega Dow's"
+       },
+       "precio": {
+        "es": "5 €",
+        "va": "5 €",
+        "en": "5 €"
+       }
+      }
+     ]
+    }
+   ],
+   "sinAlergenos": true
+  }
+ ],
+ "alergenos": {
+  "celery": {
+   "es": "Apio",
+   "va": "Api",
+   "en": "Celery"
+  },
+  "crustaceans": {
+   "es": "Crustáceos",
+   "va": "Crustacis",
+   "en": "Crustaceans"
+  },
+  "eggs": {
+   "es": "Huevos",
+   "va": "Ous",
+   "en": "Eggs"
+  },
+  "fish": {
+   "es": "Pescado",
+   "va": "Peix",
+   "en": "Fish"
+  },
+  "gluten": {
+   "es": "Gluten",
+   "va": "Gluten",
+   "en": "Gluten"
+  },
+  "lupins": {
+   "es": "Altramuces",
+   "va": "Tramussos",
+   "en": "Lupins"
+  },
+  "dairy": {
+   "es": "Lácteos",
+   "va": "Làctics",
+   "en": "Dairy"
+  },
+  "mollusks": {
+   "es": "Moluscos",
+   "va": "Mol·luscos",
+   "en": "Mollusks"
+  },
+  "mustard": {
+   "es": "Mostaza",
+   "va": "Mostassa",
+   "en": "Mustard"
+  },
+  "nuts": {
+   "es": "Frutos con cáscara",
+   "va": "Fruits amb corfa",
+   "en": "Nuts"
+  },
+  "peanuts": {
+   "es": "Cacahuetes",
+   "va": "Cacauets",
+   "en": "Peanuts"
+  },
+  "sesame": {
+   "es": "Sésamo",
+   "va": "Sèsam",
+   "en": "Sesame"
+  },
+  "soya": {
+   "es": "Soja",
+   "va": "Soja",
+   "en": "Soya"
+  },
+  "sulphites": {
+   "es": "Sulfitos",
+   "va": "Sulfits",
+   "en": "Sulphites"
+  }
+ },
+ "pm": {
+  "es": "P/SM",
+  "va": "P/SM",
+  "en": "P/SM"
+ }
+}

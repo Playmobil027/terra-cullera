@@ -258,12 +258,13 @@ h2.titulo{font-size:clamp(2.6rem,6vw,4.2rem);line-height:1.1;color:var(--terra-c
     <a class="logo" href="#inicio" aria-label="terra, inicio">terra</a>
     <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="nav" data-i="menu">Menú</button>
     <nav class="nav" id="nav" aria-label="Principal">
-      <a href="#carta" data-i="nav_menu">Menú del día</a>
+      <a href="carta.html#menu" data-i="nav_menu">Menú del día</a>
       <div class="dd" id="ddCartas">
         <button class="nav-link dd-btn" aria-expanded="false" aria-haspopup="true" data-i="nav_cartas">Cartas</button>
         <ul class="dd-list">
-          <li><a href="#carta" class="edit" data-i="carta_1">Carta</a></li>
-          <li><a href="#carta" class="edit" data-i="carta_2">Carta de vinos</a></li>
+          <li><a href="carta.html#mediodia" data-i="carta_1">Carta mediodía</a></li>
+          <li><a href="carta.html#noche" data-i="carta_2">Carta noche</a></li>
+          <li><a href="carta.html#bebidas" data-i="carta_3">Bebidas</a></li>
         </ul>
       </div>
       <div class="dd" id="ddIdiomas">
@@ -326,11 +327,13 @@ h2.titulo{font-size:clamp(2.6rem,6vw,4.2rem);line-height:1.1;color:var(--terra-c
       <div class="cols">
         <div class="col">
           <h3 data-i="nav_menu">Menú del día</h3>
-          <p class="vacio edit" data-i="pend">[contenido del cliente]</p>
+          <p class="vacio" data-i="c_menu_txt">Entrante, plato principal y postre a elegir. 27,50 € (IVA incluido).</p>
+          <a class="btn btn-cobre" href="carta.html#menu" data-i="c_menu_btn">Ver el menú del día</a>
         </div>
         <div class="col">
           <h3 data-i="nav_cartas">Cartas</h3>
-          <p class="vacio edit" data-i="pend">[contenido del cliente]</p>
+          <p class="vacio" data-i="c_cartas_txt">Mediodía, noche y bebidas. Con buscador y filtro de alérgenos.</p>
+          <a class="btn btn-linea" href="carta.html#mediodia" data-i="c_cartas_btn">Ver la carta</a>
         </div>
       </div>
       <p class="alergias" data-i="alergias">Bajo previo aviso adaptamos el menú a vuestras alergias, intolerancias o restricciones alimentarias.</p>
@@ -412,6 +415,7 @@ h2.titulo{font-size:clamp(2.6rem,6vw,4.2rem);line-height:1.1;color:var(--terra-c
       <li><strong>Reservar sin fricción</strong>Botón de reserva siempre a mano en la cabecera y, en el móvil, una barra fija con Reservar y Llamar.</li>
       <li><strong>Horario que se explica solo</strong>La web calcula si estáis abiertos ahora, marca el día de hoy y dice cuándo abrís la próxima vez.</li>
       <li><strong>Mejor presencia en Google</strong>Metadatos, datos estructurados de restaurante con dirección, horario y teléfono, y textos pensados para "restaurante en Cullera".</li>
+      <li><strong>Carta accesible</strong>Buscador, filtro de alérgenos, tamaño de letra ajustable e impresión. Toda la carta en una sola página, con los alérgenos escritos y no solo dibujados, y editable desde un único archivo.</li>
       <li><strong>Vuestros reconocimientos, bien presentados</strong>Repsol, Michelin y Contornà con su espacio propio, y la web en castellano y valenciano.</li>
     </ul>
     <button class="btn btn-linea" type="button" id="resaltar">Resaltar datos a confirmar</button>
@@ -425,14 +429,16 @@ document.documentElement.classList.add('js');
     es:{},
     va:{
       skip:"Anar al contingut",menu:"Menú",
-      nav_menu:"Menú del dia",nav_cartas:"Cartes",nav_idiomas:"Idiomes",carta_1:"Carta",carta_2:"Carta de vins",
+      nav_menu:"Menú del dia",nav_cartas:"Cartes",nav_idiomas:"Idiomes",carta_1:"Carta de migdia",carta_2:"Carta de nit",carta_3:"Begudes",
       reservar_larga:"Fer una reserva",reservar:"Reservar",llamar:"Telefonar",llamar_largo:"Telefonar ara",
       lema:"Producte · Equip · Creativitat · Microestacionalitat · Equilibri · Quilòmetre 0 · Sostenibilitat",
       g_repsol:"Recomanació Guia Repsol 2026",g_michelin:"Recomanació Guia Michelin 2026",g_contorna:"Guia Contornà 2026",
       f_titulo:"El que sosté terra",
       f_intro:"Allò important és el producte de quilòmetre 0; predomina el treball en equip, la creativitat, i ens preocupem per l'equilibri i la sostenibilitat aplicant la microestacionalitat.",
       v1:"Producte",v2:"Equip",v3:"Creativitat",v4:"Microestacionalitat",v5:"Equilibri",v6:"Quilòmetre 0",v7:"Sostenibilitat",
-      c_titulo:"Menú i cartes",pend:"[contingut del client]",
+      c_titulo:"Menú i cartes",
+      c_menu_txt:"Entrant, plat principal i postres a escollir. 27,50 € (IVA inclòs).",c_menu_btn:"Veure el menú del dia",
+      c_cartas_txt:"Migdia, nit i begudes. Amb buscador i filtre d'al·lèrgens.",c_cartas_btn:"Veure la carta",
       alergias:"Amb avís previ adaptem el menú a les vostres al·lèrgies, intoleràncies o restriccions alimentàries.",
       r_titulo:"Reserves i contacte",r_horario:"Horari d'obertura",
       d0:"Diumenge",d1:"Dilluns",d3:"Dimecres",d4:"Dijous",d5:"Divendres",d6:"Dissabte",
@@ -517,7 +523,7 @@ document.documentElement.classList.add('js');
   document.getElementById('resaltar').addEventListener('click',function(){document.body.classList.toggle('ver-editables');});
 
   var l0='es';
-  try{var q=new URLSearchParams(location.search).get('lang');l0=q==='va'||q==='es'?q:(localStorage.getItem('terra-lang')||'es');}catch(e){}
+  try{var q=new URLSearchParams(location.search).get('lang');l0=q==='va'||q==='es'?q:(localStorage.getItem('terra-lang')==='va'?'va':'es');}catch(e){}
   if(l0==='va')setLang('va');else estado();
   setInterval(estado,60000);
 })();
