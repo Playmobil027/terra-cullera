@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terra · Restaurante en Cullera · Producto de kilómetro 0</title>
+<meta name="description" content="Restaurante en Cullera donde lo importante es el producto de kilómetro 0; donde predomina el trabajo en equipo, la creatividad y donde nos preocupamos por el equilibrio y sostenibilidad aplicando la microestacionalidad.">
+<meta name="theme-color" content="#251C0A">
+<link rel="canonical" href="https://terra-cullera.vercel.app/">
+<link rel="alternate" hreflang="es" href="https://terra-cullera.vercel.app/">
+<link rel="alternate" hreflang="ca" href="https://terra-cullera.vercel.app/?lang=va">
+<link rel="alternate" hreflang="x-default" href="https://terra-cullera.vercel.app/">
+<meta property="og:type" content="restaurant.restaurant">
+<meta property="og:title" content="Terra · Restaurante en Cullera">
+<meta property="og:description" content="Producto, equipo, creatividad, microestacionalidad, equilibrio, kilómetro 0 y sostenibilidad. Reserva tu mesa en Cullera.">
+<meta property="og:image" content="https://terra-cullera.vercel.app/assets/hero.jpg">
+<meta property="og:url" content="https://terra-cullera.vercel.app/">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="ca_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero.jpg" fetchpriority="high">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Terra · Restaurante",
+  "url": "https://terra-cullera.vercel.app/",
+  "image": "https://terra-cullera.vercel.app/assets/hero.jpg",
+  "description": "Restaurante en Cullera donde lo importante es el producto de kilómetro 0, el trabajo en equipo, la creatividad, el equilibrio y la sostenibilidad aplicando la microestacionalidad.",
+  "telephone": "+34960488254",
+  "email": "terra.cullera@gmail.com",
+  "hasMap": "https://maps.app.goo.gl/KXZ4jf7LhvB18ZUt5",
+  "acceptsReservations": true,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C/ Riu, 2",
+    "addressLocality": "Cullera",
+    "addressRegion": "Valencia",
+    "postalCode": "46400",
+    "addressCountry": "ES"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Wednesday","Thursday"], "opens": "13:30", "closes": "15:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "13:30", "closes": "15:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "19:30", "closes": "23:30" }
+  ]
+}
+</script>
+<style>
+:root{
+  --terra-fondo:#251C0A;
+  --terra-crema:#CBC6C2;
+  --terra-salvia:#B8C49E;
+  --terra-cobre:#755035;
+  --crema-90:rgba(203,198,194,.9);
+  --crema-72:rgba(203,198,194,.72);
+  --crema-20:rgba(203,198,194,.2);
+  --crema-10:rgba(203,198,194,.1);
+  --salvia-35:rgba(184,196,158,.35);
+  --fondo-92:rgba(37,28,10,.92);
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+  --font:"Italiana",serif;
+  --pad:clamp(1.25rem,5vw,3rem);
+  --wrap:1120px;
+  --header-h:4.25rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:var(--header-h)}
+body{margin:0;background:var(--terra-fondo);color:var(--crema-90);font-family:var(--font);font-size:1.4rem;line-height:1.6;font-synthesis:none;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--terra-salvia);text-underline-offset:.25em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+h1,h2,h3,h4,p,ul,dl,dd,figure{margin:0;padding:0}
+ul{list-style:none}
+h1,h2,h3,h4{font-weight:400}
+:focus-visible{outline:2px solid var(--terra-salvia);outline-offset:4px;border-radius:2px}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--terra-fondo);color:var(--terra-crema);padding:.6rem 1rem;border:1px solid var(--terra-salvia);z-index:100}
+.skip:focus{top:1rem}
+.wrap{width:100%;max-width:calc(var(--wrap) + var(--pad)*2);margin-inline:auto;padding-inline:var(--pad)}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.edit{outline:0}
+body.ver-editables .edit{outline:2px dashed var(--terra-salvia);outline-offset:3px;background:var(--salvia-35)}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;font:inherit;font-size:1.5rem;line-height:1;padding:.95rem 1.9rem;border-radius:4px;border:1px solid transparent;text-decoration:none;cursor:pointer;letter-spacing:.02em;transition:background-color .18s ease,border-color .18s ease,transform .16s var(--ease-out)}
+.btn-cobre{background:var(--terra-cobre);color:var(--terra-crema);box-shadow:2px 4px 5px rgb(33 23 3)}
+.btn-linea{background:transparent;color:var(--terra-crema);border-color:var(--crema-20)}
+.btn:active{transform:scale(.97)}
+@media (hover:hover) and (pointer:fine){
+  .btn-cobre:hover{background-image:linear-gradient(var(--crema-10),var(--crema-10));text-decoration:none}
+  .btn-linea:hover{border-color:var(--terra-salvia);color:var(--terra-salvia);text-decoration:none}
+}
+
+/* Cabecera */
+.site-header{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--header-h);transition:background-color .25s ease,border-color .25s ease;border-bottom:1px solid transparent}
+.site-header.solid{background:var(--fondo-92);border-color:var(--crema-10);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.site-header .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font-size:2.4rem;line-height:1;padding:.4rem 0;display:inline-block;color:var(--terra-salvia);text-decoration:none;letter-spacing:.01em}
+.nav{display:flex;align-items:center;gap:clamp(.75rem,2vw,1.75rem)}
+.nav a,.nav button.nav-link{font:inherit;font-size:1.35rem;color:var(--crema-90);background:none;border:0;padding:.5rem .25rem;cursor:pointer;text-decoration:none}
+@media (hover:hover) and (pointer:fine){.nav a:hover,.nav button.nav-link:hover{color:var(--terra-salvia)}}
+.nav .btn-cobre{font-size:1.5rem;padding:.6rem 1.25rem;color:var(--terra-crema)}
+.dd{position:relative}
+.dd-btn::after{content:"";display:inline-block;width:.45em;height:.45em;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-.15em) rotate(45deg);margin-left:.55em;transition:transform .18s var(--ease-out)}
+.dd-btn[aria-expanded="true"]::after{transform:translateY(.05em) rotate(225deg)}
+.dd-list{position:absolute;right:0;top:calc(100% + .5rem);min-width:13rem;background:var(--terra-fondo);border:1px solid var(--crema-20);border-radius:4px;padding:.4rem;box-shadow:2px 4px 5px rgb(33 23 3);opacity:0;transform:scale(.96);transform-origin:top right;visibility:hidden;pointer-events:none;transition:opacity .15s ease,transform .15s var(--ease-out),visibility 0s .15s}
+.dd.open .dd-list{opacity:1;transform:scale(1);visibility:visible;pointer-events:auto;transition:opacity .15s ease,transform .15s var(--ease-out),visibility 0s}
+.dd-list a,.dd-list button{display:block;width:100%;text-align:left;padding:.55rem .8rem;font:inherit;font-size:1.15rem;color:var(--crema-90);background:none;border:0;border-radius:3px;cursor:pointer}
+.dd-list [aria-current="true"]{color:var(--terra-salvia)}
+@media (hover:hover) and (pointer:fine){.dd-list a:hover,.dd-list button:hover{background:var(--crema-10);color:var(--terra-salvia)}}
+.menu-toggle{display:none;font:inherit;font-size:1.25rem;color:var(--terra-crema);background:none;border:1px solid var(--crema-20);border-radius:4px;padding:.4rem .9rem;cursor:pointer}
+@media (max-width:860px){
+  .menu-toggle{display:inline-block}
+  .nav{position:fixed;inset:var(--header-h) 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:var(--terra-fondo);border-bottom:1px solid var(--crema-10);padding:.5rem var(--pad) 1.25rem;max-height:calc(100dvh - var(--header-h));overflow:auto;opacity:0;transform:translateY(-8px);visibility:hidden;transition:opacity .18s ease,transform .2s var(--ease-out),visibility 0s .2s}
+  .nav.open{opacity:1;transform:none;visibility:visible;transition:opacity .18s ease,transform .2s var(--ease-out),visibility 0s}
+  .nav a,.nav button.nav-link{padding:.8rem 0;font-size:1.4rem;text-align:left;width:100%;border-bottom:1px solid var(--crema-10)}
+  .nav .btn-cobre{display:none}
+  .dd-list{position:static;opacity:1;transform:none;visibility:visible;pointer-events:auto;display:none;border:0;box-shadow:none;padding:0 0 .5rem 1rem;min-width:0}
+  .dd.open .dd-list{display:block}
+  .dd-list a,.dd-list button{font-size:1.25rem;padding:.55rem 0}
+}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;isolation:isolate;overflow:hidden}
+.hero-img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to bottom,rgba(37,28,10,.74) 0%,rgba(37,28,10,.6) 40%,rgba(37,28,10,.78) 75%,#251C0A 100%)}
+.hero-inner{padding:calc(var(--header-h) + 2rem) var(--pad) 5rem;max-width:62rem}
+.hero h1{font-size:clamp(5rem,16vw,9.5rem);line-height:1;color:var(--terra-crema);letter-spacing:.005em;text-shadow:0 2px 24px rgba(37,28,10,.55)}
+.lema{font-size:clamp(1.55rem,3.6vw,2.6rem);line-height:1.3;color:var(--terra-salvia);margin-top:1.5rem;text-shadow:0 1px 14px rgba(37,28,10,.8)}
+.hero .btn{margin-top:2.75rem}
+.estado{margin-top:1.4rem;font-size:1.2rem;color:var(--crema-90);min-height:1.6em;text-shadow:0 1px 10px rgba(37,28,10,.9)}
+.estado i{display:inline-block;width:.55em;height:.55em;border-radius:50%;margin-right:.6em;background:var(--crema-72)}
+.estado.abierto i{background:var(--terra-salvia)}
+.hero .anim{animation:entra .7s var(--ease-out) both}
+.hero .a2{animation-delay:.12s}.hero .a3{animation-delay:.24s}.hero .a4{animation-delay:.36s}
+@keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* Secciones */
+section{position:relative}
+.sec{padding-block:clamp(4rem,9vw,7.5rem)}
+h2.titulo{font-size:clamp(2.6rem,6vw,4.2rem);line-height:1.1;color:var(--terra-crema)}
+.etiqueta{font-size:1.5rem;color:var(--crema-72);letter-spacing:.03em}
+
+/* Guías */
+.guias{padding-block:clamp(2.5rem,5vw,4rem) clamp(3rem,6vw,5rem)}
+.guias ul{display:flex;justify-content:center;align-items:flex-start;gap:clamp(1.5rem,6vw,5rem);flex-wrap:wrap}
+.guias li{display:flex;flex-direction:column;align-items:center;text-align:center;width:11.5rem}
+.guias img{height:5.5rem;width:auto;object-fit:contain}
+.guias p{margin-top:.9rem;font-size:1.2rem;line-height:1.35;color:var(--crema-90)}
+
+/* Valores */
+.valores{border-top:1px solid var(--crema-10)}
+.valores .grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+.valores figure{position:sticky;top:calc(var(--header-h) + 2rem)}
+.valores figure img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:62% 50%;filter:none}
+.valores figure::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(37,28,10,.35),rgba(37,28,10,.15) 40%,rgba(37,28,10,.55))}
+.valores .intro{font-size:1.5rem;line-height:1.55;max-width:34rem;margin-top:1.5rem;color:var(--crema-90)}
+.lista-valores{margin-top:clamp(2rem,5vw,3.5rem)}
+.lista-valores li{font-size:clamp(2.2rem,5.2vw,3.7rem);line-height:1.15;color:var(--terra-salvia);padding:.55rem 0;border-top:1px solid var(--crema-20)}
+.lista-valores li:last-child{border-bottom:1px solid var(--crema-20)}
+.js .lista-valores li{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .6s var(--ease-out)}
+.js .lista-valores.vis li{opacity:1;transform:none}
+.lista-valores li:nth-child(2){transition-delay:.05s}.lista-valores li:nth-child(3){transition-delay:.1s}.lista-valores li:nth-child(4){transition-delay:.15s}.lista-valores li:nth-child(5){transition-delay:.2s}.lista-valores li:nth-child(6){transition-delay:.25s}.lista-valores li:nth-child(7){transition-delay:.3s}
+@media (max-width:860px){
+  .valores .grid{grid-template-columns:1fr}
+  .valores figure{position:relative;top:0}
+  .valores figure img{aspect-ratio:16/10;object-position:50% 30%}
+}
+
+/* Carta */
+.carta{border-top:1px solid var(--crema-10)}
+.carta .cols{display:grid;grid-template-columns:1fr 1fr;margin-top:clamp(2rem,5vw,3.5rem)}
+.carta .col{padding:0 clamp(1rem,4vw,3.5rem) 1rem 0}
+.carta .col+.col{padding:0 0 1rem clamp(1rem,4vw,3.5rem);border-left:1px solid var(--crema-20)}
+.carta h3{font-size:clamp(2rem,4vw,2.8rem);color:var(--terra-crema);line-height:1.15}
+.carta .vacio{margin-top:1.2rem;color:var(--crema-72);font-size:1.2rem}
+.carta .col .btn{margin-top:1.6rem;font-size:1.3rem;padding:.8rem 1.4rem}
+.alergias{margin-top:clamp(2rem,4vw,3rem);padding-top:1.6rem;border-top:1px solid var(--crema-20);max-width:42rem;font-size:1.45rem}
+@media (max-width:700px){
+  .carta .cols{grid-template-columns:1fr}
+  .carta .col,.carta .col+.col{padding:0 0 2rem;border-left:0}
+  .carta .col+.col{border-top:1px solid var(--crema-20);padding-top:2rem}
+}
+
+/* Reservas */
+.reservas{border-top:1px solid var(--crema-10)}
+.reservas .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,6rem);margin-top:clamp(2rem,5vw,3.5rem)}
+.horario{width:100%;border-collapse:collapse;margin-top:1.1rem}
+.horario th,.horario td{font-weight:400;text-align:left;padding:.7rem 0;border-top:1px solid var(--crema-20);vertical-align:top;font-size:1.5rem}
+.horario tr:last-child th,.horario tr:last-child td{border-bottom:1px solid var(--crema-20)}
+.horario td{text-align:right;color:var(--crema-90)}
+.horario tr.hoy th,.horario tr.hoy td{color:var(--terra-salvia)}
+.horario tr.hoy th::after{content:" · hoy";color:var(--terra-salvia)}
+.horario tr.hoy th[data-va]::after{content:" · hui"}
+.horario td span{display:block}
+.bloque+.bloque{margin-top:2.25rem}
+.tel{display:inline-block;font-size:clamp(2.2rem,5vw,3.2rem);line-height:1.1;color:var(--terra-crema);text-decoration:none;margin-top:.5rem}
+@media (hover:hover) and (pointer:fine){.tel:hover{color:var(--terra-salvia)}}
+.bloque p{margin-top:.5rem}
+.acciones{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.4rem}
+.acciones .btn{font-size:1.4rem;padding:.8rem 1.4rem}
+.mapa{margin-top:1.4rem;border:1px solid var(--crema-20);border-radius:4px;overflow:hidden;height:15rem;background:var(--terra-fondo)}
+.mapa iframe{width:100%;height:100%;border:0;filter:grayscale(1) sepia(.55) brightness(.72) contrast(1.05)}
+@media (max-width:860px){.reservas .grid{grid-template-columns:1fr}}
+
+/* Regalos */
+.regalos{border-top:1px solid var(--crema-10);text-align:center}
+.regalos h2{max-width:20ch;margin-inline:auto}
+.regalos p{max-width:36rem;margin:1.4rem auto 0;font-size:1.35rem}
+.regalos .acciones{justify-content:center;margin-top:2rem}
+
+/* Pie */
+.site-footer{border-top:1px solid var(--crema-10);padding-block:2rem}
+.site-footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem 2rem;flex-wrap:wrap}
+.site-footer ul{display:flex;gap:0;flex-wrap:wrap}
+.site-footer li+li{border-left:1px solid var(--crema-20);margin-left:1rem;padding-left:1rem}
+.site-footer a{color:var(--crema-90);text-decoration:none;font-size:1.2rem;display:inline-block;padding:.7rem 0}
+.site-footer a:hover{color:var(--terra-salvia)}
+.site-footer .logo{font-size:2.2rem}
+
+/* Barra móvil */
+.barra{display:none}
+@media (max-width:860px){
+  body{padding-bottom:4.75rem}
+  .barra{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;position:fixed;inset:auto 0 0 0;z-index:60;padding:.7rem var(--pad) calc(.7rem + env(safe-area-inset-bottom));background:var(--fondo-92);border-top:1px solid var(--crema-10);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+  .barra .btn{font-size:1.5rem;padding:.8rem .5rem}
+}
+
+/* Franja propuesta (no aparece en la web publicada) */
+.propuesta{background:var(--terra-fondo);border-top:6px double var(--terra-cobre);padding-block:3.5rem 4rem}
+.propuesta .wrap{max-width:60rem}
+.propuesta .aviso{display:inline-block;font-size:1.1rem;border:1px dashed var(--terra-salvia);color:var(--terra-salvia);padding:.3rem .8rem;border-radius:3px}
+.propuesta h2{font-size:clamp(2rem,4.5vw,3rem);color:var(--terra-crema);margin-top:1rem;line-height:1.15}
+.propuesta ul{margin-top:1.5rem}
+.propuesta li{padding:.9rem 0;border-top:1px solid var(--crema-20);font-size:1.25rem}
+.propuesta li strong{font-weight:400;color:var(--terra-salvia);display:block;font-size:1.5rem}
+.propuesta .btn{margin-top:1.8rem}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero .anim{animation:entra-suave .4s ease both}
+  .hero .a2,.hero .a3,.hero .a4{animation-delay:0s}
+  @keyframes entra-suave{from{opacity:0}to{opacity:1}}
+  .js .lista-valores li{transform:none;transition:opacity .3s ease}
+  .dd-list,.nav{transition:opacity .1s ease}
+  .btn:active{transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido" data-i="skip">Ir al contenido</a>
+
+<header class="site-header" id="cabecera">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="terra, inicio">terra</a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="nav" data-i="menu">Menú</button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#carta" data-i="nav_menu">Menú del día</a>
+      <div class="dd" id="ddCartas">
+        <button class="nav-link dd-btn" aria-expanded="false" aria-haspopup="true" data-i="nav_cartas">Cartas</button>
+        <ul class="dd-list">
+          <li><a href="#carta" class="edit" data-i="carta_1">Carta</a></li>
+          <li><a href="#carta" class="edit" data-i="carta_2">Carta de vinos</a></li>
+        </ul>
+      </div>
+      <div class="dd" id="ddIdiomas">
+        <button class="nav-link dd-btn" aria-expanded="false" aria-haspopup="true" data-i="nav_idiomas">Idiomas</button>
+        <ul class="dd-list">
+          <li><button type="button" data-lang="es" aria-current="true" lang="es">Castellano</button></li>
+          <li><button type="button" data-lang="va" lang="ca-ES-valencia">Valencià</button></li>
+        </ul>
+      </div>
+      <a class="btn btn-cobre" href="#reservas" data-i="reservar_larga">Hacer una reserva</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+  <section class="hero" id="inicio" aria-labelledby="h-terra">
+    <img class="hero-img" src="assets/hero.jpg" width="1527" height="1013" alt="Fotografía histórica en sepia de un grupo de campesinos valencianos junto a un campo, con un hombre que come una fruta en el centro" fetchpriority="high" decoding="async">
+    <div class="hero-inner">
+      <h1 id="h-terra" class="anim">terra<span class="sr"> · Restaurante en Cullera</span></h1>
+      <p class="lema anim a2" data-i="lema">Producto · Equipo · Creatividad · Microestacionalidad · Equilibrio · Kilómetro 0 · Sostenibilidad</p>
+      <a class="btn btn-cobre anim a3" href="#reservas" data-i="reservar_larga">Hacer una reserva</a>
+      <p class="estado anim a4" id="estado" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="guias" aria-label="Reconocimientos">
+    <div class="wrap">
+      <ul>
+        <li><img src="assets/repsol.png" width="447" height="447" alt="Logotipo Guía Repsol 2026" loading="lazy"><p data-i="g_repsol">Recomendación Guía Repsol 2026</p></li>
+        <li><img src="assets/michelin.png" width="387" height="388" alt="Logotipo Guía Michelin 2026" loading="lazy"><p data-i="g_michelin">Recomendación Guía Michelín 2026</p></li>
+        <li><img src="assets/contorna.png" width="941" height="1063" alt="Logotipo Guía Contornà 2026" loading="lazy"><p data-i="g_contorna">Guía Contornà 2026</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec valores" id="filosofia" aria-labelledby="h-filosofia">
+    <div class="wrap grid">
+      <figure>
+        <img src="assets/hero.jpg" width="1527" height="1013" alt="Detalle de la fotografía histórica en sepia: campesinos valencianos sonriendo a cámara" loading="lazy" decoding="async">
+      </figure>
+      <div>
+        <h2 class="titulo" id="h-filosofia" data-i="f_titulo">Lo que sostiene a terra</h2>
+        <p class="intro" data-i="f_intro">Lo importante es el producto de kilómetro 0; predomina el trabajo en equipo, la creatividad, y nos preocupamos por el equilibrio y la sostenibilidad aplicando la microestacionalidad.</p>
+        <ul class="lista-valores" id="valores">
+          <li data-i="v1">Producto</li>
+          <li data-i="v2">Equipo</li>
+          <li data-i="v3">Creatividad</li>
+          <li data-i="v4">Microestacionalidad</li>
+          <li data-i="v5">Equilibrio</li>
+          <li data-i="v6">Kilómetro 0</li>
+          <li data-i="v7">Sostenibilidad</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec carta" id="carta" aria-labelledby="h-carta">
+    <div class="wrap">
+      <h2 class="titulo" id="h-carta" data-i="c_titulo">Menú y cartas</h2>
+      <div class="cols">
+        <div class="col">
+          <h3 data-i="nav_menu">Menú del día</h3>
+          <p class="vacio edit" data-i="pend">[contenido del cliente]</p>
+        </div>
+        <div class="col">
+          <h3 data-i="nav_cartas">Cartas</h3>
+          <p class="vacio edit" data-i="pend">[contenido del cliente]</p>
+        </div>
+      </div>
+      <p class="alergias" data-i="alergias">Bajo previo aviso adaptamos el menú a vuestras alergias, intolerancias o restricciones alimentarias.</p>
+    </div>
+  </section>
+
+  <section class="sec reservas" id="reservas" aria-labelledby="h-reservas">
+    <div class="wrap">
+      <h2 class="titulo" id="h-reservas" data-i="r_titulo">Reservas y contacto</h2>
+      <div class="grid">
+        <div>
+          <h3 class="etiqueta" data-i="r_horario">Horario de apertura</h3>
+          <table class="horario" id="horario" aria-label="Horario de apertura">
+            <tbody>
+              <tr data-dia="1"><th scope="row" data-i="d1">Lunes</th><td>13:30 – 15:30</td></tr>
+              <tr data-dia="3"><th scope="row" data-i="d3">Miércoles</th><td>13:30 – 15:30</td></tr>
+              <tr data-dia="4"><th scope="row" data-i="d4">Jueves</th><td>13:30 – 15:30</td></tr>
+              <tr data-dia="5"><th scope="row" data-i="d5">Viernes</th><td><span>13:30 – 15:30</span><span>19:30 – 23:30</span></td></tr>
+              <tr data-dia="6"><th scope="row" data-i="d6">Sábado</th><td><span>13:30 – 15:30</span><span>19:30 – 23:30</span></td></tr>
+              <tr data-dia="0"><th scope="row" data-i="d0">Domingo</th><td>13:30 – 15:30</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div class="bloque">
+            <h3 class="etiqueta" data-i="r_reservas">Reservas</h3>
+            <a class="tel" href="tel:+34960488254">+34 960 488 254</a>
+            <p data-i="r_texto">Reservas por llamada telefónica de 10 a 20 h o por nuestra página web. Las reservas pueden realizarse hasta con 3 meses de antelación.</p>
+            <div class="acciones">
+              <a class="btn btn-cobre edit" href="https://terracullera.bookingtable.cat/widget" target="_blank" rel="noopener" data-i="reservar_web">Reservar en la web</a>
+              <a class="btn btn-linea" href="tel:+34960488254" data-i="llamar_largo">Llamar ahora</a>
+            </div>
+          </div>
+          <div class="bloque">
+            <h3 class="etiqueta" data-i="r_dir">Dirección</h3>
+            <p data-i="r_dir_txt">Encuéntranos en C/ Riu nº 2 (Cullera, Valencia, 46400)</p>
+            <div class="mapa"><iframe title="Mapa de Google: Terra, C/ Riu 2, Cullera" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=C%2F%20Riu%202%2C%2046400%20Cullera%2C%20Valencia&amp;output=embed"></iframe></div>
+            <div class="acciones"><a class="btn btn-linea" href="https://maps.app.goo.gl/KXZ4jf7LhvB18ZUt5" target="_blank" rel="noopener" data-i="r_como">Cómo llegar</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec regalos" id="regalos" aria-labelledby="h-regalos">
+    <div class="wrap">
+      <h2 class="titulo" id="h-regalos" data-i="rg_titulo">Regala una experiencia única en terra</h2>
+      <p data-i="rg_txt">Puedes llamarnos o escribirnos por email. Nuestro correo electrónico es <a href="mailto:terra.cullera@gmail.com">terra.cullera@gmail.com</a></p>
+      <div class="acciones">
+        <a class="btn btn-linea" href="tel:+34960488254" data-i="llamar_largo">Llamar ahora</a>
+        <a class="btn btn-linea" href="mailto:terra.cullera@gmail.com" data-i="rg_email">Escribir un email</a>
+        <a class="btn btn-linea" href="https://wa.me/674348292" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="terra, volver arriba">terra</a>
+    <ul>
+      <li><a class="edit" href="#" data-i="pie_priv">Política de privacidad</a></li>
+      <li><a class="edit" href="#" data-i="pie_cook">Política de cookies</a></li>
+      <li><a class="edit" href="#" data-i="pie_legal">Aviso legal</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="barra" role="group" aria-label="Acciones rápidas">
+  <a class="btn btn-cobre" href="#reservas" data-i="reservar">Reservar</a>
+  <a class="btn btn-linea" href="tel:+34960488254" data-i="llamar">Llamar</a>
+</div>
+
+<aside class="propuesta" aria-label="Franja para el propietario">
+  <div class="wrap">
+    <span class="aviso">Esta franja no aparece en la web publicada</span>
+    <h2>Lo que cambia respecto a la web actual</h2>
+    <ul>
+      <li><strong>Reservar sin fricción</strong>Botón de reserva siempre a mano en la cabecera y, en el móvil, una barra fija con Reservar y Llamar.</li>
+      <li><strong>Horario que se explica solo</strong>La web calcula si estáis abiertos ahora, marca el día de hoy y dice cuándo abrís la próxima vez.</li>
+      <li><strong>Mejor presencia en Google</strong>Metadatos, datos estructurados de restaurante con dirección, horario y teléfono, y textos pensados para "restaurante en Cullera".</li>
+      <li><strong>Vuestros reconocimientos, bien presentados</strong>Repsol, Michelin y Contornà con su espacio propio, y la web en castellano y valenciano.</li>
+    </ul>
+    <button class="btn btn-linea" type="button" id="resaltar">Resaltar datos a confirmar</button>
+  </div>
+</aside>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var D={
+    es:{},
+    va:{
+      skip:"Anar al contingut",menu:"Menú",
+      nav_menu:"Menú del dia",nav_cartas:"Cartes",nav_idiomas:"Idiomes",carta_1:"Carta",carta_2:"Carta de vins",
+      reservar_larga:"Fer una reserva",reservar:"Reservar",llamar:"Telefonar",llamar_largo:"Telefonar ara",
+      lema:"Producte · Equip · Creativitat · Microestacionalitat · Equilibri · Quilòmetre 0 · Sostenibilitat",
+      g_repsol:"Recomanació Guia Repsol 2026",g_michelin:"Recomanació Guia Michelin 2026",g_contorna:"Guia Contornà 2026",
+      f_titulo:"El que sosté terra",
+      f_intro:"Allò important és el producte de quilòmetre 0; predomina el treball en equip, la creativitat, i ens preocupem per l'equilibri i la sostenibilitat aplicant la microestacionalitat.",
+      v1:"Producte",v2:"Equip",v3:"Creativitat",v4:"Microestacionalitat",v5:"Equilibri",v6:"Quilòmetre 0",v7:"Sostenibilitat",
+      c_titulo:"Menú i cartes",pend:"[contingut del client]",
+      alergias:"Amb avís previ adaptem el menú a les vostres al·lèrgies, intoleràncies o restriccions alimentàries.",
+      r_titulo:"Reserves i contacte",r_horario:"Horari d'obertura",
+      d0:"Diumenge",d1:"Dilluns",d3:"Dimecres",d4:"Dijous",d5:"Divendres",d6:"Dissabte",
+      r_reservas:"Reserves",
+      r_texto:"Reserves per telèfon, de 10 a 20 h, o per la nostra pàgina web. Les reserves es poden fer amb fins a 3 mesos d'antelació.",
+      reservar_web:"Reservar a la web",r_dir:"Adreça",
+      r_dir_txt:"Trobeu-nos al C/ Riu núm. 2 (Cullera, València, 46400)",r_como:"Com arribar-hi",
+      rg_titulo:"Regala una experiència única a terra",
+      rg_txt:"Podeu telefonar-nos o escriure'ns per correu electrònic. El nostre correu electrònic és <a href=\"mailto:terra.cullera@gmail.com\">terra.cullera@gmail.com</a>",
+      rg_email:"Escriure un correu",
+      pie_priv:"Política de privacitat",pie_cook:"Política de galetes",pie_legal:"Avís legal",
+      s_open:"Obert ara · fins a les {t}",s_closed_hoy:"Tancat ara · tornem a obrir hui a les {t}",
+      s_next_man:"Pròxima obertura: demà a les {t}",s_next_dia:"Pròxima obertura: {d} a les {t}",
+      dias:["diumenge","dilluns","dimarts","dimecres","dijous","divendres","dissabte"],
+      title:"Terra · Restaurant a Cullera · Producte de quilòmetre 0",
+      desc:"Restaurant a Cullera on allò important és el producte de quilòmetre 0; on predomina el treball en equip, la creativitat i on ens preocupem per l'equilibri i la sostenibilitat aplicant la microestacionalitat.",
+      hoyTxt:" · hui"
+    }
+  };
+  D.es={s_open:"Abierto ahora · hasta las {t}",s_closed_hoy:"Cerrado ahora · volvemos a abrir hoy a las {t}",s_next_man:"Próxima apertura: mañana a las {t}",s_next_dia:"Próxima apertura: {d} a las {t}",dias:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"],
+    title:document.title,desc:document.querySelector('meta[name=description]').content};
+  var els=document.querySelectorAll('[data-i]');
+  els.forEach(function(el){var k=el.getAttribute('data-i');if(k!=='lema'&&k!=='rg_txt')D.es[k]=el.innerHTML;});
+  D.es.lema=document.querySelector('[data-i=lema]').innerHTML;
+  D.es.rg_txt=document.querySelector('[data-i=rg_txt]').innerHTML;
+  var lang='es';
+  var SCHED={0:[[13.5,15.5]],1:[[13.5,15.5]],3:[[13.5,15.5]],4:[[13.5,15.5]],5:[[13.5,15.5],[19.5,23.5]],6:[[13.5,15.5],[19.5,23.5]]};
+  function fmt(h){var H=Math.floor(h),M=Math.round((h-H)*60);return H+':'+(M<10?'0':'')+M;}
+  function madrid(){
+    var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Madrid',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),o={};
+    p.forEach(function(x){o[x.type]=x.value;});
+    var w={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[o.weekday];
+    return {d:w,h:(+o.hour%24)+(+o.minute)/60};
+  }
+  function estado(){
+    var n=madrid(),t=D[lang],box=document.getElementById('estado'),s=SCHED[n.d]||[],msg='',open=false,i;
+    for(i=0;i<s.length;i++){if(n.h>=s[i][0]&&n.h<s[i][1]){msg=t.s_open.replace('{t}',fmt(s[i][1]));open=true;break;}}
+    if(!open){
+      for(i=0;i<s.length;i++){if(n.h<s[i][0]){msg=t.s_closed_hoy.replace('{t}',fmt(s[i][0]));break;}}
+      if(!msg){
+        for(var k=1;k<=7;k++){var dd=(n.d+k)%7;if(SCHED[dd]){var f=fmt(SCHED[dd][0][0]);msg=k===1?t.s_next_man.replace('{t}',f):t.s_next_dia.replace('{d}',t.dias[dd]).replace('{t}',f);break;}}
+      }
+    }
+    box.className='estado anim a4'+(open?' abierto':'');
+    box.innerHTML='<i aria-hidden="true"></i>'+msg;
+    document.querySelectorAll('#horario tr').forEach(function(r){r.classList.toggle('hoy',+r.getAttribute('data-dia')===n.d);});
+  }
+  function setLang(l){
+    lang=l;var t=D[l];
+    els.forEach(function(el){var k=el.getAttribute('data-i');if(t[k]!==undefined)el.innerHTML=t[k];});
+    document.documentElement.lang=l==='va'?'ca-ES-valencia':'es';
+    document.title=t.title;document.querySelector('meta[name=description]').content=t.desc;
+    document.querySelectorAll('[data-lang]').forEach(function(b){b.setAttribute('aria-current',b.getAttribute('data-lang')===l?'true':'false');});
+    document.querySelectorAll('#horario th').forEach(function(th){if(l==='va')th.setAttribute('data-va','');else th.removeAttribute('data-va');});
+    try{localStorage.setItem('terra-lang',l);}catch(e){}
+    estado();
+  }
+  document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-lang'));closeDD();});});
+
+  // desplegables
+  var dds=document.querySelectorAll('.dd');
+  function closeDD(except){dds.forEach(function(d){if(d!==except){d.classList.remove('open');d.querySelector('.dd-btn').setAttribute('aria-expanded','false');}});}
+  dds.forEach(function(d){var b=d.querySelector('.dd-btn');b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeDD(d);d.classList.toggle('open',o);b.setAttribute('aria-expanded',o);});});
+  document.addEventListener('click',function(e){if(!e.target.closest('.dd'))closeDD();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();closeMenu();}});
+
+  // menú móvil
+  var nav=document.getElementById('nav'),mt=document.getElementById('menuToggle');
+  function closeMenu(){nav.classList.remove('open');mt.setAttribute('aria-expanded','false');}
+  mt.addEventListener('click',function(){var o=!nav.classList.contains('open');nav.classList.toggle('open',o);mt.setAttribute('aria-expanded',o);});
+  nav.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu();});
+
+  // cabecera sólida
+  var h=document.getElementById('cabecera');
+  function sc(){h.classList.toggle('solid',window.scrollY>40);}
+  sc();window.addEventListener('scroll',sc,{passive:true});
+
+  // reveal valores
+  var lv=document.getElementById('valores');
+  if('IntersectionObserver' in window){new IntersectionObserver(function(en,ob){en.forEach(function(x){if(x.isIntersecting){lv.classList.add('vis');ob.disconnect();}});},{threshold:.2}).observe(lv);}else{lv.classList.add('vis');}
+
+  document.getElementById('resaltar').addEventListener('click',function(){document.body.classList.toggle('ver-editables');});
+
+  var l0='es';
+  try{var q=new URLSearchParams(location.search).get('lang');l0=q==='va'||q==='es'?q:(localStorage.getItem('terra-lang')||'es');}catch(e){}
+  if(l0==='va')setLang('va');else estado();
+  setInterval(estado,60000);
+})();
+</script>
+</body>
+</html>

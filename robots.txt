@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://terra-cullera.vercel.app/sitemap.xml
